@@ -57,7 +57,9 @@ const translations = {
         'commerce_title': 'COMERCIO',
         'trad_prod_title': 'PRODUCTOS TRADICIONALES',
         'trad_prod_desc': 'El comercio de productos tradicionales es fundamental para nuestra identidad y economía, facilitando el intercambio de bienes artesanales y agrícolas de alta calidad.',
-        'btn_more': 'SOLICITAR ASESORÍA',
+        'btn_more': 'VER MAS DETALLES',
+        'btn_info': 'SOLICITAR INFO',
+        'btn_advisory': 'SOLICITAR ASESORÍA',
         'btn_details': 'DETALLES',
         'btn_form': 'IR AL FORMULARIO DE CONTACTO',
         'ie_title': 'IMPORTACIÓN & EXPORTACIÓN',
@@ -82,7 +84,8 @@ const translations = {
         'prod_3_desc': 'Productos textiles artesanales y de alta calidad, representando la tradición ecuatoriana.',
         'prod_4_desc': 'Jamón curado de excelente calidad, preparado con métodos tradicionales.',
         'prod_5_desc': 'Pescado fresco y mariscos de las costas del Pacífico ecuatoriano.',
-        'products_page_title': 'Nuestros Productos'
+        'products_page_title': 'Nuestros Productos',
+        'form_url': 'https://forms.gle/5951nVBJNCh4sBi78'
     },
     'fr': {
         'nav_home': 'ACCUEIL',
@@ -109,7 +112,9 @@ const translations = {
         'commerce_title': 'COMMERCE',
         'trad_prod_title': 'PRODUITS TRADITIONNELS',
         'trad_prod_desc': 'Le commerce de produits traditionnels est fondamental pour notre identité, facilitant l\'échange de produits artisanaux et agricoles de haute qualité.',
-        'btn_more': 'DEMANDER CONSEIL',
+        'btn_more': 'VOIR PLUS DE DÉTAILS',
+        'btn_info': 'DEMANDER INFO',
+        'btn_advisory': 'DEMANDER CONSEIL',
         'btn_details': 'DÉTAILS',
         'btn_form': 'ACCÉDER AU FORMULAIRE DE CONTACT',
         'ie_title': 'IMPORTATION & EXPORTATION',
@@ -134,7 +139,8 @@ const translations = {
         'prod_3_desc': 'Produits textiles artisanaux de haute qualité, représentant la tradition équatorienne.',
         'prod_4_desc': 'Jambon séché de qualité exceptionnelle, préparé selon des méthodes traditionnelles.',
         'prod_5_desc': 'Poissons frais et fruits de mer des côtes du Pacifique équatorien.',
-        'products_page_title': 'Nos Produits'
+        'products_page_title': 'Nos Produits',
+        'form_url': 'https://docs.google.com/forms/d/1Bsjxey6_Y9yGgwF3xPTHx7tOudQXe6t5cxqrB5cBO5E/viewform'
     },
     'en': {
         'nav_home': 'HOME',
@@ -161,7 +167,9 @@ const translations = {
         'commerce_title': 'COMMERCE',
         'trad_prod_title': 'TRADITIONAL PRODUCTS',
         'trad_prod_desc': 'Trade in traditional products is fundamental to our identity and economy.',
-        'btn_more': 'REQUEST ADVISORY',
+        'btn_more': 'SEE MORE DETAILS',
+        'btn_info': 'REQUEST INFO',
+        'btn_advisory': 'REQUEST ADVISORY',
         'btn_details': 'DETAILS',
         'btn_form': 'GO TO CONTACT FORM',
         'ie_title': 'IMPORT & EXPORT',
@@ -186,7 +194,8 @@ const translations = {
         'prod_3_desc': 'Handcrafted textile products of high quality, representing Ecuadorian tradition.',
         'prod_4_desc': 'Cured ham of excellent quality, prepared with traditional methods.',
         'prod_5_desc': 'Fresh fish and seafood from the Ecuadorian Pacific coast.',
-        'products_page_title': 'Our Products'
+        'products_page_title': 'Our Products',
+        'form_url': 'https://docs.google.com/forms/d/e/1FAIpQLScqEPD_uMeHBLZXmpucLE1a_TDyYZAjEGwem9Dfi8k9MheecA/viewform'
     },
     'ca': {
         'nav_home': 'INICI',
@@ -213,7 +222,9 @@ const translations = {
         'commerce_title': 'COMERÇ',
         'trad_prod_title': 'PRODUCTES TRADICIONALS',
         'trad_prod_desc': 'El comerç de productes tradicionals és fonamental per a la nostra identitat i economia.',
-        'btn_more': 'SOL·LICITAR ASSESSORAMENT',
+        'btn_more': 'VEURE MÉS DETALLS',
+        'btn_info': 'SOL·LICITAR INFO',
+        'btn_advisory': 'SOL·LICITAR ASSESSORAMENT',
         'btn_details': 'DETALLS',
         'btn_form': 'ANAR AL FORMULARI DE CONTACTE',
         'ie_title': 'IMPORTACIÓ I EXPORTACIÓ',
@@ -238,7 +249,8 @@ const translations = {
         'prod_3_desc': 'Productes tèxtils artesanals d\'alta qualitat, representant la tradició equatoriana.',
         'prod_4_desc': 'Pernil curat de qualitat excel·lent, preparat amb mètodes tradicionals.',
         'prod_5_desc': 'Peix fresc i marisc de les costes del Pacífic equatorià.',
-        'products_page_title': 'Els Nostres Productes'
+        'products_page_title': 'Els Nostres Productes',
+        'form_url': 'https://docs.google.com/forms/d/e/1FAIpQLSeuPu_ceclsak6l1MelMbZuSp5_WQ3Oscagp_49upE67mSDhg/viewform'
     }
 };
 
@@ -260,11 +272,28 @@ function setLang(lang) {
     if (currentFlag) currentFlag.src = `images/flag_${lang}.png`;
     if (currentLangText) currentLangText.innerText = lang.toUpperCase();
 
+    // Changer l'URL du formulaire de contact selon la langue
+    const contactFormLink = document.getElementById('contact-form-link');
+    if (contactFormLink && translations[lang] && translations[lang]['form_url']) {
+        contactFormLink.href = translations[lang]['form_url'];
+    }
+
     localStorage.setItem('preferredLang', lang);
 }
 
 // ==========================================
-// 4. INICIALIZACIÓN
+// 4. FONCTION DE REDIRECTION VERS FORMULAIRE
+// ==========================================
+function redirectToForm() {
+    const savedLang = localStorage.getItem('preferredLang') || 'es';
+    const formUrl = translations[savedLang] && translations[savedLang]['form_url'] 
+        ? translations[savedLang]['form_url'] 
+        : 'https://forms.gle/5951nVBJNCh4sBi78';
+    window.open(formUrl, '_blank');
+}
+
+// ==========================================
+// 5. INICIALIZACIÓN
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'es';
