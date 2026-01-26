@@ -37,9 +37,10 @@ body {
 }
 
 .logo img {
-    height: 60px;
+    height: 50px;
     width: auto;
     background-color: transparent;
+    mix-blend-mode: darken;
 }
 
 .menu ul {
