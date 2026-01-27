@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CICTAEC - Deporte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo_cictaec.svg" alt="CICTAEC Logo" data-key="logo_img">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#inicio" data-key="nav_home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about" data-key="nav_about">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#areas" data-key="nav_areas">Areas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact" data-key="nav_contact">Contacto</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/flag_es.png" id="current-flag" alt="Español" style="width: 20px; height: auto;">
+                            <span id="current-lang-text">ES</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('fr')">
+                                <img src="images/flag_fr.png" alt="Français" style="width: 20px; height: auto;"> FR
+                            </a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('es')">
+                                <img src="images/flag_es.png" alt="Español" style="width: 20px; height: auto;"> ES
+                            </a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('ca')">
+                                <img src="images/flag_ca.png" alt="Catalan" style="width: 20px; height: auto;"> CAT
+                            </a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('en')">
+                                <img src="images/flag_en.png" alt="English" style="width: 20px; height: auto;"> EN
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mt-5 mb-5">
+        <h2 class="reveal-title mb-5 text-center" data-key="sport_page_title">DEPORTE</h2>
+        
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm p-4">
+                    <h3 class="text-center mb-4" data-key="sport_subtitle">PROMOCIÓN DEPORTIVA</h3>
+                    <p class="lead text-center" data-key="sport_desc">Fomentamos el intercambio deportivo y la promoción de eventos deportivos entre Ecuador y Europa, creando oportunidades de desarrollo en el ámbito deportivo internacional.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" data-key="sport_exchanges_title">INTERCAMBIOS DEPORTIVOS</h4>
+                        <p class="card-text" data-key="sport_exchanges_desc">Facilitamos el intercambio de atletas, entrenadores y profesionales del deporte entre Ecuador y Europa, promoviendo la cooperación deportiva internacional y el desarrollo de talento.</p>
+                        <ul>
+                            <li data-key="sport_exchanges_item1">Programas de intercambio para atletas</li>
+                            <li data-key="sport_exchanges_item2">Formación de entrenadores</li>
+                            <li data-key="sport_exchanges_item3">Cooperación técnica deportiva</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" data-key="sport_events_title">EVENTOS DEPORTIVOS</h4>
+                        <p class="card-text" data-key="sport_events_desc">Organizamos y promocionamos eventos deportivos que conectan a Ecuador con Europa, creando oportunidades para la participación internacional y el desarrollo del deporte.</p>
+                        <ul>
+                            <li data-key="sport_events_item1">Torneos internacionales</li>
+                            <li data-key="sport_events_item2">Competencias bilaterales</li>
+                            <li data-key="sport_events_item3">Eventos deportivos culturales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" data-key="sport_infrastructure_title">INFRAESTRUCTURA DEPORTIVA</h4>
+                        <p class="card-text" data-key="sport_infrastructure_desc">Apoyamos el desarrollo de infraestructura deportiva y la transferencia de conocimientos técnicos para mejorar las instalaciones y condiciones de entrenamiento.</p>
+                        <ul>
+                            <li data-key="sport_infrastructure_item1">Consultoría en instalaciones deportivas</li>
+                            <li data-key="sport_infrastructure_item2">Equipamiento deportivo de calidad</li>
+                            <li data-key="sport_infrastructure_item3">Asesoría técnica especializada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" data-key="sport_business_title">NEGOCIOS DEPORTIVOS</h4>
+                        <p class="card-text" data-key="sport_business_desc">Facilitamos conexiones comerciales en el sector deportivo, incluyendo patrocinios, marketing deportivo y oportunidades de inversión en el ámbito deportivo internacional.</p>
+                        <ul>
+                            <li data-key="sport_business_item1">Conexión con patrocinadores</li>
+                            <li data-key="sport_business_item2">Marketing deportivo internacional</li>
+                            <li data-key="sport_business_item3">Oportunidades de inversión</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card bg-light shadow-sm">
+                    <div class="card-body text-center p-5">
+                        <h3 class="mb-4" data-key="sport_contact_title">¿INTERESADO EN COLABORAR?</h3>
+                        <p class="lead mb-4" data-key="sport_contact_desc">Si deseas participar en nuestros programas deportivos o tienes una propuesta de colaboración, no dudes en contactarnos.</p>
+                        <a href="index.html#contact" class="btn btn-primary btn-lg px-5" data-key="btn_contact">CONTACTAR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn btn-lg btn-secondary px-5" data-key="btn_back_home">Volver al inicio</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-key="footer_copy">© 2024 CICTAEC - Cámara Internacional de Comercio y Turismo. Todos los derechos reservados.</p>
+            <div class="mt-2">
+                <a href="politica-privacidad.html" class="text-white me-3" data-key="footer_privacy">Política de Privacidad</a>
+                <a href="politica-cookies.html" class="text-white" data-key="footer_cookies">Política de Cookies</a>
+            </div>
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" title="Retour en haut">↑</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
