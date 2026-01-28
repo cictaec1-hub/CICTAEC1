@@ -732,11 +732,36 @@ body {
 
 .hover-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .hover-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.hover-card .product-description {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 90%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.hover-card:hover .product-description {
+    opacity: 1;
+    visibility: visible;
 }
 
 .card-img-top {
