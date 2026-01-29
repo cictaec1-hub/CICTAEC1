@@ -20,6 +20,25 @@ body {
     padding: 0 20px;
 }
 
+/* Ajustement pour écrans larges 16:9 */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1500px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+
 /* Header/Navbar */
 .navbar {
     background-color: #f5f5f5;
