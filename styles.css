@@ -640,7 +640,7 @@ body {
 @media (max-width: 768px) {
     /* Section CULTURA: image à droite (plus petite), texte à gauche */
     .tourism .commerce-content:first-of-type {
-        flex-direction: row-reverse !important;
+        flex-direction: row !important;
         align-items: center;
     }
     
@@ -656,28 +656,30 @@ body {
     }
     
     .tourism .commerce-content:first-of-type .commerce-image img {
-        height: 200px;
+        height: 180px;
+        object-fit: cover;
     }
     
-    /* Section TURISMO: image à gauche, texte à droite */
+    /* Section TURISMO: image à gauche (plus petite), texte à droite */
     .tourism .commerce-content:last-of-type {
-        flex-direction: row-reverse !important;
+        flex-direction: row !important;
         align-items: center;
     }
     
     .tourism .commerce-content:last-of-type .commerce-image {
-        flex: 0 0 40%;
-        max-width: 40%;
+        flex: 0 0 35%;
+        max-width: 35%;
     }
     
     .tourism .commerce-content:last-of-type .commerce-text {
         flex: 1;
-        padding-right: 15px;
-        padding-left: 0;
+        padding-left: 15px;
+        padding-right: 0;
     }
     
     .tourism .commerce-content:last-of-type .commerce-image img {
-        height: 250px;
+        height: 180px;
+        object-fit: cover;
     }
 }
 
@@ -829,13 +831,13 @@ body {
         gap: 30px;
     }
 
-    .commerce-content,
+    .commerce:not(.tourism) .commerce-content,
     .import-export {
         flex-direction: column;
     }
 
     /* Section COMERCIO - PRODUCTOS TRADICIONALES: Image en haut, texte et bouton en bas */
-    .commerce .commerce-content:first-of-type {
+    .commerce:not(.tourism) .commerce-content:first-of-type {
         flex-direction: column-reverse !important;
     }
 
