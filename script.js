@@ -29,6 +29,29 @@ function manualMove(step) {
 }
 
 // ==========================================
+// INTERSECTION OBSERVER POUR ANIMATIONS
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observer les éléments avec animation
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-delay');
+    animatedElements.forEach(el => observer.observe(el));
+});
+
+// ==========================================
 // 2. DICCIONARIO DE TRADUCCIONES (ACTUALIZADO)
 // ==========================================
 const translations = {
@@ -36,6 +59,7 @@ const translations = {
         'nav_home': 'INICIO',
         'nav_about': 'Sobre nosotros',
         'nav_areas': 'Areas',
+        'nav_premios': 'Premios',
         'nav_contact': 'Contacto',
         'hero_title': 'CICTAEC',
         'hero_subtitle': 'Cámara Internacional de Comercio y Turismo',
@@ -218,6 +242,7 @@ const translations = {
         'nav_home': 'ACCUEIL',
         'nav_about': 'À propos',
         'nav_areas': 'Domaines',
+        'nav_premios': 'Prix',
         'nav_contact': 'Contact',
         'hero_title': 'CICTAEC',
         'hero_subtitle': 'Chambre Internationale de Commerce et de Tourisme',
@@ -394,6 +419,7 @@ const translations = {
         'nav_home': 'HOME',
         'nav_about': 'About Us',
         'nav_areas': 'Areas',
+        'nav_premios': 'Awards',
         'nav_contact': 'Contact',
         'hero_title': 'CICTAEC',
         'hero_subtitle': 'International Chamber of Commerce and Tourism',
@@ -576,6 +602,7 @@ const translations = {
         'nav_home': 'INICI',
         'nav_about': 'Sobre nosaltres',
         'nav_areas': 'Àrees',
+        'nav_premios': 'Premis',
         'nav_contact': 'Contacte',
         'hero_title': 'CICTAEC',
         'hero_subtitle': 'Cambra Internacional de Comerç i Turisme',

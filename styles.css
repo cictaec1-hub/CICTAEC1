@@ -258,7 +258,7 @@ body {
 .services-container .service-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -393,6 +393,32 @@ body {
     border-radius: 8px;
 }
 
+/* Animations pour la section commerce */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-on-scroll,
+.animate-on-scroll-delay {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.animate-on-scroll.visible {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-on-scroll-delay.visible {
+    animation: slideInRight 0.8s ease-out 0.4s forwards;
+}
+
 .import-export {
     display: flex;
     gap: 40px;
@@ -497,7 +523,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.2);
     z-index: 1;
 }
 
