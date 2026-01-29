@@ -615,9 +615,6 @@ body {
 .product-item:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-.pescado::before {
-    background-image: url('images/seccion_productos_pescado.jpg');
-}
 
 /* Ajustes para nuevas secciones */
 .tourism {
@@ -636,9 +633,9 @@ body {
     padding: 20px 40px;
 }
 
-/* Responsive para la inversión de la sección cultural */
+/* Responsive para la sección CULTURA Y TURISMO */
 @media (max-width: 768px) {
-    /* Section CULTURA: image à gauche (plus petite), texte à droite */
+    /* CULTURA: image à gauche, texte à droite */
     .tourism .commerce-content:first-of-type {
         flex-direction: row !important;
         align-items: center;
@@ -660,7 +657,7 @@ body {
         object-fit: cover;
     }
     
-    /* Section TURISMO: image à gauche (plus petite), texte à droite */
+    /* TURISMO: image à gauche, texte à droite */
     .tourism .commerce-content:last-of-type {
         flex-direction: row !important;
         align-items: center;
