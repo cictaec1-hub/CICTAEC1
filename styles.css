@@ -653,7 +653,7 @@ body {
     }
     
     .tourism .commerce-content:first-of-type .commerce-image img {
-        height: 180px;
+        height: 120px;
         object-fit: cover;
     }
     
@@ -675,7 +675,7 @@ body {
     }
     
     .tourism .commerce-content:last-of-type .commerce-image img {
-        height: 180px;
+        height: 120px;
         object-fit: cover;
     }
 }
