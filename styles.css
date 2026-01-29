@@ -638,7 +638,7 @@ body {
 
 /* Responsive para la inversión de la sección cultural */
 @media (max-width: 768px) {
-    /* Section CULTURA: image à droite (plus petite), texte à gauche */
+    /* Section CULTURA: image à gauche (plus petite), texte à droite */
     .tourism .commerce-content:first-of-type {
         flex-direction: row !important;
         align-items: center;
@@ -651,8 +651,8 @@ body {
     
     .tourism .commerce-content:first-of-type .commerce-text {
         flex: 1;
-        padding-right: 15px;
-        padding-left: 0;
+        padding-left: 15px;
+        padding-right: 0;
     }
     
     .tourism .commerce-content:first-of-type .commerce-image img {
