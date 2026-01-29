@@ -638,8 +638,45 @@ body {
 
 /* Responsive para la inversión de la sección cultural */
 @media (max-width: 768px) {
-    .cultural .commerce-content {
-        flex-direction: column !important;
+    /* Section CULTURA: image à gauche (plus petite), texte à droite */
+    .tourism .commerce-content:first-of-type {
+        flex-direction: row !important;
+        align-items: center;
+    }
+    
+    .tourism .commerce-content:first-of-type .commerce-image {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    
+    .tourism .commerce-content:first-of-type .commerce-text {
+        flex: 1;
+        padding-left: 15px;
+    }
+    
+    .tourism .commerce-content:first-of-type .commerce-image img {
+        height: 250px;
+    }
+    
+    /* Section TURISMO: image à gauche, texte à droite */
+    .tourism .commerce-content:last-of-type {
+        flex-direction: row-reverse !important;
+        align-items: center;
+    }
+    
+    .tourism .commerce-content:last-of-type .commerce-image {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    
+    .tourism .commerce-content:last-of-type .commerce-text {
+        flex: 1;
+        padding-right: 15px;
+        padding-left: 0;
+    }
+    
+    .tourism .commerce-content:last-of-type .commerce-image img {
+        height: 250px;
     }
 }
 
@@ -794,6 +831,10 @@ body {
     .commerce-content,
     .import-export {
         flex-direction: column;
+    }
+
+    .commerce-content {
+        flex-direction: column-reverse;
     }
 
     .contact-content {

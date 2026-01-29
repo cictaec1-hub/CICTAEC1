@@ -83,6 +83,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
 
         .producto-card:hover {
@@ -605,7 +606,7 @@
     </section>
         <footer class="footer">
         <div class="container">
-            <p data-key="footer_copy">© 2024 CICTAEC - Cámara Internacional de Comercio y Turismo. Todos los derechos reservados.</p>
+            <p data-key="footer_copy">© 2026 CICTAEC - Cámara Internacional de Comercio y Turismo. Todos los derechos reservados.</p>
             <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" title="Retour en haut">↑</a>
         </div>
     </footer>
@@ -634,6 +635,13 @@
             const titulo = categoria === 'importacion' ? 'IMPORTACIÓN' : 'EXPORTACIÓN';
             document.getElementById('categoria-title').textContent = titulo;
         }
+
+        // Ajouter les événements de clic pour rediriger vers le formulaire de contact
+        document.querySelectorAll('.producto-card').forEach(card => {
+            card.addEventListener('click', function() {
+                window.open('https://forms.gle/5951nVBJNCh4sBi78', '_blank');
+            });
+        });
     </script>
 </body>
 </html>
