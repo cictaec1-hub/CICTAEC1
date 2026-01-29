@@ -838,6 +838,13 @@ body {
         flex-direction: column-reverse !important;
     }
 
+    /* S'assurer que le contenu est visible sur mobile même avant l'animation */
+    .animate-on-scroll,
+    .animate-on-scroll-delay {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
     .contact-content {
         flex-direction: column;
     }
