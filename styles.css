@@ -843,6 +843,15 @@ body {
 
     .founder {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .founder-image {
+        margin-left: 0;
+    }
+
+    .founder-info p[data-key="founder_quote"] br {
+        display: none;
     }
 
     .mission-vision .container {
