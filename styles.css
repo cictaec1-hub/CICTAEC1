@@ -8,6 +8,12 @@ html {
     scroll-padding-top: 150px;
 }
 
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 80px;
+    }
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
