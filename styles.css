@@ -202,7 +202,19 @@ body {
 }
 
 .founder-image {
-    margin-left: 360px;
+    margin-left: 25%;
+}
+
+@media (max-width: 1200px) {
+    .founder-image {
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 992px) {
+    .founder-image {
+        margin-left: 5%;
+    }
 }
 
 .founder-image img {
