@@ -198,6 +198,11 @@ const translations = {
         'cookies_browsers_title': 'Cómo gestionar cookies en los principales navegadores:',
         'cookies_contact_title': 'Contacto',
         'cookies_contact_desc': 'Para cualquier consulta sobre nuestra política de cookies, puede contactarnos en:',
+        // PREMIO/BLOG PAGE
+        'premio_page_title': 'Blog - CICTAEC',
+        'premio_period_title': 'Período',
+        'premio_award': 'Premio',
+        'premio_news': 'Noticia',
         'cookies_back_btn': '← Volver al inicio',
         // PRIVACY PAGE
         'privacy_title': 'Política de Privacidad',
@@ -380,6 +385,11 @@ const translations = {
         'cookies_browsers_title': 'Comment gérer les cookies dans les principaux navigateurs:',
         'cookies_contact_title': 'Contact',
         'cookies_contact_desc': 'Pour toute question concernant notre politique de cookies, vous pouvez nous contacter à:',
+        // PREMIO/BLOG PAGE
+        'premio_page_title': 'Blog - CICTAEC',
+        'premio_period_title': 'Période',
+        'premio_award': 'Prix',
+        'premio_news': 'Actualité',
         'cookies_back_btn': '← Retour à l\'accueil',
         // PRIVACY PAGE
         'privacy_title': 'Politique de Confidentialité',
@@ -567,8 +577,11 @@ const translations = {
         'cookies_manage_desc': 'The user can configure their browser to accept or reject cookies. Most browsers automatically accept cookies, but you can modify this setting. However, if you decide to disable cookies, some features of the site may not be available.',
         'cookies_browsers_title': 'How to manage cookies in major browsers:',
         'cookies_contact_title': 'Contact',
-        'cookies_contact_desc': 'For any questions about our cookie policy, you can contact us at:',
-        'cookies_back_btn': '← Back to home',
+        'cookies_contact_desc': 'For any questions about our cookie policy, you can contact us at:',        // PREMIO/BLOG PAGE
+        'premio_page_title': 'Blog - CICTAEC',
+        'premio_period_title': 'Period',
+        'premio_award': 'Award',
+        'premio_news': 'News',        'cookies_back_btn': '← Back to home',
         // PRIVACY PAGE
         'privacy_title': 'Privacy Policy',
         'privacy_intro': 'In compliance with the General Data Protection Regulation (GDPR) and the Organic Law on Data Protection (LOPD), we inform you about the processing of your personal data.',
@@ -751,8 +764,11 @@ const translations = {
         'cookies_manage_desc': 'L\'usuari pot configurar el seu navegador per acceptar o rebutjar cookies. La majoria dels navegadors accepten cookies automàticament, però podeu modificar aquesta configuració. No obstant això, si decidiu desactivar les cookies, és possible que algunes funcionalitats del lloc no estiguin disponibles.',
         'cookies_browsers_title': 'Com gestionar cookies als principals navegadors:',
         'cookies_contact_title': 'Contacte',
-        'cookies_contact_desc': 'Per a qualsevol consulta sobre la nostra política de cookies, podeu contactar-nos a:',
-        'cookies_back_btn': '← Tornar a l\'inici',
+        'cookies_contact_desc': 'Per a qualsevol consulta sobre la nostra política de cookies, podeu contactar-nos a:',        // PREMIO/BLOG PAGE
+        'premio_page_title': 'Blog - CICTAEC',
+        'premio_period_title': 'Període',
+        'premio_award': 'Premi',
+        'premio_news': 'Notícia',        'cookies_back_btn': '← Tornar a l\'inici',
         // PRIVACY PAGE
         'privacy_title': 'Política de Privacitat',
         'privacy_intro': 'En compliment del Reglament General de Protecció de Dades (RGPD) i la Llei Orgànica de Protecció de Dades (LOPD), us informem sobre el tractament de les vostres dades personals.',
