@@ -1217,6 +1217,19 @@ body {
     .productos-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+
+    /* Mejorar visibilidad del fondo en mobile */
+    .products-background::before {
+        background-color: rgba(255, 255, 255, 0.50) !important;
+    }
+
+    .productos-display {
+        background: rgba(248, 249, 250, 0.40) !important;
+    }
+
+    .producto-card {
+        background: rgba(255, 255, 255, 0.65) !important;
+    }
 }
 
 /* Styles pour premio.html */
@@ -1356,6 +1369,23 @@ body {
     
     .periodo-item {
         margin-bottom: 15px;
+    }
+
+    /* Mejorar visibilidad del fondo en mobile */
+    .premio-background::before {
+        background-color: rgba(255, 255, 255, 0.30) !important;
+    }
+
+    .images-display {
+        background-color: transparent !important;
+    }
+
+    .image-card {
+        background: rgba(255, 255, 255, 0.60) !important;
+    }
+
+    .images-display h2 {
+        background: rgba(255, 255, 255, 0.75) !important;
     }
 }
 
