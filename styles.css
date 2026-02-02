@@ -567,6 +567,33 @@ body {
     z-index: 2;
 }
 
+/* Premio Section with Background */
+.premio-background {
+    background-image: url('images/fondo_premio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    position: relative;
+    padding: 60px 0;
+    min-height: 100vh;
+}
+
+.premio-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.40);
+    z-index: 0;
+}
+
+.premio-background > * {
+    position: relative;
+    z-index: 2;
+}
+
 /* Products Section */
 .products {
     padding: 60px 0;
@@ -1196,10 +1223,35 @@ body {
 .premio-container {
     margin-top: 100px;
     min-height: 70vh;
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+.premio-container .row {
+    background: transparent !important;
+}
+
+.premio-container .col-lg-3,
+.premio-container .col-md-4,
+.premio-container .col-lg-9,
+.premio-container .col-md-8,
+.premio-container .d-grid {
+    background: transparent !important;
+}
+
+.premio-container .card {
+    background: transparent !important;
+    border: none !important;
+}
+
+.premio-container .card-body {
+    background: transparent !important;
+    padding: 10px !important;
 }
 
 .periodo-item {
-    background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4f 100%);
+    background: linear-gradient(135deg, rgba(26, 77, 46, 0.9) 0%, rgba(45, 122, 79, 0.9) 100%);
     color: white;
     padding: 25px 20px;
     margin-bottom: 20px;
@@ -1215,10 +1267,11 @@ body {
     transform: translateX(10px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     border-color: #ffd700;
+    background: linear-gradient(135deg, rgba(26, 77, 46, 0.95) 0%, rgba(45, 122, 79, 0.95) 100%);
 }
 
 .periodo-item.active {
-    background: linear-gradient(135deg, #2d7a4f 0%, #3a9c64 100%);
+    background: linear-gradient(135deg, rgba(45, 122, 79, 0.95) 0%, rgba(58, 156, 100, 0.95) 100%);
     border-color: #ffd700;
     transform: scale(1.05);
 }
@@ -1232,7 +1285,9 @@ body {
 
 .images-display {
     padding: 20px;
-    background: #f8f9fa;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     border-radius: 10px;
     min-height: 500px;
 }
@@ -1242,6 +1297,9 @@ body {
     margin-bottom: 30px;
     font-weight: bold;
     text-align: center;
+    background: rgba(255, 255, 255, 0.80);
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .images-grid {
@@ -1254,12 +1312,19 @@ body {
     gap: 20px;
 }
 
+.premio-container .image-card,
 .image-card {
     transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.70) !important;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
+.premio-container .image-card:hover,
 .image-card:hover {
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.88) !important;
 }
 
 .image-card img {
@@ -1269,11 +1334,11 @@ body {
 
 .image-placeholder {
     height: 200px;
-    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+    background: linear-gradient(135deg, rgba(224, 224, 224, 0.5) 0%, rgba(245, 245, 245, 0.5) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: #666;
     font-size: 3rem;
 }
 
@@ -1298,6 +1363,11 @@ body {
 .premio-container {
     margin-top: 100px;
     min-height: 70vh;
+    background: transparent !important;
+}
+
+.premio-container .row {
+    background: transparent !important;
 }
 
 .periodo-item {
