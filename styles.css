@@ -26,7 +26,7 @@ body {
     padding: 0 20px;
 }
 
-/* Ajustement pour écrans larges 16:9 */
+/* Ajuste para pantallas anchas 16:9 */
 @media (min-width: 1400px) {
     .container {
         max-width: 1400px;
@@ -154,7 +154,7 @@ body {
     z-index: -1;
 }
 
-/* Boutons de navigation */
+/* Botones de navegación */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -434,7 +434,7 @@ body {
     border-radius: 8px;
 }
 
-/* Animations pour la section commerce */
+/* Animaciones para la sección comercio */
 @keyframes slideInRight {
     from {
         opacity: 0;
@@ -486,7 +486,7 @@ body {
     line-height: 1.8;
 }
 
-/* Sections avec fond vert */
+/* Secciones con fondo verde */
 #areas h2,
 .commerce h2,
 .products h2,
@@ -702,7 +702,7 @@ body {
     }
 }
 
-/* État initial : Respecte les marges Bootstrap tout en étant invisible */
+/* Estado inicial: Respeta los márgenes Bootstrap siendo invisible */
 .reveal-title {
     opacity: 0;
     transform: translateX(-30px);
@@ -710,7 +710,7 @@ body {
     will-change: opacity, transform;
 }
 
-/* État final : Retour à la position exacte prévue par Bootstrap */
+/* Estado final: Retorno a la posición exacta prevista por Bootstrap */
 .reveal-title.active {
     opacity: 1;
     transform: translateX(0);
@@ -755,11 +755,11 @@ body {
     flex: 1;
 }
 
-/* Nouveaux styles pour l'espacement des titres */
+/* Nuevos estilos para el espaciado de los títulos */
 .contact-company-title {
     color: #ffffff;
     font-size: 1.25rem;
-    margin-bottom: 30px; /* L'espace que vous avez demandé */
+    margin-bottom: 30px; /* El espacio que solicitó */
     font-weight: 500;
 }
 
@@ -800,14 +800,14 @@ body {
     border-radius: 8px;
 }
 
-/* Style du conteneur des icônes */
+/* Estilo del contenedor de los iconos */
 .social-links {
     margin-top: 20px;
     display: flex;
     gap: 15px;
 }
 
-/* Style des icônes individuelles */
+/* Estilo de los iconos individuales */
 .social-links img {
     width: 35px;
     height: 35px;
@@ -815,7 +815,7 @@ body {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Petit effet de survol */
+/* Pequeño efecto al pasar el cursor */
 .social-links img:hover {
     transform: scale(1.1);
     opacity: 0.8;
@@ -864,12 +864,12 @@ body {
         flex-direction: column;
     }
 
-    /* Section COMERCIO - PRODUCTOS TRADICIONALES: Image en haut, texte et bouton en bas */
+    /* Sección COMERCIO - PRODUCTOS TRADICIONALES: Imagen arriba, texto y botón abajo */
     .commerce:not(.tourism) .commerce-content:first-of-type {
         flex-direction: column-reverse !important;
     }
 
-    /* S'assurer que le contenu est visible sur mobile même avant l'animation */
+    /* Asegurarse de que el contenido sea visible en móvil incluso antes de la animación */
     .animate-on-scroll,
     .animate-on-scroll-delay {
         opacity: 1 !important;
@@ -955,7 +955,7 @@ body {
     padding: 0.5em 0.8em;
 }
 
-/* Styles pour productos.html */
+/* Estilos para productos.html */
 .producto-container {
     display: flex;
     min-height: 70vh;
