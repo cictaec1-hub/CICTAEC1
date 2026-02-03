@@ -29,29 +29,6 @@ function manualMove(step) {
 }
 
 // ==========================================
-// INTERSECTION OBSERVER POUR ANIMATIONS
-// ==========================================
-document.addEventListener('DOMContentLoaded', function() {
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observer les éléments avec animation
-    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-delay');
-    animatedElements.forEach(el => observer.observe(el));
-});
-
-// ==========================================
 // 2. DICCIONARIO DE TRADUCCIONES (ACTUALIZADO)
 // ==========================================
 const translations = {
@@ -891,6 +868,19 @@ const observer = new IntersectionObserver((entries) => {
 
 const titlesToAnimate = document.querySelectorAll('.reveal-title');
 titlesToAnimate.forEach(title => observer.observe(title));
+
+// --- ANIMATION DES SECTIONS AU SCROLL ---
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+const elementsToAnimate = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-delay');
+elementsToAnimate.forEach(element => sectionObserver.observe(element));
+
 // --- EFFET PARALLAX SUBTIL POUR LE FOND ---
 window.addEventListener('scroll', function() {
     const backgrounds = document.querySelectorAll('.index-background');
