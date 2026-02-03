@@ -891,3 +891,14 @@ const observer = new IntersectionObserver((entries) => {
 
 const titlesToAnimate = document.querySelectorAll('.reveal-title');
 titlesToAnimate.forEach(title => observer.observe(title));
+// --- EFFET PARALLAX SUBTIL POUR LE FOND ---
+window.addEventListener('scroll', function() {
+    const backgrounds = document.querySelectorAll('.index-background');
+    backgrounds.forEach(bg => {
+        const scrolled = window.pageYOffset;
+        const rect = bg.getBoundingClientRect();
+        const bgTop = rect.top + scrolled;
+        const offset = (scrolled - bgTop) * 0.3;
+        bg.style.backgroundPositionY = `calc(50% - ${offset}px)`;
+    });
+});

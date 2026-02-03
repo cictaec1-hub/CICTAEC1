@@ -193,6 +193,7 @@ body {
     font-size: 1.5em;
     margin-bottom: 40px;
     color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .org-description {
@@ -232,6 +233,7 @@ body {
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .founder-info h3 {
@@ -429,11 +431,14 @@ body {
     border-radius: 4px;
     font-size: 12px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
     background-color: #1e5a80;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
 }
 
 .commerce-image img,
@@ -442,6 +447,7 @@ body {
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* Animaciones para la sección comercio */
@@ -513,6 +519,8 @@ body {
     display: block;
     text-align: left;
     border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Sport Section with Background */
@@ -563,6 +571,35 @@ body {
 }
 
 .products-background > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Index Background */
+.index-background {
+    background-image: url('images/fondo_index.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    padding: 0;
+    min-height: 100vh;
+    will-change: background-position;
+}
+
+.index-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 0;
+}
+
+.index-background > * {
     position: relative;
     z-index: 2;
 }
@@ -729,7 +766,7 @@ body {
 
 /* Ajustes para nuevas secciones */
 .tourism {
-    background-color: #ffffff;
+    background-color: transparent;
 }
 
 .tourism h2 {
