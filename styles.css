@@ -1409,7 +1409,12 @@ body {
         margin-bottom: 15px;
     }
 
-    /* Mejorar visibilidad del fondo en mobile */
+    /* Mejorar visibilité du fond en mobile */
+    .premio-background {
+        background-size: 150%;
+        background-position: center center;
+    }
+    
     .premio-background::before {
         background-color: rgba(255, 255, 255, 0.30) !important;
     }
