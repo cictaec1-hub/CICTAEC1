@@ -1400,6 +1400,13 @@ body {
     color: #1a4d2e;
 }
 
+.image-card-description {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #1a4d2e;
+    padding-top: 8px !important;
+}
+
 @media (max-width: 768px) {
     .premio-container {
         margin-top: 80px;
