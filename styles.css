@@ -623,7 +623,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.40);
+    background-color: rgba(255, 255, 255, 0.50);
     z-index: 0;
 }
 
@@ -1597,4 +1597,45 @@ body {
 
 .premio-container .images-grid.active {
     row-gap: 26px;
+}
+
+.image-card img[src^="images/"] {
+    cursor: zoom-in;
+}
+
+.premio-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 2000;
+}
+
+.premio-lightbox.is-open {
+    display: flex;
+}
+
+.premio-lightbox img {
+    max-width: min(92vw, 1400px);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.premio-lightbox-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 2.1rem;
+    line-height: 1;
+    cursor: pointer;
 }
