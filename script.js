@@ -222,7 +222,7 @@ const translations = {
         'privacy_rights_limitation': 'Limitación',
         'privacy_rights_portability': 'Portabilidad',
         'privacy_rights_opposition': 'Oposición',
-        'privacy_rights_exercise': 'Para ejercer estos derechos, puede contactarnos en info@cictaec.es o en el +34 664 413 231.',
+        'privacy_rights_exercise': 'Para ejercer estos derechos, puede contactarnos en cictaec@cictaec.es / cictaec1@gmail.com o en el +34 664 413 231.',
         'privacy_security_title': 'Seguridad de los datos',
         'privacy_security_desc': 'CICTAEC ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad e integridad de los datos personales, así como para evitar su pérdida, alteración o acceso no autorizado.',
         'privacy_changes_title': 'Modificaciones de la política',
@@ -414,7 +414,7 @@ const translations = {
         'privacy_rights_limitation': 'Limitation',
         'privacy_rights_portability': 'Portabilité',
         'privacy_rights_opposition': 'Opposition',
-        'privacy_rights_exercise': 'Pour exercer ces droits, vous pouvez nous contacter à info@cictaec.es ou au +34 664 413 231.',
+        'privacy_rights_exercise': 'Pour exercer ces droits, vous pouvez nous contacter à cictaec@cictaec.es / cictaec1@gmail.com ou au +34 664 413 231.',
         'privacy_security_title': 'Sécurité des données',
         'privacy_security_desc': 'CICTAEC a adopté les mesures techniques et organisationnelles nécessaires pour garantir la sécurité et l\'intégrité des données personnelles, ainsi que pour éviter leur perte, altération ou accès non autorisé.',
         'privacy_changes_title': 'Modifications de la politique',
@@ -610,7 +610,7 @@ const translations = {
         'privacy_rights_limitation': 'Restriction',
         'privacy_rights_portability': 'Portability',
         'privacy_rights_opposition': 'Objection',
-        'privacy_rights_exercise': 'To exercise these rights, you can contact us at info@cictaec.es or at +34 664 413 231.',
+        'privacy_rights_exercise': 'To exercise these rights, you can contact us at cictaec@cictaec.es / cictaec1@gmail.com or at +34 664 413 231.',
         'privacy_security_title': 'Data security',
         'privacy_security_desc': 'CICTAEC has adopted the necessary technical and organizational measures to ensure the security and integrity of personal data, as well as to prevent loss, alteration or unauthorized access.',
         'privacy_changes_title': 'Policy modifications',
@@ -802,7 +802,7 @@ const translations = {
         'privacy_rights_limitation': 'Limitació',
         'privacy_rights_portability': 'Portabilitat',
         'privacy_rights_opposition': 'Oposició',
-        'privacy_rights_exercise': 'Per exercir aquests drets, podeu contactar-nos a info@cictaec.es o al +34 664 413 231.',
+        'privacy_rights_exercise': 'Per exercir aquests drets, podeu contactar-nos a cictaec@cictaec.es / cictaec1@gmail.com o al +34 664 413 231.',
         'privacy_security_title': 'Seguretat de les dades',
         'privacy_security_desc': 'CICTAEC ha adoptat les mesures tècniques i organitzatives necessàries per garantir la seguretat i integritat de les dades personals, així com per evitar la seva pèrdua, alteració o accés no autoritzat.',
         'privacy_changes_title': 'Modificacions de la política',
@@ -912,3 +912,78 @@ window.addEventListener('scroll', function() {
         bg.style.backgroundPositionY = `calc(50% - ${offset}px)`;
     });
 });
+
+// =============================
+// Cookie consent management
+// =============================
+;(function(){
+    const STORAGE_KEY = 'cictaec_cookie_consent_v1';
+
+    function readConsent(){
+        try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || null; }catch(e){return null}
+    }
+
+    function saveConsent(obj){
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+    }
+
+    function applyConsent(consent){
+        if(!consent) return;
+        // Placeholder: enable analytics scripts only if consent.analytics === true
+        if(consent.analytics){
+            // Developer: add analytics script injection here if needed
+            // Example (disabled by default):
+            // if(!document.getElementById('ga-script')){ /* inject GA */ }
+        }
+    }
+
+    function showBanner(){
+        const banner = document.getElementById('cookie-consent-banner');
+        if(banner) banner.style.display = 'flex';
+    }
+
+    function hideBanner(){
+        const banner = document.getElementById('cookie-consent-banner');
+        if(banner) banner.style.display = 'none';
+    }
+
+    function init(){
+        const consent = readConsent();
+        if(consent){
+            applyConsent(consent);
+            return; // already decided
+        }
+        // show banner and wire buttons
+        showBanner();
+
+        const btnAccept = document.getElementById('cc-accept-btn');
+        const btnReject = document.getElementById('cc-reject-btn');
+        const btnPrefs = document.getElementById('cc-preferences-btn');
+        const prefsBox = document.getElementById('cookie-preferences');
+        const saveBtn = document.getElementById('cc-save-btn');
+        const analyticsChk = document.getElementById('cc-analytics');
+        const marketingChk = document.getElementById('cc-marketing');
+
+        if(btnAccept) btnAccept.addEventListener('click', ()=>{
+            const c = {necessary:true, analytics:true, marketing:true, ts:Date.now()};
+            saveConsent(c); applyConsent(c); hideBanner(); if(prefsBox) prefsBox.style.display='none';
+        });
+
+        if(btnReject) btnReject.addEventListener('click', ()=>{
+            const c = {necessary:true, analytics:false, marketing:false, ts:Date.now()};
+            saveConsent(c); applyConsent(c); hideBanner(); if(prefsBox) prefsBox.style.display='none';
+        });
+
+        if(btnPrefs) btnPrefs.addEventListener('click', ()=>{
+            if(!prefsBox) return; prefsBox.style.display = prefsBox.style.display === 'block' ? 'none' : 'block';
+            const stored = readConsent(); if(stored){ if(analyticsChk) analyticsChk.checked = !!stored.analytics; if(marketingChk) marketingChk.checked = !!stored.marketing; }
+        });
+
+        if(saveBtn) saveBtn.addEventListener('click', ()=>{
+            const c = {necessary:true, analytics: !!(analyticsChk && analyticsChk.checked), marketing: !!(marketingChk && marketingChk.checked), ts:Date.now()};
+            saveConsent(c); applyConsent(c); hideBanner(); if(prefsBox) prefsBox.style.display='none';
+        });
+    }
+
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();

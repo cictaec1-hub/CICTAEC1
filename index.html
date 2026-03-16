@@ -39,7 +39,7 @@
                     "url": "https://www.cictaec.es/",
                     "logo": "https://www.cictaec.es/images/logo_cictaec.svg",
                     "image": "https://www.cictaec.es/images/logo_cictaec.svg",
-                    "email": "cictaec@cictaec.es",
+                    "email": ["cictaec@cictaec.es", "cictaec1@gmail.com"],
                     "telephone": "+34 664 413 231",
                     "sameAs": [
                         "https://www.facebook.com/asociacion.cictaec/",
@@ -69,6 +69,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Cookie consent banner styles */
+        #cookie-consent-banner { position: fixed; right: 20px; bottom: 20px; left:20px; z-index: 9999; display:flex; justify-content:space-between; align-items:center; background:#fff; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.12); padding:16px; gap:12px; }
+        #cookie-consent-banner p { margin:0; color:#222; }
+        #cookie-consent-banner .cc-actions { display:flex; gap:8px; }
+        #cookie-consent-banner .btn { margin:0; }
+        #cookie-preferences { display:none; position:fixed; right:20px; bottom:90px; z-index:10000; background:#fff; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.15); padding:16px; width:320px; }
+        #cookie-preferences h4 { margin-top:0; }
+        .cc-toggle { display:flex; justify-content:space-between; align-items:center; margin:8px 0; }
+    </style>
 </head>
 
 <body>
@@ -460,6 +470,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <!-- Cookie consent banner -->
+    <div id="cookie-consent-banner" role="dialog" aria-live="polite" style="display:none;">
+        <div style="flex:1">
+            <p><strong>Usamos cookies</strong> para mejorar su experiencia. Puede aceptar todas o configurar sus preferencias.</p>
+        </div>
+        <div class="cc-actions">
+            <button id="cc-preferences-btn" class="btn btn-outline-secondary">Preferencias</button>
+            <button id="cc-reject-btn" class="btn btn-secondary">Rechazar</button>
+            <button id="cc-accept-btn" class="btn btn-primary">Aceptar todo</button>
+        </div>
+    </div>
+
+    <div id="cookie-preferences" aria-hidden="true">
+        <h4>Preferencias de cookies</h4>
+        <div class="cc-toggle">
+            <span>Cookies necesarias</span>
+            <span>Siempre activas</span>
+        </div>
+        <div class="cc-toggle">
+            <span>Analíticas</span>
+            <label class="switch"><input type="checkbox" id="cc-analytics"><span></span></label>
+        </div>
+        <div class="cc-toggle">
+            <span>Marketing</span>
+            <label class="switch"><input type="checkbox" id="cc-marketing"><span></span></label>
+        </div>
+        <div style="text-align:right;margin-top:8px;">
+            <button id="cc-save-btn" class="btn btn-primary">Guardar</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
