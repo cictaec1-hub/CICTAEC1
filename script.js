@@ -79,7 +79,7 @@ const translations = {
         'sport_subtitle': 'PROMOVEMOS DEPORTE',
         'sport_desc': 'Fomentamos el intercambio deportivo y la promoción de eventos deportivos entre Ecuador y Europa, creando oportunidades de desarrollo en el ámbito deportivo internacional.',
         'sport_page_title': 'DEPORTE',
-        'sport_clubs_title': 'CLUBES ASOCIADOS',
+        'sport_clubs_title': 'CLUBS ASOCIADOS',
         'club1_name': 'BEISBOL4ALL',
         'club1_desc': 'Club especializado en béisbol con programas de desarrollo para jóvenes atletas. Fomenta el intercambio deportivo y la formación de talento en el béisbol español.',
         'club2_name': 'PENYA',
