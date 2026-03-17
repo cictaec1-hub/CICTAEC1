@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page en construction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  /* local styles for the construction card */
+  body { background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url('images/engranajes.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .construction-card { display:flex; align-items:center; justify-content:center; min-height:60vh; margin:40px 0; }
+  .construction-inner { max-width:900px; width:100%; background: rgba(255,255,255,0.80); padding:36px; box-shadow:0 6px 24px rgba(0,0,0,0.08); border-radius:8px; text-align:center; }
+  .construction-inner h1 { margin:0 0 8px; font-size:28px; color:#333; }
+  .construction-inner p { margin:8px 0 18px; color:#555; }
+  .construction-inner .actions a { display:inline-block; margin:6px 8px; padding:10px 16px; border-radius:6px; text-decoration:none; color:#fff; background:#007bff; }
+  .muted { color:#888; font-size:14px; margin-top:12px; }
+  @media (max-width:600px){ .construction-inner{padding:20px} .construction-inner h1{font-size:22px} }
+
+  /* Cookie consent banner styles (copied from index) */
+  #cookie-consent-banner { position: fixed; right: 20px; bottom: 20px; left:20px; z-index: 9999; display:flex; justify-content:space-between; align-items:center; background:#fff; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.12); padding:16px; gap:12px; }
+  #cookie-consent-banner p { margin:0; color:#222; }
+  #cookie-consent-banner .cc-actions { display:flex; gap:8px; }
+  #cookie-consent-banner .btn { margin:0; }
+  #cookie-preferences { display:none; position:fixed; right:20px; bottom:90px; z-index:10000; background:#fff; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.15); padding:16px; width:320px; }
+  #cookie-preferences h4 { margin-top:0; }
+  .cc-toggle { display:flex; justify-content:space-between; align-items:center; margin:8px 0; }
+  </style>
+</head>
+<body>
+  <header class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo_cictaec.svg" alt="CICTAEC Logo">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#inicio" data-key="nav_home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about" data-key="nav_about">Sobre nosotros</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="areasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-key="nav_areas">Areas</span>
+            </a>
+            <div class="dropdown-menu p-3" aria-labelledby="areasDropdown" style="min-width:16rem;">
+              <a class="dropdown-item" href="index.html#turismo">Cultura y Turismo</a>
+              <a class="dropdown-item" href="index.html#comercio">Comercio</a>
+              <a class="dropdown-item" href="index.html#deporte">Deporte</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact" data-key="nav_contact">Contacto</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="images/flag_es.png" id="current-flag" alt="Español" class="flag-icon">
+              <span id="current-lang-text">ES</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('fr')">
+                  <img src="images/flag_fr.png" alt="Français" class="flag-icon"> FR
+                </a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('es')">
+                  <img src="images/flag_es.png" alt="Español" class="flag-icon"> ES
+                </a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('ca')">
+                  <img src="images/flag_ca.png" alt="Catalan" class="flag-icon"> CAT
+                </a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLang('en')">
+                  <img src="images/flag_en.png" alt="English" class="flag-icon"> EN
+                </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container construction-card">
+    <div class="construction-inner">
+      <h1 data-key="construction_title">Page en construction</h1>
+      <p data-key="construction_message">Cette page est actuellement en cours de construction. Revenez bientôt pour voir les mises à jour.</p>
+      <div class="actions">
+      <a class="btn btn-primary" href="index.html" data-key="btn_back_home">Retour à l'accueil</a>
+      <a class="btn btn-outline-primary" href="premio.html" data-key="btn_view_premio">Voir la page Premio</a>
+      </div>
+    </div>
+    </div>
+  </main>
+
+<footer class="footer">
+  <div class="container text-center">
+    <p data-key="footer_copy">
+      © 2026 CICTAEC - Cámara Internacional de Comercio y Turismo. Todos los derechos reservados.
+    </p>
+
+    <p class="footer-links">
+      <a href="politica-privacidad.html" data-key="footer_privacy_link">Política de Privacidad</a> |
+      <a href="politica-cookies.html" data-key="footer_cookies_link">Política de Cookies</a> |
+      <a href="aviso-legal.html">Aviso Legal</a>
+    </p>
+
+    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
+       class="back-to-top" title="Volver arriba">↑</a>
+  </div>
+</footer>
+
+  <!-- Cookie consent banner (copied from index) -->
+  <div id="cookie-consent-banner" role="dialog" aria-live="polite" style="display:none;">
+    <div style="flex:1">
+      <p><strong>Usamos cookies</strong> para mejorar su experiencia. Puede aceptar todas o configurar sus preferencias.</p>
+    </div>
+    <div class="cc-actions">
+      <button id="cc-preferences-btn" class="btn btn-outline-secondary">Preferencias</button>
+      <button id="cc-reject-btn" class="btn btn-secondary">Rechazar</button>
+      <button id="cc-accept-btn" class="btn btn-primary">Aceptar todo</button>
+    </div>
+  </div>
+
+  <div id="cookie-preferences" aria-hidden="true">
+    <h4>Preferencias de cookies</h4>
+    <div class="cc-toggle">
+      <span>Cookies necesarias</span>
+      <span>Siempre activas</span>
+    </div>
+    <div class="cc-toggle">
+      <span>Analíticas</span>
+      <label class="switch"><input type="checkbox" id="cc-analytics"><span></span></label>
+    </div>
+    <div class="cc-toggle">
+      <span>Marketing</span>
+      <label class="switch"><input type="checkbox" id="cc-marketing"><span></span></label>
+    </div>
+    <div style="text-align:right;margin-top:8px;">
+      <button id="cc-save-btn" class="btn btn-primary">Guardar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

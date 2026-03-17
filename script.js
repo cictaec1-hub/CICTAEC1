@@ -182,6 +182,9 @@ const translations = {
         'cookies_contact_desc': 'Para cualquier consulta sobre nuestra política de cookies, puede contactarnos en:',
         // PREMIO/BLOG PAGE
         'premio_page_title': 'Blog - CICTAEC',
+        'construction_title': 'Página en construcción',
+        'construction_message': 'Esta página está actualmente en construcción. Vuelve pronto para ver las actualizaciones.',
+        'btn_view_premio': 'VER PREMIO',
         'premio_period_title': 'Período',
         'premio_award': 'Premio',
         'premio_news': 'Noticia',
@@ -374,6 +377,9 @@ const translations = {
         'cookies_contact_desc': 'Pour toute question concernant notre politique de cookies, vous pouvez nous contacter à:',
         // PREMIO/BLOG PAGE
         'premio_page_title': 'Blog - CICTAEC',
+        'construction_title': 'Page en construction',
+        'construction_message': 'Cette page est actuellement en cours de construction. Revenez bientôt pour voir les mises à jour.',
+        'btn_view_premio': 'VOIR PREMIO',
         'premio_period_title': 'Période',
         'premio_award': 'Prix',
         'premio_news': 'Actualité',
@@ -571,6 +577,9 @@ const translations = {
         'cookies_contact_title': 'Contact',
         'cookies_contact_desc': 'For any questions about our cookie policy, you can contact us at:',        // PREMIO/BLOG PAGE
         'premio_page_title': 'Blog - CICTAEC',
+        'construction_title': 'Page under construction',
+        'construction_message': 'This page is currently under construction. Please check back soon for updates.',
+        'btn_view_premio': 'VIEW PREMIO',
         'premio_period_title': 'Period',
         'premio_award': 'Award',
         'premio_news': 'News',        'cookies_back_btn': '← Back to home',
@@ -763,6 +772,9 @@ const translations = {
         'cookies_contact_title': 'Contacte',
         'cookies_contact_desc': 'Per a qualsevol consulta sobre la nostra política de cookies, podeu contactar-nos a:',        // PREMIO/BLOG PAGE
         'premio_page_title': 'Blog - CICTAEC',
+        'construction_title': 'Pàgina en construcció',
+        'construction_message': 'Aquesta pàgina està actualment en construcció. Torneu aviat per veure les actualitzacions.',
+        'btn_view_premio': 'VEURE PREMIO',
         'premio_period_title': 'Període',
         'premio_award': 'Premi',
         'premio_news': 'Notícia',        'cookies_back_btn': '← Tornar a l\'inici',
@@ -837,6 +849,8 @@ function setLang(lang) {
     }
 
     localStorage.setItem('preferredLang', lang);
+    // set the document language for accessibility
+    try { document.documentElement.lang = lang; } catch(e) {}
 }
 
 // ==========================================
