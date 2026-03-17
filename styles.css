@@ -1657,8 +1657,27 @@ body {
     height: 230px;
 }
 
+.premio-container .images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
 .premio-container .images-grid.active {
     row-gap: 26px;
+}
+
+.premio-container .image-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.premio-container .image-card .card-img-top,
+.premio-container .image-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .image-card img[src^="images/"] {
