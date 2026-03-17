@@ -1657,14 +1657,16 @@ body {
     height: 230px;
 }
 
+
 .premio-container .images-grid {
+    display: none;
+}
+
+.premio-container .images-grid.active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 16px;
     align-items: start;
-}
-
-.premio-container .images-grid.active {
     row-gap: 26px;
 }
 
