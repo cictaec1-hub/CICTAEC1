@@ -82,9 +82,9 @@
             <!-- Barra lateral simplificada: períodos -->
             <div class="col-lg-3 col-md-4">
                 <div class="list-group" role="tablist" aria-label="Períodos">
-                    <button class="btn btn-outline-success w-100 text-start mb-2" type="button" onclick="showPeriodo('2002-2012')">2002 - 2012</button>
-                    <button class="btn btn-outline-success w-100 text-start mb-2" type="button" onclick="showPeriodo('2013-2020')">2013 - 2020</button>
-                    <button class="btn btn-outline-success w-100 text-start" type="button" onclick="showPeriodo('2021-2026')">2021 - 2026</button>
+                    <button class="btn period-btn btn-outline-success w-100 text-start mb-2" data-period="2002-2012" type="button" onclick="showPeriodo('2002-2012')">2002 - 2012</button>
+                    <button class="btn period-btn btn-outline-success w-100 text-start mb-2" data-period="2013-2020" type="button" onclick="showPeriodo('2013-2020')">2013 - 2020</button>
+                    <button class="btn period-btn btn-outline-success w-100 text-start" data-period="2021-2026" type="button" onclick="showPeriodo('2021-2026')">2021 - 2026</button>
                 </div>
             </div>
 
@@ -387,7 +387,24 @@
 
             // Mostrar la cuadrícula correspondiente
             const gridId = 'periodo-' + periodo;
-            document.getElementById(gridId).classList.add('active');
+            const gridEl = document.getElementById(gridId);
+            if (gridEl) gridEl.classList.add('active');
+
+            // Actualizar título del período
+            const periodText = periodo.replace('-', ' - ');
+            const titleEl = document.getElementById('periodo-title');
+            if (titleEl) titleEl.innerHTML = '<span data-key="premio_period_title">Período</span> ' + periodText;
+
+            // Resaltar botón activo
+            document.querySelectorAll('.period-btn').forEach(btn => {
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-outline-success');
+            });
+            const activeBtn = document.querySelector('.period-btn[data-period="' + periodo + '"]');
+            if (activeBtn) {
+                activeBtn.classList.remove('btn-outline-success');
+                activeBtn.classList.add('btn-success');
+            }
         }
 
         function updatePeriodTitle(periodo) {
@@ -450,7 +467,6 @@
         // Inicializar el título al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
             showPeriodo('2002-2012');
-            document.getElementById('periodo-title').innerHTML = '<span data-key="premio_period_title">Período</span> 2002 - 2012';
 
             const lightbox = document.getElementById('premio-lightbox');
             const lightboxImage = document.getElementById('premio-lightbox-image');
