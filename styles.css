@@ -527,6 +527,13 @@ body {
     color: #444;
 }
 
+/* Make the small 'trad_prod_desc' used in the services box match the ie_desc size */
+.services-container .service-text p[data-key="trad_prod_desc"] {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #444;
+}
+
 @media (max-width: 576px) {
     .section-subtext,
     .commerce-text p,
@@ -842,6 +849,14 @@ body {
     .products .container {
         padding: 0 20px;
     }
+}
+
+/* Ensure both 'Conectamos los mercados' and 'Facilitamos los procesos logisticos' match */
+#comercio .import-export .ie-text p,
+.services-container .service-text p[data-key="trad_prod_desc"] {
+    font-size: 16px !important;
+    line-height: 1.9 !important;
+    color: #444 !important;
 }
 
 .product-item {
