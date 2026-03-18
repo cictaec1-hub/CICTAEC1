@@ -464,7 +464,7 @@ body {
         padding: 0 20px;
     }
 }
-}
+
 
 /* Cookie consent banner - responsive adjustments */
 #cookie-consent-banner {
@@ -525,9 +525,7 @@ body {
         width: auto;
     }
 }
-    align-items: center;
-    margin-bottom: 20px;
-}
+
 
 .commerce-text {
     flex: 1;
@@ -903,6 +901,35 @@ body {
     color: #444 !important;
 }
 
+/* Make CULTURA Y TURISMO images match COMERCIO sizing */
+.tourism .commerce-content .commerce-image,
+.tourism .commerce-content:last-of-type .commerce-image {
+    flex: 0 0 42% !important;
+    max-width: 42% !important;
+    width: 42% !important;
+}
+.tourism .commerce-content .commerce-image img,
+.tourism .commerce-content:last-of-type .commerce-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 420px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+}
+
+@media (max-width: 768px) {
+    .tourism .commerce-content .commerce-image,
+    .tourism .commerce-content:last-of-type .commerce-image {
+        flex: 0 0 35% !important;
+        max-width: 35% !important;
+        width: 35% !important;
+    }
+    .tourism .commerce-content .commerce-image img,
+    .tourism .commerce-content:last-of-type .commerce-image img {
+        max-height: 220px !important;
+    }
+}
+
 .product-item {
     position: relative;
     overflow: hidden;
@@ -1007,6 +1034,30 @@ body {
     }
 }
 
+/* Make Importación & Exportación on mobile display like Productos Tradicionales (text then image) */
+@media (max-width: 767px) {
+    #comercio .import-export {
+        display: flex !important;
+        flex-direction: column-reverse !important; /* text above, image below */
+        gap: 0;
+        align-items: stretch;
+    }
+
+    #comercio .import-export .ie-image,
+    #comercio .import-export .ie-text {
+        max-width: 100% !important;
+        flex: unset !important;
+        width: 100% !important;
+    }
+
+    #comercio .import-export .ie-image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        border-radius: 8px;
+    }
+}
+
 .product-item .product-overlay p {
     font-size: 0.85rem;
     line-height: 1.4;
@@ -1106,7 +1157,7 @@ body {
         height: 120px;
         object-fit: cover;
     }
-}
+
 
 /* Mirror the .tourism mobile layout exactly for #comercio */
 @media (max-width: 768px) {
