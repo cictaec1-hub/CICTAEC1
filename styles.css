@@ -1012,28 +1012,35 @@ body {
 
 /* Responsive para la sección CULTURA Y TURISMO */
 @media (max-width: 768px) {
-    /* CULTURA: image à gauche, texte à droite */
-    .tourism .commerce-content:first-of-type {
-        flex-direction: row !important;
+    /* COMERCIO: make layout identical to .tourism but with images on the right */
+    #comercio .commerce-content {
+        flex-direction: row-reverse !important;
         align-items: center;
+        gap: 20px;
     }
-    
-    .tourism .commerce-content:first-of-type .commerce-image {
-        flex: 0 0 35%;
-        max-width: 35%;
+
+    #comercio .commerce-content .commerce-image {
+        flex: 0 0 35% !important;
+        max-width: 35% !important;
     }
-    
-    .tourism .commerce-content:first-of-type .commerce-text {
-        flex: 1;
-        padding-left: 15px;
-        padding-right: 0;
+
+    #comercio .commerce-content .commerce-text {
+        flex: 1 !important;
+        padding-right: 15px;
+        padding-left: 0;
     }
-    
-    .tourism .commerce-content:first-of-type .commerce-image img {
+
+    #comercio .commerce-content .commerce-image img {
         height: 120px;
         object-fit: cover;
     }
-    
+
+    /* add vertical spacing between the two comercio blocks on small screens */
+    #comercio .commerce-content + .import-export,
+    #comercio .commerce-content + .commerce-content {
+        margin-top: 20px;
+    }
+}
     /* TURISMO: image à gauche, texte à droite */
     .tourism .commerce-content:last-of-type {
         flex-direction: row !important;
@@ -1052,6 +1059,109 @@ body {
     }
     
     .tourism .commerce-content:last-of-type .commerce-image img {
+        height: 120px;
+        object-fit: cover;
+    }
+}
+
+/* Mirror the .tourism mobile layout exactly for #comercio */
+@media (max-width: 768px) {
+    /* COMERCIO: first block (Productos Tradicionales) */
+    #comercio .commerce-content:first-of-type {
+        flex-direction: row !important;
+        align-items: center;
+    }
+
+    #comercio .commerce-content:first-of-type .commerce-image {
+        flex: 0 0 35% !important;
+        max-width: 35% !important;
+    }
+
+    #comercio .commerce-content:first-of-type .commerce-text {
+        flex: 1 !important;
+        padding-left: 15px;
+        padding-right: 0;
+    }
+
+    #comercio .commerce-content:first-of-type .commerce-image img {
+        height: 120px;
+        object-fit: cover;
+    }
+
+    /* COMERCIO: second block (Importación & Exportación) mirror tourism last-of-type */
+    #comercio .import-export {
+        flex-direction: row !important;
+        align-items: center;
+    }
+
+    #comercio .import-export .ie-image {
+        flex: 0 0 35% !important;
+        max-width: 35% !important;
+    }
+
+    #comercio .import-export .ie-text {
+        flex: 1 !important;
+        padding-left: 15px;
+        padding-right: 0;
+    }
+
+    #comercio .import-export .ie-image img {
+        height: 120px;
+        object-fit: cover;
+    }
+}
+
+/* Final override: make Importación & Exportación match other mobile blocks exactly */
+@media (max-width: 768px) {
+    #comercio .import-export {
+        display: flex !important;
+        flex-direction: row-reverse !important; /* image on the right */
+        align-items: center !important;
+        gap: 20px !important;
+        margin-top: 20px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #comercio .import-export .ie-image {
+        flex: 0 0 35% !important;
+        max-width: 35% !important;
+        width: 35% !important;
+    }
+
+    #comercio .import-export .ie-text {
+        flex: 1 1 65% !important;
+        padding-right: 15px !important;
+        padding-left: 0 !important;
+    }
+
+    #comercio .import-export .ie-image img {
+        height: 120px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+    }
+}
+
+/* Make COMERCIO behave like CULTURA Y TURISMO on small screens */
+@media (max-width: 768px) {
+    #comercio .commerce-content {
+        flex-direction: row !important;
+        align-items: center;
+    }
+
+    #comercio .commerce-content .commerce-image {
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+
+    #comercio .commerce-content .commerce-text {
+        flex: 1;
+        padding-left: 15px;
+        padding-right: 0;
+    }
+
+    #comercio .commerce-content .commerce-image img {
         height: 120px;
         object-fit: cover;
     }
