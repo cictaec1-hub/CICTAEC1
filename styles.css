@@ -522,6 +522,12 @@ body {
     }
 }
 
+/* Ensure mission and vision paragraphs remain white on the colored background */
+.mission-vision .mission p,
+.mission-vision .vision p {
+    color: #ffffff;
+}
+
 /* Increase font size for the Cultura paragraph to improve readability */
 .commerce-text p[data-key="cultural_desc"] {
     font-size: 16px;
