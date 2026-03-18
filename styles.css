@@ -1187,6 +1187,20 @@ body {
     }
 }
 
+/* Align Importación & Exportación block with the COMERCIO title margins */
+#comercio .import-export {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    #comercio .import-export {
+        padding: 0 20px;
+    }
+}
+
 /* Make COMERCIO behave like CULTURA Y TURISMO on small screens */
 @media (max-width: 768px) {
     #comercio .commerce-content {
