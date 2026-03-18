@@ -4,6 +4,31 @@
     box-sizing: border-box;
 }
 
+/* Desktop override: ensure Tourism second block shows image on the left (small photo) */
+@media (min-width: 769px) {
+    .tourism .commerce-content:last-of-type {
+        flex-direction: row-reverse !important;
+        align-items: center !important;
+    }
+
+    .tourism .commerce-content:last-of-type .commerce-image {
+        flex: 0 0 35% !important;
+        max-width: 35% !important;
+    }
+
+    .tourism .commerce-content:last-of-type .commerce-text {
+        flex: 1 1 65% !important;
+        padding-right: 15px !important;
+        padding-left: 0 !important;
+    }
+
+    .tourism .commerce-content:last-of-type .commerce-image img {
+        height: auto !important;
+        max-height: 260px !important;
+        object-fit: cover !important;
+    }
+}
+
 html {
     scroll-padding-top: 150px;
 }
