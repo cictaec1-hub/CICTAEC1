@@ -492,6 +492,36 @@ body {
     line-height: 1.8;
 }
 
+/* Unified rule for paragraphs that sit under section titles to improve readability */
+.section-subtext,
+.commerce-text p,
+.ie-text p,
+.services-container .service-more p,
+.founder-info p,
+.org-description p,
+.mission p,
+.vision p,
+.sport .commerce-text p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #444;
+}
+
+@media (max-width: 576px) {
+    .section-subtext,
+    .commerce-text p,
+    .ie-text p,
+    .services-container .service-more p,
+    .founder-info p,
+    .org-description p,
+    .mission p,
+    .vision p,
+    .sport .commerce-text p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+}
+
 /* Increase font size for the Cultura paragraph to improve readability */
 .commerce-text p[data-key="cultural_desc"] {
     font-size: 16px;
