@@ -485,8 +485,8 @@ body {
 
 /* Make the comercio image narrower so it doesn't appear horizontally stretched */
 #comercio .commerce-image {
-    flex: 0 0 48%;
-    max-width: 48%;
+    flex: 0 0 42%;
+    max-width: 42%;
 }
 
 #comercio .commerce-text {
@@ -637,6 +637,40 @@ body {
 
 .ie-text {
     flex: 1;
+}
+
+/* Ensure Importación & Exportación image matches the Productos Tradicionales image width */
+#comercio .import-export .ie-image {
+    flex: 0 0 42%;
+    max-width: 42%;
+}
+
+#comercio .import-export .ie-text {
+    flex: 1 1 52%;
+}
+
+@media (max-width: 767px) {
+    #comercio .import-export {
+        flex-direction: column;
+    }
+    #comercio .import-export .ie-image,
+    #comercio .import-export .ie-text {
+        flex: unset;
+        max-width: 100%;
+    }
+}
+
+/* Force equal sizing for both Productos Tradicionales and Import/Export image columns */
+#comercio .commerce-image,
+#comercio .import-export .ie-image {
+    flex: 0 0 42% !important;
+    max-width: 42% !important;
+    width: 42% !important;
+}
+
+#comercio .commerce-text,
+#comercio .import-export .ie-text {
+    flex: 1 1 52% !important;
 }
 
 .ie-text h3 {
