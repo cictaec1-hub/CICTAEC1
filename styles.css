@@ -506,6 +506,20 @@ body {
     }
 }
 
+/* Match tourism paragraph styling with cultural_desc for consistency */
+.commerce-text p[data-key="tourism_desc"] {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #444;
+}
+
+@media (max-width: 576px) {
+    .commerce-text p[data-key="tourism_desc"] {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+}
+
 .btn {
     display: inline-block;
     background-color: #2c7ba7;
