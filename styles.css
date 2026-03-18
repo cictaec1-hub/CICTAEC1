@@ -400,6 +400,20 @@ body {
     display: flex;
     gap: 20px;
 }
+
+/* Align commerce content horizontally with the section title paddings */
+.commerce .commerce-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px; /* matches .commerce h2 padding */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .commerce .commerce-content {
+        padding: 0 20px;
+    }
+}
 }
 
 /* Cookie consent banner - responsive adjustments */
