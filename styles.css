@@ -206,6 +206,12 @@ body {
     margin-right: auto;
 }
 
+/* Ensure these descriptive paragraphs are not bold */
+.org-description p,
+.founder-info p {
+    font-weight: 400;
+}
+
 .founder {
     display: flex;
     gap: 40px;
