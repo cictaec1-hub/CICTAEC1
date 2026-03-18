@@ -705,14 +705,23 @@ body {
 }
 
 @media (max-width: 767px) {
+    /* Stack import/export vertically like the other commerce blocks and
+       make the text appear before the image (matches Productos Tradicionales) */
     #comercio .import-export {
         flex-direction: column;
+        gap: 16px;
+        margin-top: 1.5rem;
+        align-items: stretch;
     }
     #comercio .import-export .ie-image,
     #comercio .import-export .ie-text {
         flex: unset;
         max-width: 100%;
+        width: 100%;
     }
+    /* Ensure text shows first on narrow screens so layout matches other stacked blocks */
+    #comercio .import-export .ie-image { order: 2; }
+    #comercio .import-export .ie-text { order: 1; }
 }
 
 /* Force equal sizing for both Productos Tradicionales and Import/Export image columns */
