@@ -494,15 +494,15 @@ body {
 
 /* Increase font size for the Cultura paragraph to improve readability */
 .commerce-text p[data-key="cultural_desc"] {
-    font-size: 18px;
-    line-height: 1.95;
+    font-size: 16px;
+    line-height: 1.9;
     color: #444;
 }
 
 @media (max-width: 576px) {
     .commerce-text p[data-key="cultural_desc"] {
-        font-size: 16px;
-        line-height: 1.8;
+        font-size: 15px;
+        line-height: 1.75;
     }
 }
 
