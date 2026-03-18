@@ -824,6 +824,20 @@ body {
     padding: 20px 60px;
 }
 
+/* Align catalog items with the title's left/right padding */
+.products .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .products .container {
+        padding: 0 20px;
+    }
+}
+
 .product-item {
     position: relative;
     overflow: hidden;
