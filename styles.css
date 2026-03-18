@@ -29,6 +29,25 @@
     }
 }
 
+/* Ensure CULTURA and TURISMO images share the same dimensions on desktop */
+@media (min-width: 769px) {
+    .tourism .commerce-content .commerce-image {
+        flex: 0 0 35% !important;
+        max-width: 35% !important;
+        width: 35% !important;
+    }
+
+    .tourism .commerce-content .commerce-text {
+        flex: 1 1 65% !important;
+    }
+
+    .tourism .commerce-content .commerce-image img {
+        height: auto !important;
+        max-height: 260px !important;
+        object-fit: cover !important;
+    }
+}
+
 html {
     scroll-padding-top: 150px;
 }
