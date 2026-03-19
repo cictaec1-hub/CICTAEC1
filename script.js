@@ -452,7 +452,7 @@ const translations = {
         'vision_text': 'To be a reference chamber in the international connection between Ecuador and Europe, relating important sectors such as trade, tourism, education, technological innovation, industrial and agricultural.',
         'areas_main_title': 'AREAS',
         'area_1': 'COMMERCE',
-        'area_2': 'CULTURE AND TOURISM',
+        'area_2': 'CULTURE &amp; TOURISM',
         'area_3': 'SPORT',
         'area_1_subtext': 'We connect markets',
         'area_2_subtext': 'Promotion • Routes • Cultural Exchange',
