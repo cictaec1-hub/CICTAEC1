@@ -75,7 +75,7 @@ const translations = {
         'tourism_subtitle': 'TURISMO',
         'tourism_desc': 'Impulsamos el turismo sostenible y el reconocimiento de destinos estratégicos en ambos continentes, facilitando el intercambio cultural.',
         'cultural_subtitle': 'CULTURA',
-        'cultural_desc': 'Preservamos y difundimos las tradiciones y el arte del Ecuador. La cultura es nuestra fuerza para unir comunidades e impulsar el desarollo.',
+        'cultural_desc': 'En CICTAEC, protegemos y proyectamos la riqueza cultural del Ecuador hacia el mundo. Creemos que el arte y nuestras tradiciones son motores esenciales para fortalecer los lazos entre comunidades e impulsar el desarrollo económico y social.',
         'sport_subtitle': 'PROMOVEMOS DEPORTE',
         'sport_desc': 'Fomentamos el intercambio deportivo y la promoción de eventos deportivos entre Ecuador y Europa, creando oportunidades de desarrollo en el ámbito deportivo internacional.',
         'sport_page_title': 'DEPORTE',
