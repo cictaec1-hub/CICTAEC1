@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -772,7 +772,7 @@ body {
 
 /* Sport Section with Background */
 .sport-background {
-    background-image: url('images/fondo_deporte.jpg');
+    background-image: url('images/deporte_fondo.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
@@ -798,7 +798,7 @@ body {
 
 /* Products Section with Background */
 .products-background {
-    background-image: url('images/mapa_mondo.jpg');
+    background-image: url('images/commun_mapa_mondo.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
@@ -824,7 +824,7 @@ body {
 
 /* Index Background */
 .index-background {
-    background-image: url('images/fondo_index.jpg');
+    background-image: url('images/index_fondo.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -853,7 +853,7 @@ body {
 
 /* Premio Section with Background */
 .premio-background {
-    background-image: url('images/fondo_premio.jpg');
+    background-image: url('images/premio_fondo.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
@@ -965,23 +965,23 @@ body {
 }
 
 .aceite::before {
-    background-image: url('images/seccion_productos_aceite.png');
+    background-image: url('images/productos_seccion_aceite.png');
 }
 
 .frutos::before {
-    background-image: url('images/seccion_productos_frutos.png');
+    background-image: url('images/productos_seccion_frutos.png');
 }
 
 .textil::before {
-    background-image: url('images/seccion_productos_textil.png');
+    background-image: url('images/productos_seccion_textil.png');
 }
 
 .jamon::before {
-    background-image: url('images/seccion_productos_jamon.jpg');
+    background-image: url('images/productos_seccion_jamon.jpg');
 }
 
 .pescado::before {
-    background-image: url('images/seccion_productos_pescado.jpg');
+    background-image: url('images/productos_seccion_pescado.jpg');
 }
 
 .product-item::after {
@@ -2116,3 +2116,4 @@ body {
     line-height: 1;
     cursor: pointer;
 }
+
