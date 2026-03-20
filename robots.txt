@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pagina-en-construccion.html
 
 Sitemap: https://www.cictaec.es/sitemap.xml

@@ -167,7 +167,7 @@ body {
     color: white;
 }
 
-.hero h1 {
+.hero h1, .hero h2 {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -1464,7 +1464,7 @@ body {
         flex-direction: column;
     }
 
-    .hero h1 {
+    .hero h1, .hero h2 {
         font-size: 36px;
     }
 }
