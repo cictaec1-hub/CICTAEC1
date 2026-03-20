@@ -843,7 +843,7 @@ function setLang(lang) {
     const currentFlag = document.getElementById('current-flag');
     const currentLangText = document.getElementById('current-lang-text');
     
-    if (currentFlag) currentFlag.src = `images/flag_${lang}.png`;
+    if (currentFlag) currentFlag.src = `images/commun_flag_${lang}.png`;
     if (currentLangText) currentLangText.innerText = lang.toUpperCase();
 
     // Changer l'URL du formulaire de contact selon la langue
