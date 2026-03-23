@@ -77,16 +77,16 @@
         <!-- Sidebar avec les catégories -->
         <div class="categoria-sidebar">
             <div class="categoria-item active" onclick="showCategoria('importacion')">
-                <h3>IMPORTACIÓN</h3>
+                <h3 data-key="badge_import">Importación</h3>
             </div>
             <div class="categoria-item" onclick="showCategoria('exportacion')">
-                <h3>EXPORTACIÓN</h3>
+                <h3 data-key="badge_export">Exportación</h3>
             </div>
         </div>
 
         <!-- Zone d'affichage des produits -->
         <div class="productos-display">
-            <h2 id="categoria-title">IMPORTACIÓN</h2>
+            <h2 id="categoria-title" data-key="badge_import">Importación</h2>
 
             <!-- Produits IMPORTACIÓN -->
             <div id="categoria-importacion" class="productos-grid active">
@@ -520,9 +520,20 @@
             const gridId = 'categoria-' + categoria;
             document.getElementById(gridId).classList.add('active');
 
-            // Mettre à jour le titre
-            const titulo = categoria === 'importacion' ? 'IMPORTACIÓN' : 'EXPORTACIÓN';
-            document.getElementById('categoria-title').textContent = titulo;
+            // Mettre à jour le data-key du titre pour la traduction dynamique
+            const titleEl = document.getElementById('categoria-title');
+            if (titleEl) {
+                if (categoria === 'importacion') {
+                    titleEl.setAttribute('data-key', 'badge_import');
+                } else {
+                    titleEl.setAttribute('data-key', 'badge_export');
+                }
+                // Déclencher la traduction dynamique si la fonction setLang existe
+                if (typeof setLang === 'function') {
+                    const lang = localStorage.getItem('preferredLang') || 'es';
+                    setLang(lang);
+                }
+            }
         }
 
         // Ajouter les événements de clic pour rediriger vers le formulaire de contact
