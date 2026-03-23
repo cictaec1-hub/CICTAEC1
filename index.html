@@ -529,31 +529,31 @@
     <!-- Banner de consentimiento de cookies -->
     <div id="cookie-consent-banner" role="dialog" aria-live="polite" style="display:none;">
         <div style="flex:1">
-            <p><strong>Usamos cookies</strong> para mejorar su experiencia. Puede aceptar todas o configurar sus preferencias.</p>
+            <p data-key="cookie_banner_message"><strong>Usamos cookies</strong> para mejorar su experiencia. Puede aceptar todas o configurar sus preferencias.</p>
         </div>
         <div class="cc-actions">
-            <button id="cc-preferences-btn" class="btn btn-outline-secondary">Preferencias</button>
-            <button id="cc-reject-btn" class="btn btn-secondary">Rechazar</button>
-            <button id="cc-accept-btn" class="btn btn-primary">Aceptar todo</button>
+            <button id="cc-preferences-btn" class="btn btn-outline-secondary" data-key="cookie_btn_preferences">Preferencias</button>
+            <button id="cc-reject-btn" class="btn btn-secondary" data-key="cookie_btn_reject">Rechazar</button>
+            <button id="cc-accept-btn" class="btn btn-primary" data-key="cookie_btn_accept_all">Aceptar todo</button>
         </div>
     </div>
 
     <div id="cookie-preferences" aria-hidden="true">
-        <h4>Preferencias de cookies</h4>
+        <h4 data-key="cookie_prefs_title">Preferencias de cookies</h4>
         <div class="cc-toggle">
-            <span>Cookies necesarias</span>
-            <span>Siempre activas</span>
+            <span data-key="cookie_prefs_necessary">Cookies necesarias</span>
+            <span data-key="cookie_prefs_always_on">Siempre activas</span>
         </div>
         <div class="cc-toggle">
-            <span>Analíticas</span>
+            <span data-key="cookie_prefs_analytics">Analíticas</span>
             <label class="switch"><input type="checkbox" id="cc-analytics"><span></span></label>
         </div>
         <div class="cc-toggle">
-            <span>Marketing</span>
+            <span data-key="cookie_prefs_marketing">Marketing</span>
             <label class="switch"><input type="checkbox" id="cc-marketing"><span></span></label>
         </div>
         <div style="text-align:right;margin-top:8px;">
-            <button id="cc-save-btn" class="btn btn-primary">Guardar</button>
+            <button id="cc-save-btn" class="btn btn-primary" data-key="cookie_btn_save">Guardar</button>
         </div>
     </div>
 
