@@ -1027,11 +1027,11 @@ body {
 }
 
 .aceite::before {
-    background-image: url('images/productos_seccion_aceite.png');
+    background-image: url('images/productos_seccion_aceite.jpg');
 }
 
 .frutos::before {
-    background-image: url('images/productos_seccion_frutos.png');
+    background-image: url('images/productos_seccion_frutos.jpg');
 }
 
 .textil::before {
