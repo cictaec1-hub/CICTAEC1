@@ -60,59 +60,6 @@
     }
 }
 
-#cookie-consent-banner {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    left: 20px;
-    z-index: 9999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    padding: 16px;
-    gap: 12px;
-}
-
-#cookie-consent-banner p {
-    margin: 0;
-    color: #222;
-}
-
-#cookie-consent-banner .cc-actions {
-    display: flex;
-    gap: 8px;
-}
-
-#cookie-consent-banner .btn {
-    margin: 0;
-}
-
-#cookie-preferences {
-    display: none;
-    position: fixed;
-    right: 20px;
-    bottom: 90px;
-    z-index: 10000;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    padding: 16px;
-    width: 320px;
-}
-
-#cookie-preferences h4 {
-    margin-top: 0;
-}
-
-.cc-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 8px 0;
-}
 * {
     margin: 0;
     padding: 0;
