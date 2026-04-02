@@ -74,7 +74,7 @@
 
     <div class="products-background">
         <div class="container producto-container">
-        <!-- Sidebar avec les catégories -->
+        <!-- Sidebar catégorias -->
         <div class="categoria-sidebar">
             <div class="categoria-item active" onclick="showCategoria('importacion')">
                 <h3 data-key="badge_import">Importación</h3>
@@ -84,11 +84,11 @@
             </div>
         </div>
 
-        <!-- Zone d'affichage des produits -->
+        <!-- Zona de visualización de productos -->
         <div class="productos-display">
             <h2 id="categoria-title" data-key="badge_import">Importación</h2>
 
-            <!-- Produits IMPORTACIÓN -->
+            <!-- Productos IMPORTACIÓN -->
             <div id="categoria-importacion" class="productos-grid active">
                 <!-- PESCADO -->
                 <div class="producto-card">
@@ -171,7 +171,7 @@
                 </div>
             </div>
 
-            <!-- Produits EXPORTACIÓN -->
+            <!-- Productos EXPORTACIÓN -->
             <div id="categoria-exportacion" class="productos-grid">
                 <!-- ACEITE -->
                 <div class="producto-card">
@@ -255,7 +255,7 @@
 
                 <div class="category-separator" style="grid-column: 1 / -1;"></div>
 
-                <!-- LÉGUMES -->
+                <!-- LEGUMBRES -->
                 <div class="producto-card">
                     <span class="categoria-badge" data-key="prod_9_title">LÉGUMES</span>
                     <img src="images/productos_fritas.jpg" alt="Patatas Fritas">
@@ -503,24 +503,24 @@
     <script src="script.js"></script>
     <script>
         function showCategoria(categoria) {
-            // Enlever la classe active de tous les items
+            // Eliminar la clase activa de todos los elementos
             document.querySelectorAll('.categoria-item').forEach(item => {
                 item.classList.remove('active');
             });
 
-            // Masquer toutes les grilles de produits
+            // Ocultar todas las cuadrículas de productos
             document.querySelectorAll('.productos-grid').forEach(grid => {
                 grid.classList.remove('active');
             });
 
-            // Ajouter la classe active à l'item cliqué
+            // Añadir la clase activa al elemento clicado
             event.target.closest('.categoria-item').classList.add('active');
 
-            // Afficher la grille correspondante
+            // Mostrar la cuadrícula correspondiente
             const gridId = 'categoria-' + categoria;
             document.getElementById(gridId).classList.add('active');
 
-            // Mettre à jour le data-key du titre pour la traduction dynamique
+            // Actualizar el data-key del título para la traducción dinámica
             const titleEl = document.getElementById('categoria-title');
             if (titleEl) {
                 if (categoria === 'importacion') {
@@ -528,7 +528,7 @@
                 } else {
                     titleEl.setAttribute('data-key', 'badge_export');
                 }
-                // Déclencher la traduction dynamique si la fonction setLang existe
+                // Activar la traducción dinámica si la función setLang existe
                 if (typeof setLang === 'function') {
                     const lang = localStorage.getItem('preferredLang') || 'es';
                     setLang(lang);
@@ -536,7 +536,7 @@
             }
         }
 
-        // Ajouter les événements de clic pour rediriger vers le formulaire de contact
+        // Añadir eventos de clic para redirigir hacia el formulario de contacto
         document.querySelectorAll('.producto-card').forEach(card => {
             card.addEventListener('click', function() {
                 window.open('https://forms.gle/5951nVBJNCh4sBi78', '_blank');
