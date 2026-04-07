@@ -528,7 +528,7 @@
                 } else {
                     titleEl.setAttribute('data-key', 'badge_export');
                 }
-                // Activar la traducción dinámica si la función setLang existe
+                // Activar la traducción dinámica con la función setLang 
                 if (typeof setLang === 'function') {
                     const lang = localStorage.getItem('preferredLang') || 'es';
                     setLang(lang);
@@ -536,7 +536,7 @@
             }
         }
 
-        // Añadir eventos de clic para redirigir hacia el formulario de contacto
+        //  eventos de clic para redirigir hacia el formulario de contacto
         document.querySelectorAll('.producto-card').forEach(card => {
             card.addEventListener('click', function() {
                 window.open('https://forms.gle/5951nVBJNCh4sBi78', '_blank');
