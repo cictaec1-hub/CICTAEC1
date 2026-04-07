@@ -1554,7 +1554,7 @@ body {
 
 .hover-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .hover-card .product-description {
@@ -1587,12 +1587,12 @@ body {
 }
 
 .border-dashed {
-    border: 2px dashed #ddd !important;
+    border: 2px dashed #ddd;
     background-color: #f8f9fa;
 }
 
 .border-dashed:hover {
-    border-color: #2c7ba7 !important;
+    border-color: #2c7ba7;
     background-color: #e9ecef;
 }
 
@@ -1792,13 +1792,13 @@ body {
 .premio-container {
     margin-top: 100px;
     min-height: 70vh;
-    background: transparent !important;
+    background: transparent;
     position: relative;
     z-index: 1;
 }
 
 .premio-container .row {
-    background: transparent !important;
+    background: transparent;
 }
 
 .premio-container .col-lg-3,
@@ -1806,17 +1806,17 @@ body {
 .premio-container .col-lg-9,
 .premio-container .col-md-8,
 .premio-container .d-grid {
-    background: transparent !important;
+    background: transparent;
 }
 
 .premio-container .card {
-    background: transparent !important;
-    border: none !important;
+    background: transparent;
+    border: none;
 }
 
 .premio-container .card-body {
-    background: transparent !important;
-    padding: 10px !important;
+    background: transparent;
+    padding: 10px;
 }
 
 .periodo-item {
@@ -1854,9 +1854,9 @@ body {
 
 .images-display {
     padding: 20px;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
     border-radius: 10px;
     min-height: 500px;
 }
@@ -1884,16 +1884,16 @@ body {
 .premio-container .image-card,
 .image-card {
     transition: transform 0.3s ease;
-    background: rgba(255, 255, 255, 0.70) !important;
+    background: rgba(255, 255, 255, 0.70);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .premio-container .image-card:hover,
 .image-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.88) !important;
+    background: rgba(255, 255, 255, 0.88);
 }
 
 .image-card img {
@@ -1925,18 +1925,18 @@ body {
     line-height: 1.4;
     text-align: center;
     color: #1a4d2e;
-    padding-top: 8px !important;
+    padding-top: 8px;
 }
 
 .section-title-card {
     flex: 0 0 100%;
     max-width: 100%;
-    background: linear-gradient(135deg, rgba(26, 77, 46, 0.92) 0%, rgba(45, 122, 79, 0.92) 100%) !important;
-    border: none !important;
+    background: linear-gradient(135deg, rgba(26, 77, 46, 0.92) 0%, rgba(45, 122, 79, 0.92) 100%);
+    border: none;
 }
 
 .section-title-card:hover {
-    transform: none !important;
+    transform: none;
 }
 
 .section-title-text {
@@ -1946,7 +1946,7 @@ body {
     font-size: 1rem;
     font-weight: 700;
     text-align: left;
-    padding: 12px 16px !important;
+    padding: 12px 16px;
 }
 
 @media (max-width: 768px) {
@@ -1965,19 +1965,19 @@ body {
     }
     
     .premio-background::before {
-        background-color: rgba(255, 255, 255, 0.30) !important;
+        background-color: rgba(255, 255, 255, 0.30);
     }
 
     .images-display {
-        background-color: transparent !important;
+        background-color: transparent;
     }
 
     .image-card {
-        background: rgba(255, 255, 255, 0.60) !important;
+        background: rgba(255, 255, 255, 0.60);
     }
 
     .images-display h2 {
-        background: rgba(255, 255, 255, 0.75) !important;
+        background: rgba(255, 255, 255, 0.75);
     }
 }
 
@@ -1985,11 +1985,11 @@ body {
 .premio-container {
     margin-top: 100px;
     min-height: 70vh;
-    background: transparent !important;
+    background: transparent;
 }
 
 .premio-container .row {
-    background: transparent !important;
+    background: transparent;
 }
 
 .periodo-item {
