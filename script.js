@@ -1066,7 +1066,7 @@ function setLang(lang) {
     if (currentFlag) currentFlag.src = `images/commun_flag_${lang}.png`;
     if (currentLangText) currentLangText.innerText = lang.toUpperCase();
 
-    // Changer l'URL du formulaire de contact selon la langue
+    // Cambiar la URL del formulario de contacto según el idioma
     const contactFormLink = document.getElementById('contact-form-link');
     if (contactFormLink && translations[lang] && translations[lang]['form_url']) {
         contactFormLink.href = translations[lang]['form_url'];
@@ -1078,7 +1078,7 @@ function setLang(lang) {
 }
 
 // ==========================================
-// 4. FONCTION DE REDIRECTION VERS FORMULAIRE
+// 4. FUNCIÓN DE REDIRECCIÓN VERS FORMULARIO
 // ==========================================
 function redirectToForm() {
     const savedLang = localStorage.getItem('preferredLang') || 'es';
@@ -1111,7 +1111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// --- ANIMATION DES TITRES AU SCROLL ---
+// --- ANIMACIÓN DE LOS TÍTULOS AL HACER SCROLL ---
 const observerOptions = {
     threshold: 0.2 
 };
@@ -1127,7 +1127,7 @@ const observer = new IntersectionObserver((entries) => {
 const titlesToAnimate = document.querySelectorAll('.reveal-title');
 titlesToAnimate.forEach(title => observer.observe(title));
 
-// --- ANIMATION DES SECTIONS AU SCROLL ---
+// --- ANIMACIÓN DE SECCIONES AL HACER SCROLL ---
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1139,7 +1139,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 const elementsToAnimate = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-delay');
 elementsToAnimate.forEach(element => sectionObserver.observe(element));
 
-// --- EFFET PARALLAX SUBTIL POUR LE FOND ---
+// --- EFECTO PARALLAX SUBTIL PARA EL FONDO ---
 window.addEventListener('scroll', function() {
     const backgrounds = document.querySelectorAll('.index-background');
     backgrounds.forEach(bg => {
