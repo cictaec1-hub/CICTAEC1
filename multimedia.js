@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: "50%", left: "40%", 
                     title: "Parque Nacional Machalilla", 
                     desc: "Avistamiento de ballenas jorobadas cada año.", 
-                    img: "images/ballenas.jpg" 
+                    img: "images/BALLENAS.webp" 
                 },
                 { 
                     top: "30%", left: "60%", 
                     title: "Manta", 
                     desc: "Importante puerto pesquero y del atún.", 
-                    img: "images/manta.jpg" 
+                    img: "images/MANTA.webp" 
                 }
             ]
         },
@@ -39,13 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: "65%", left: "45%", 
                     title: "Cuenca", 
                     desc: "Famosa por arquitectura colonial y artesanías.", 
-                    img: "images/cuenca.jpg" 
+                    img: "images/CUENCA.webp" 
                 },
                 { 
                     top: "35%", left: "55%", 
                     title: "Laguna de Quilotoa", 
                     desc: "Cráter volcánico con aguas color turquesa.", 
-                    img: "images/quilotoa.jpg" 
+                    img: "images/QUILOTOA.webp" 
                 }
             ]
         },
@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: "60%", left: "55%", 
                     title: "Cueva de los Tayos", 
                     desc: "Famosa por sus misterios y leyendas.", 
-                    img: "images/cueva.jpg" 
+                    img: "images/cueva.webp" 
                 },
                 { 
                     top: "40%", left: "70%", 
                     title: "Reserva Cuyabeno", 
                     desc: "Hogar de los famosos delfines rosados.", 
-                    img: "images/delfines.jpg" 
+                    img: "images/delfines.webp" 
                 }
             ]
         },
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
             mapId: "map-galapagos",
             videoSrc: "mp4/galapagos.mp4",
             hotspots: [
-                { top: "40%", left: "50%", title: "Tortuga Gigante", desc: "Símbolo de longevidad endémica.", img: "images/tortuga.jpg" },
-                { top: "70%", left: "30%", title: "Piquero de patas azules", desc: "Destacan por sus llamativas patas azules.", img: "images/piqueros.jpg" }
+                { top: "40%", left: "50%", title: "Tortuga Gigante", desc: "Símbolo de longevidad endémica.", img: "images/tortuga.webp" },
+                { top: "70%", left: "30%", title: "Piquero de patas azules", desc: "Destacan por sus llamativas patas azules.", img: "images/piqueros.webp" }
             ]
         }
     };
