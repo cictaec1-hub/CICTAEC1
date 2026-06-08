@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: "50%", left: "40%", 
                     title: "Parque Nacional Machalilla", 
                     desc: "Avistamiento de ballenas jorobadas cada año.", 
+<<<<<<< HEAD
                     img: "images/BALLENAS.webp" 
+=======
+                    img: "images/ballenas.webp" 
+>>>>>>> 78502f744fa3ef2918ee543298812d84b8d0d297
                 },
                 { 
                     top: "30%", left: "60%", 
