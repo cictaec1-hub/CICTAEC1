@@ -277,37 +277,33 @@
     .audio-toggle-btn { bottom: auto; top: 15px; right: 15px; padding: 8px 14px; font-size: 0.65rem; }
 }
 /* === TÍTULOS FLASH === */
-/* === TÍTULOS FLASH (COMPACTOS) === */
 .flash-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    pointer-events: none; /* No interfiere con clicks */
     z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .flash-title {
     position: absolute;
-    background: rgba(15, 43, 77, 0.95);
-    color: #FFD700;
-    padding: 8px 14px; /* Mucho más pequeño */
-    border-radius: 6px;
-    border: 1.5px solid #FFD700;
-    text-align: left;
+    background: rgba(15, 43, 77, 0.9); /* Azul corporativo semitransparente */
+    color: #FFD700; /* Dorado */
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: 2px solid #FFD700;
+    text-align: center;
     opacity: 0;
-    transform: translateY(10px) scale(0.8);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    max-width: 180px; /* Ancho máximo reducido */
-    pointer-events: auto; /* Permite clics si hace falta */
-    cursor: pointer;
-  
-    box-sizing: border-box; /* Añade esto para que el padding no rompa el ancho */
-    white-space: normal;    /* Permite que el texto baje de línea si es muy largo */
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 80%;
 }
-
 
 .flash-title.visible {
     opacity: 1;
@@ -315,17 +311,16 @@
 }
 
 .flash-title h3 {
-    margin: 0 0 3px 0;
-    font-size: 0.85rem; /* Texto pequeño */
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
     color: #FFD700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1.2;
+    letter-spacing: 2px;
 }
 
 .flash-title p {
     margin: 0;
-    font-size: 0.7rem; /* Descripción aún más pequeña */
+    font-size: 1rem;
     color: #fff;
-    line-height: 1.3;
+    line-height: 1.4;
 }

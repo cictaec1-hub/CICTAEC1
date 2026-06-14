@@ -303,11 +303,7 @@
     max-width: 180px; /* Ancho máximo reducido */
     pointer-events: auto; /* Permite clics si hace falta */
     cursor: pointer;
-  
-    box-sizing: border-box; /* Añade esto para que el padding no rompa el ancho */
-    white-space: normal;    /* Permite que el texto baje de línea si es muy largo */
 }
-
 
 .flash-title.visible {
     opacity: 1;

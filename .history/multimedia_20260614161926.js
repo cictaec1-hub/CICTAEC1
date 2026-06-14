@@ -104,23 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hotspots: [
                 {
     type: "flash",
-    time: 0,
-    top: "25%",
-    left: "20%",
-    title: "Chimborazo: el gigante de los Andes ecuatorianos",
-    desc: "La cima del Chimborazo es el punto de la Tierra más alejado del centro del planeta debido al abultamiento ecuatorial."
-},
-
-{
-    type: "flash",
-    time: 4,
-    top: "70%",
-    left: "75%",
-    title: "Cotopaxi: el guardián de los Andes ecuatorianos",
-    desc: "Con 5.897 metros de altitud, es uno de los volcanes activos más altos del mundo."
-},
-                {
-    type: "flash",
     time: 7,
     top: "25%",
     left: "20%",
@@ -207,96 +190,18 @@ document.addEventListener('DOMContentLoaded', () => {
             mapId: "map-amazonia",
             videoSrc: "mp4/amazonia.mp4",
             hotspots: [
-               {
-type: "flash",
-time: 0,
-top: "20%",
-left: "15%",
-title: "Ríos amazónicos de Ecuador",
-desc: "Los bosques amazónicos desempeñan un papel fundamental en la regulación del clima y el ciclo del agua."
-},
-
-{
-type: "flash",
-time: 5,
-top: "70%",
-left: "75%",
-title: "La nutria gigante de la Amazonía",
-desc: "Uno de los mamíferos acuáticos más grandes de Sudamérica."
-},
-
-{
-type: "flash",
-time: 7,
-top: "35%",
-left: "60%",
-title: "Guacamayo escarlata",
-desc: "Ave reconocida por su colorido plumaje y gran inteligencia."
-},
-
-{
-type: "flash",
-time: 9,
-top: "75%",
-left: "25%",
-title: "Un bosque milenario",
-desc: "Algunos árboles amazónicos pueden superar los 40 metros de altura y vivir durante cientos de años."
-},
-
-{
-type: "flash",
-time: 15,
-top: "25%",
-left: "80%",
-title: "Tucán",
-desc: "Su gran pico puede representar hasta un tercio de la longitud total de su cuerpo."
-},
-
-{
-type: "flash",
-time: 18,
-top: "65%",
-left: "35%",
-title: "Monos aulladores rojos",
-desc: "Sus potentes aullidos pueden escucharse a varios kilómetros de distancia."
-},
-
-{
-type: "flash",
-time: 21,
-top: "30%",
-left: "70%",
-title: "Pequeño guardián de las flores",
-desc: "Ecuador alberga más de 130 especies de colibríes."
-},
-
-{
-type: "flash",
-time: 25,
-top: "75%",
-left: "15%",
-title: "Comunidades amazónicas",
-desc: "La región alberga comunidades que mantienen una estrecha relación con los ríos y la naturaleza."
-},
-
-{
-type: "flash",
-time: 39,
-top: "25%",
-left: "75%",
-title: "Delfín rosado",
-desc: "Es uno de los pocos delfines de agua dulce que existen en el mundo."
-},
-
-{
-type: "flash",
-time: 45,
-top: "50%",
-left: "50%",
-title: "Amazonía ecuatoriana",
-desc: "Entre ríos, bosques y comunidades, constituye uno de los patrimonios naturales más valiosos del Ecuador."
-},
-
+                { 
+                    top: "60%", left: "55%", 
+                    title: "Cueva de los Tayos", 
+                    desc: "Famosa por sus misterios y leyendas.", 
+                    img: "images/cueva.webp" 
+                },
+                { 
+                    top: "40%", left: "70%", 
+                    title: "Reserva Cuyabeno", 
+                    desc: "Hogar de los famosos delfines rosados.", 
+                    img: "images/delfines.webp" 
+                }
             ]
         },
         galapagos: {
@@ -305,117 +210,8 @@ desc: "Entre ríos, bosques y comunidades, constituye uno de los patrimonios nat
             mapId: "map-galapagos",
             videoSrc: "mp4/galapagos.mp4",
             hotspots: [
-                
-                {
-type: "flash",
-time: 0,
-top: "25%",
-left: "20%",
-title: "Piquero de patas azules",
-desc: "Durante el cortejo, los machos levantan sus patas para mostrar su coloración; cuanto más intensa es, más atractivos resultan para las hembras."
-},
-
-{
-type: "flash",
-time: 7,
-top: "70%",
-left: "75%",
-title: "Isla Bartolomé: un paisaje forjado por volcanes",
-desc: "Las islas Galápagos se formaron por actividad volcánica hace millones de años y continúan evolucionando con el tiempo."
-},
-
-{
-type: "flash",
-time: 10,
-top: "35%",
-left: "60%",
-title: "Aguas turquesas del Pacífico",
-desc: "Las costas del archipiélago albergan una extraordinaria riqueza de vida marina."
-},
-
-{
-type: "flash",
-time: 13,
-top: "75%",
-left: "25%",
-title: "Tortuga verde",
-desc: "Es una de las especies marinas más emblemáticas de las islas y puede recorrer miles de kilómetros a lo largo de su vida."
-},
-
-{
-type: "flash",
-time: 17,
-top: "70%",
-left: "15%",
-title: "Iguana marina",
-desc: "Es el único lagarto del mundo capaz de alimentarse en el mar."
-},
-
-{
-type: "flash",
-time: 22,
-top: "30%",
-left: "75%",
-title: "Cangrejo zayapa",
-desc: "Los ejemplares jóvenes presentan colores oscuros y adquieren tonos rojos y naranjas al llegar a la edad adulta."
-},
-
-{
-type: "flash",
-time: 25,
-top: "65%",
-left: "20%",
-title: "Iguana marina",
-desc: "Después de nadar en aguas frías, pasa largos periodos tomando el sol sobre las rocas para recuperar temperatura."
-},
-
-{
-type: "flash",
-time: 27,
-top: "70%",
-left: "80%",
-title: "Lobo marino de Galápagos",
-desc: "Es una especie endémica del archipiélago y uno de los animales más fáciles de observar en playas y costas rocosas."
-},
-
-{
-type: "flash",
-time: 37,
-top: "25%",
-left: "35%",
-title: "Turismo sostenible",
-desc: "Miles de visitantes recorren las islas cada año para conocer su extraordinaria biodiversidad."
-},
-
-{
-type: "flash",
-time: 41,
-top: "70%",
-left: "20%",
-title: "Manglares y lagunas costeras",
-desc: "Estos ecosistemas sirven de refugio para aves, peces y numerosas especies marinas."
-},
-
-{
-type: "flash",
-time: 44,
-top: "30%",
-left: "75%",
-title: "Aves marinas pescando",
-desc: "Muchas especies dependen de la riqueza pesquera de las islas para alimentarse y reproducirse."
-},
-
-{
-type: "flash",
-time: 49,
-top: "50%",
-left: "50%",
-title: "Galápagos: un patrimonio natural único",
-desc: "Las islas albergan especies únicas y ecosistemas que las convierten en uno de los tesoros naturales más valiosos del planeta."
-},
-
-            
-            
+                { top: "40%", left: "50%", title: "Tortuga Gigante", desc: "Símbolo de longevidad endémica.", img: "images/tortuga.webp" },
+                { top: "70%", left: "30%", title: "Piquero de patas azules", desc: "Destacan por sus llamativas patas azules.", img: "images/piqueros.webp" }
             ]
         }
     };

@@ -104,23 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hotspots: [
                 {
     type: "flash",
-    time: 0,
-    top: "25%",
-    left: "20%",
-    title: "Chimborazo: el gigante de los Andes ecuatorianos",
-    desc: "La cima del Chimborazo es el punto de la Tierra más alejado del centro del planeta debido al abultamiento ecuatorial."
-},
-
-{
-    type: "flash",
-    time: 4,
-    top: "70%",
-    left: "75%",
-    title: "Cotopaxi: el guardián de los Andes ecuatorianos",
-    desc: "Con 5.897 metros de altitud, es uno de los volcanes activos más altos del mundo."
-},
-                {
-    type: "flash",
     time: 7,
     top: "25%",
     left: "20%",
