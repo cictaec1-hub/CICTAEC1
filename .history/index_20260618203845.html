@@ -224,383 +224,245 @@
 
     </section>
 
+    </section>
 
-<section id="festival-tricolor" class="festival-tricolor-section">
-    
-    <!-- Fondo con gradiente tricolor animado -->
-    <div class="festival-bg-effects">
-        <div class="color-band band-red"></div>
-        <div class="color-band band-yellow"></div>
-        <div class="color-band band-blue"></div>
-        <div class="festival-particles" id="festivalParticles"></div>
-    </div>
-
-    <div class="festival-container">
+    <!-- ============================================
+         SECCIÓN TABLÓN DE EVENTOS - CARRUSEL CINEMATOGRÁFICO
+         ============================================ -->
+    <section id="eventos-cictaec" class="events-cinema-section">
+        <div class="cinema-particles" id="particles"></div>
+        <div class="cinema-light-rays"></div>
         
+        <div class="container">
+            <div class="events-header">
+                <span class="events-tag animate-fade-in">✨ AGENDA INTERNACIONAL</span>
+                <h2 class="events-title animate-shine">PRÓXIMOS EVENTOS</h2>
+                <p class="events-subtitle animate-fade-in-delay">Conectando Ecuador y Europa</p>
+                <div class="title-decoration animate-expand"></div>
+            </div>
 
-        <!-- Fecha Principal -->
-        <div class="festival-date-banner animate-slide-down">
-            <span class="date-day">SÁBADO 1 AGOSTO</span>
-            <span class="date-time">APERTURA DE PUERTAS 12:00HRS</span>
-        </div>
-<!-- Título Principal -->
-<div class="festival-main-title animate-scale-in">
-    <div class="title-sub">Festival</div>
-    <h1 class="title-tricolor">
-        <span class="letter-3d letter-t" style="--delay: 0s;">T</span>
-        <span class="letter-3d letter-r1" style="--delay: 0.1s;">R</span>
-        <span class="letter-3d letter-i" style="--delay: 0.2s;">I</span>
-        <span class="letter-3d letter-c" style="--delay: 0.3s;">C</span>
-        <span class="letter-3d letter-o1" style="--delay: 0.4s;">O</span>
-        <span class="letter-3d letter-l" style="--delay: 0.5s;">L</span>
-        <span class="letter-3d letter-o2" style="--delay: 0.6s;">O</span>
-        <span class="letter-3d letter-r2" style="--delay: 0.7s;">R</span>
-    </h1>
-    <div class="title-country">ECUATORIANO</div>
-</div>
+            <div class="events-carousel-container">
+                <div class="events-carousel-track" id="eventsTrack">
+                    
+                    <!-- EVENTO 1: EL VUELO DEL CÓNDOR (VIDEO PROTAGONISTA) -->
+                    <div class="event-slide active">
+                        <div class="event-flyer featured poster-style">
+                            
+                            <!-- Capa de Video con Ken Burns -->
+                            <div class="flyer-media poster-media">
+                                <div class="ken-burns-layer">
+                                    <video autoplay muted loop playsinline class="flyer-video-bg">
+                                        <source src="mp4/condor-encuentro.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                
+                                <!-- Capas de efectos -->
+                                <div class="poster-overlay"></div>
+                                <div class="flyer-scanline"></div>
+                                <div class="light-sweep"></div>
+                                
+                                <!-- Badges flotantes -->
+                                <div class="poster-badges-container">
+                                    <div class="poster-badge animate-bounce-in delay-1">
+                                        <span class="badge-icon">🦅</span>
+                                        <span class="badge-text">DE QUITO A BARCELONA</span>
+                                    </div>
+                                    <div class="poster-badge animate-bounce-in delay-2">
+                                        <span class="badge-icon">✈️</span>
+                                        <span class="badge-text">UNIÓN TRANSATLÁNTICA</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Esquinas decorativas -->
+                                <div class="corner-decoration top-left animate-fade-in delay-3"></div>
+                                <div class="corner-decoration top-right animate-fade-in delay-3"></div>
+                                <div class="corner-decoration bottom-left animate-fade-in delay-3"></div>
+                                <div class="corner-decoration bottom-right animate-fade-in delay-3"></div>
+                            </div>
+                            
+                            <!-- Contenido inferior -->
+                            <div class="flyer-body poster-body">
+                                <div class="flyer-badge cultura animate-slide-in-left">
+                                    <span class="badge-icon">🇪🇨</span>
+                                    <span>ENCUENTRO DE LA COMUNIDAD ECUATORIANA</span>
+                                </div>
+                                
+                                <h3 class="flyer-heading poster-heading animate-slide-in-left delay-1">
+                                    El Vuelo del Cóndor: Cruzando el Océano para Reunirnos
+                                </h3>
+                                
+                                <div class="poster-artists animate-fade-in-up delay-2">
+                                    <p class="artists-label">✈️ Nuestra historia:</p>
+                                    <div class="artists-marquee">
+                                        <div class="marquee-content">
+                                            <span>Un símbolo ancestral</span> • 
+                                            <span>Despega desde los Andes</span> • 
+                                            <span>Cruza el Atlántico</span> • 
+                                            <span>Aterriza en Barcelona</span> • 
+                                            <span>Se reúne con su gente</span> • 
+                                            <span>Celebra la unión</span> • 
+                                            <span>CICTAEC: Tu puente al mundo</span> • 
+                                            <span>Un símbolo ancestral</span> • 
+                                            <span>Despega desde los Andes</span> • 
+                                            <span>Cruza el Atlántico</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flyer-meta poster-meta animate-fade-in-up delay-3">
+                                    <span class="meta-item"><span class="icon">🎵</span> Comunidad • Identidad • Celebración</span>
+                                    <span class="meta-item"><span class="icon">📍</span> Olimpic Arena, Badalona</span>
+                                </div>
+                                
+                                <div class="flyer-footer poster-footer animate-fade-in-up delay-4">
+                                    <a href="https://forms.gle/5951nVBJNCh4sBi78" target="_blank" class="btn-flyer primary btn-pulse">
+                                        <span>🎟️</span>
+                                        <span>Únete al Encuentro</span>
+                                        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                    <a href="tel:+34664275023" class="btn-flyer secondary">
+                                        <span>📞</span>
+                                        <span>+34 664 27 50 23</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Carrusel de Artistas -->
-<!-- Carrusel de Artistas -->
-<div class="festival-artists-section animate-fade-in-up delay-2">
-    <div class="artists-section-header">
-        <span class="header-line"></span>
-        <span class="header-text">🎤 ARTISTAS INVITADOS</span>
-        <span class="header-line"></span>
-    </div>
-    
-    <div class="artists-carousel-track">
-        <div class="artists-carousel-items">
-            <!-- Artista 1: Dayanara -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/dayanara.jpg" alt="Dayanara" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">DP</div>
+                    <!-- EVENTO 2: FERIA COMERCIAL -->
+                    <div class="event-slide">
+                        <div class="event-flyer featured">
+                            <div class="flyer-media">
+                                <div class="ken-burns-layer">
+                                    <img src="images/evento-feria.jpg" alt="Feria Comercial" class="flyer-image-static">
+                                </div>
+                                <div class="flyer-overlay"></div>
+                                <div class="flyer-scanline"></div>
+                                <div class="light-sweep"></div>
+                            </div>
+                            <div class="flyer-body">
+                                <div class="flyer-badge comercio animate-slide-in-left">
+                                    <span class="badge-icon">💼</span>
+                                    <span>COMERCIO</span>
+                                </div>
+                                <h3 class="flyer-heading animate-slide-in-left delay-1">Feria Internacional de Quito 2026</h3>
+                                <div class="flyer-meta animate-fade-in-up delay-2">
+                                    <span class="meta-item"><span class="icon">📍</span> Quito, Ecuador</span>
+                                    <span class="meta-item"><span class="icon">📅</span> 15-20 Julio 2026</span>
+                                    <span class="meta-item"><span class="icon">🕐</span> 09:00 - 18:00</span>
+                                </div>
+                                <p class="flyer-text animate-fade-in-up delay-3">
+                                    Encuentro empresarial para promover exportaciones ecuatorianas a Europa. 
+                                    Networking con empresas internacionales y ruedas de negocio.
+                                </p>
+                                <div class="flyer-footer animate-fade-in-up delay-4">
+                                    <a href="#" class="btn-flyer primary">
+                                        <span>🎟️</span>
+                                        <span>Inscribirme Ahora</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                    <span class="flyer-status free">✓ Gratuito</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENTO 3: SEMANA CULTURAL -->
+                    <div class="event-slide">
+                        <div class="event-flyer featured">
+                            <div class="flyer-media">
+                                <div class="ken-burns-layer">
+                                    <img src="images/evento-cultural.jpg" alt="Semana Cultural" class="flyer-image-static">
+                                </div>
+                                <div class="flyer-overlay"></div>
+                                <div class="flyer-scanline"></div>
+                                <div class="light-sweep"></div>
+                            </div>
+                            <div class="flyer-body">
+                                <div class="flyer-badge cultura animate-slide-in-left">
+                                    <span class="badge-icon">🎭</span>
+                                    <span>CULTURA</span>
+                                </div>
+                                <h3 class="flyer-heading animate-slide-in-left delay-1">Semana Cultural del Ecuador</h3>
+                                <div class="flyer-meta animate-fade-in-up delay-2">
+                                    <span class="meta-item"><span class="icon">📍</span> Barcelona, España</span>
+                                    <span class="meta-item"><span class="icon">📅</span> 5-12 Agosto 2026</span>
+                                    <span class="meta-item"><span class="icon">🕐</span> Todo el día</span>
+                                </div>
+                                <p class="flyer-text animate-fade-in-up delay-3">
+                                    Celebración de la diversidad cultural: música, danza, gastronomía 
+                                    y arte ecuatoriano. Exposiciones, conciertos y talleres.
+                                </p>
+                                <div class="flyer-footer animate-fade-in-up delay-4">
+                                    <a href="#" class="btn-flyer primary">
+                                        <span>📋</span>
+                                        <span>Ver Programa</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                    <span class="flyer-status open">● Abierto</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <span class="artist-name">Dayanara</span>
+
+                <!-- Controles -->
+                <button class="carousel-control prev" id="btnPrev" aria-label="Anterior">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-control next" id="btnNext" aria-label="Siguiente">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Barra de progreso -->
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressBar"></div>
+                </div>
+
+                <!-- Indicadores -->
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+
+                <!-- Botón Pause/Play -->
+                <button class="autoplay-toggle" id="autoplayBtn" aria-label="Pausar autoplay">
+                    <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                    <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                </button>
             </div>
-            
-            <!-- Artista 2: Jorge Heredia -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/heredia.jpg" alt="Jorge Heredia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">JH</div>
-                </div>
-                <span class="artist-name">Jorge Heredia<br><small>Animador</small></span>
-            </div>
-            
-            <!-- Artista 3: Christian Jaramillo -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/christian-jaramillo.jpg" alt="Christian Jaramillo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">CJ</div>
-                </div>
-                <span class="artist-name">Christian Jaramillo</span>
-            </div>
-            
-            <!-- Artista 4: Héctor Jaramillo -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/hector-jaramillo.jpg" alt="Héctor Jaramillo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">HJ</div>
-                </div>
-                <span class="artist-name">Héctor Jaramillo</span>
-            </div>
-           
-            
-            <!-- Artista 5: Hilda Murillo -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/hilda-murillo.jpg" alt="Hilda Murillo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">HM</div>
-                </div>
-                <span class="artist-name">Hilda Murillo</span>
-            </div>
-            
-            <!-- Artista 6: Clarita Vera -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/clarita-vera.jpg" alt="Clarita Vera" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">CV</div>
-                </div>
-                <span class="artist-name">Clarita Vera</span>
-            </div>
-            
-            <!-- Artista 7: Lorena Tonato -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/lorena-tonato.jpg" alt="Lorena Tonato" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">LT</div>
-                </div>
-                <span class="artist-name">Lorena Tonato</span>
-            </div>
-            
-            <!-- Artista 8: Don Medardo -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/don-medardo.jpg" alt="Don Medardo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">DM</div>
-                </div>
-                <span class="artist-name">Don Medardo<br><small>y sus Players</small></span>
-            </div>
-            
-            <!-- Artista 9: Oranzas -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/tranzas.jpg" alt="Oranzas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">OR</div>
-                </div>
-                <span class="artist-name">Tranzas</span>
-            </div>
-            
-            <!-- Artista 10: Beder -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/beder.jpg" alt="Beder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">B</div>
-                </div>
-                <span class="artist-name">Beder<br><small>El Musicólogo</small></span>
-            </div>
-            
-            <!-- Artista 11: Paolo Plaza -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/paolo-plaza.jpg" alt="Paolo Plaza" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">PP</div>
-                </div>
-                <span class="artist-name">Paolo Plaza</span>
-            </div>
-            
-            <!-- Artista 12: Adolescentes -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/adolescentes.jpg" alt="Adolescentes de Venezuela" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">AV</div>
-                </div>
-                <span class="artist-name">Adolescentes<br><small>de Venezuela</small></span>
-            </div>
-            
-            <!-- Artista 13: La Chicho -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/la-chicho.jpg" alt="La Chicho" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">LC</div>
-                </div>
-                <span class="artist-name">La Chicho<br><small>Salsa Choke</small></span>
-            </div>
-            
-            <!-- Artista 14: Millennium -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/millennium.jpg" alt="Grupo Millennium" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">GM</div>
-                </div>
-                <span class="artist-name">Grupo Millennium</span>
-            </div>
-            
-            <!-- Artista 15: Jazmín -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/jazmin.jpg" alt="Jazmín" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">JL</div>
-                </div>
-                <span class="artist-name">Jazmín<br><small>La Tumbadora</small></span>
-            </div>
-            
-            <!-- Artista 16: Jombriel -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/jombriel.jpg" alt="Jombriel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">J</div>
-                </div>
-                <span class="artist-name">Jombriel</span>
-            </div>
-            
-            <!-- Artista 17: Katty Elisa -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/katty-elisa.jpg" alt="Katty Elisa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">KE</div>
-                </div>
-                <span class="artist-name">Katty Elisa<br><small>La Gran Dama</small></span>
-            </div>
-            
-            <!-- Artista 18: Danilo Parra -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/danilo-parra.jpg" alt="Danilo Parra" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">DP</div>
-                </div>
-                <span class="artist-name">Danilo Parra</span>
-            </div>
-            
-            <!-- Artista 19: Joseph Sanz -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/joseph-sanz.jpg" alt="Joseph Sanz" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">JS</div>
-                </div>
-                <span class="artist-name">Joseph Sanz<br><small>Yo Soy Celia Cruz</small></span>
-            </div>
-            
-            <!-- Artista 20: La Vecina -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/la-vecina.jpg" alt="La Vecina y Amigos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">LV</div>
-                </div>
-                <span class="artist-name">La Vecina<br><small>y Amigos</small></span>
-            </div>
-            
-            <!-- Artista 21: DJ Wuazat -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/dj-wuazat.jpg" alt="DJ Wuazat" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">DJ</div>
-                </div>
-                <span class="artist-name">DJ Wuazat</span>
-            </div>
-            
-            <!-- Artista 22: Los Legendarios -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/los-legendarios.jpg" alt="Los Legendarios" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">LL</div>
-                </div>
-                <span class="artist-name">Los Legendarios</span>
-            </div>
-            
-            <!-- Artista 23: Pato Cisneros -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/pato-cisneros.jpg" alt="Pato Cisneros" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">PC</div>
-                </div>
-                <span class="artist-name">Pato Cisneros</span>
-            </div>
-            
-            <!-- Artista 24: Dayi-O -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/dayi-o.jpg" alt="Dayi-O" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">DO</div>
-                </div>
-                <span class="artist-name">Dayi-O</span>
-            </div>
-            
-            <!-- Artista 25: Kerly Morán -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/kerly-moran.jpg" alt="Kerly Morán" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">KM</div>
-                </div>
-                <span class="artist-name">Kerly Morán</span>
-            </div>
-            
-            <!-- Artista 26: Rudy Noroña -->
-            <div class="artist-card">
-                <div class="artist-photo">
-                    <img src="images/artistas/rudy-norona.jpg" alt="Rudy Noroña" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="artist-initials" style="display:none;">RN</div>
-                </div>
-                <span class="artist-name">Rudy Noroña</span>
+
+            <div class="events-cta">
+                <a href="#" class="btn-view-all-events">
+                    <span>📅</span>
+                    <span>Ver Calendario Completo</span>
+                </a>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <!-- ============================================
+         FIN SECCIÓN EVENTOS
+         ============================================ -->
 
-        <!-- Info del Evento (Lugar, fecha, precio) -->
-        <div class="festival-info-strip animate-fade-in-up delay-3">
-            <div class="info-block">
-                <span class="info-icon"></span>
-                <div class="info-content">
-                    <span class="info-label">Lugar</span>
-                    <span class="info-value">Olimpic Arena Badalona</span>
-                </div>
-            </div>
-            <div class="info-block">
-                <span class="info-icon">📅</span>
-                <div class="info-content">
-                    <span class="info-label">Fecha</span>
-                    <span class="info-value">Sábado 1 Agosto 2026</span>
-                </div>
-            </div>
-            <div class="info-block">
-                <span class="info-icon">🕐</span>
-                <div class="info-content">
-                    <span class="info-label">Puertas</span>
-                    <span class="info-value">12:00h</span>
-                </div>
-            </div>
-            <div class="info-block highlight">
-                <span class="info-icon">🎟️</span>
-                <div class="info-content">
-                    <span class="info-label">Entradas desde</span>
-                    <span class="info-value price">16,50€</span>
-                </div>
-            </div>
-        </div>
+    <section id="about" class="organization">
 
-        <!-- Actividades del Festival -->
-        <div class="festival-activities animate-fade-in-up delay-3">
-            <div class="activity-item">
-                <span class="activity-icon">🎵</span>
-                <span class="activity-text">Música en Vivo</span>
-            </div>
-            <div class="activity-item">
-                <span class="activity-icon">💃</span>
-                <span class="activity-text">Baile y Folklore</span>
-            </div>
-            <div class="activity-item">
-                <span class="activity-icon">🍽️</span>
-                <span class="activity-text">Gastronomía Ecuatoriana</span>
-            </div>
-            <div class="activity-item">
-                <span class="activity-icon"></span>
-                <span class="activity-text">Arte y Cultura</span>
-            </div>
-            <div class="activity-item">
-                <span class="activity-icon">🎮</span>
-                <span class="activity-text">Juegos Infantiles</span>
-            </div>
-        </div>
 
-        <!-- Sponsors -->
-        <div class="festival-sponsors animate-fade-in-up delay-4">
-            <div class="sponsors-header">
-                <span class="header-line"></span>
-                <span class="header-text">🤝 EMPRESAS COLABORADORAS</span>
-                <span class="header-line"></span>
-            </div>
-            <div class="sponsors-image-wrapper">
-                <img src="images/sponsors-todos.png" alt="Sponsors Festival Tricolor" class="sponsors-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="sponsors-placeholder" style="display:none;">
-                    <span>📌 Imagen de patrocinadores</span>
-                </div>
-            </div>
-        </div>
-
-       
-    <!-- Botones de Acción -->
-<div class="festival-actions animate-fade-in-up delay-5">
-    <a href="https://checkoutentradas.elcorteingles.es/#/open/checkout/product/00-00089rN/event/00-00089qe/show/00-0003cqB" target="_blank" class="btn-comprar-entradas">
-        <span class="btn-icon">🎟️</span>
-        <span>COMPRAR ENTRADAS</span>
-        <span class="btn-price">16,50€</span>
-    </a>
-    <a href="tel:+34664275023" class="btn-info-contacto">
-        <span class="btn-icon">📞</span>
-        <span>+34 664 27 50 23</span>
-    </a>
-</div>
-
-        <!-- Dirección completa -->
-        <div class="festival-address animate-fade-in delay-5">
-            <span class="address-icon">📍</span>
-            <span>Carrer de Ponent, 161, 08912 Badalona, Barcelona</span>
-        </div>
-
-    </div>
-</section>
 
 
 

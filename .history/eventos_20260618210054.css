@@ -1,0 +1,365 @@
+/* ============================================
+   SECCIÓN EVENTO PRINCIPAL - FESTIVAL TRICOLOR
+   ============================================ */
+
+.main-event-section {
+    background: linear-gradient(135deg, #0f2b4d 0%, #1a3a5c 50%, #0d1f33 100%);
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-event-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.event-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header del Evento */
+.event-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.event-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.badge-flag {
+    font-size: 1.5rem;
+}
+
+.event-title {
+    font-size: 2.8rem;
+    color: #FFD700;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    line-height: 1.2;
+}
+
+/* Carrusel de Artistas con Iniciales */
+.artists-carousel-wrapper {
+    margin: 50px 0;
+    padding: 30px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-label {
+    text-align: center;
+    color: #FFD700;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.carousel-label .icon {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.artists-carousel-track {
+    overflow: hidden;
+    position: relative;
+}
+
+.artists-carousel-items {
+    display: flex;
+    gap: 25px;
+    animation: scrollArtists 40s linear infinite;
+    width: max-content;
+}
+
+.artists-carousel-track:hover .artists-carousel-items {
+    animation-play-state: paused;
+}
+
+@keyframes scrollArtists {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.artist-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 140px;
+    transition: transform 0.3s ease;
+}
+
+.artist-item:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.artist-initials {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #FFD700;
+    background: linear-gradient(135deg, #1a3a5c 0%, #0f2b4d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD700;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.artist-item:hover .artist-initials {
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.7);
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+.artist-label {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: center;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    max-width: 120px;
+    line-height: 1.2;
+}
+
+/* Info Box */
+.event-info-box {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+}
+
+/* Sponsors Section (Imagen única) */
+.sponsors-wrapper {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.sponsors-label {
+    color: #FFD700;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sponsors-image-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.sponsors-combined {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+.sponsors-combined:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Botones de Acción */
+.event-actions {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.btn-primary-glow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #FFD700 0%, #ffc400 100%);
+    color: #0f2b4d;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(255, 215, 0, 0.7);
+}
+
+.btn-arrow {
+    transition: transform 0.3s;
+}
+
+.btn-primary-glow:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+.btn-secondary-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    color: #FFD700;
+    padding: 18px 40px;
+    border: 3px solid #FFD700;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+}
+
+.btn-secondary-outline:hover {
+    background: #FFD700;
+    color: #0f2b4d;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+}
+
+/* Animaciones adicionales */
+.animate-slide-in {
+    animation: slideIn 0.8s ease 0.2s both;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-event-section {
+        padding: 60px 15px;
+    }
+    
+    .event-title {
+        font-size: 1.8rem;
+    }
+    
+    .artist-item {
+        min-width: 100px;
+        gap: 8px;
+    }
+    
+    .artist-initials {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+    
+    .artist-label {
+        font-size: 0.75rem;
+    }
+    
+    .event-info-box {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .info-row {
+        font-size: 0.95rem;
+        justify-content: center;
+    }
+    
+    .event-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-primary-glow,
+    .btn-secondary-outline {
+        justify-content: center;
+    }
+    
+    .sponsors-image-container {
+        padding: 15px;
+    }
+}

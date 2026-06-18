@@ -1,0 +1,85 @@
+/* === EFECTO DE SCROLL VERTICAL EN IMÁGENES === */
+.ken-burns-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flyer-poster-img,
+.flyer-image-static {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Animación de scroll vertical + zoom */
+    animation: verticalScroll 15s ease-in-out infinite alternate;
+}
+
+@keyframes verticalScroll {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15%) scale(1.05);
+    }
+    100% {
+        transform: translateY(-30%) scale(1.1);
+    }
+}
+
+/* Para el video del cóndor - movimiento más suave */
+.flyer-video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: videoVerticalScroll 20s ease-in-out infinite alternate;
+}
+
+@keyframes videoVerticalScroll {
+    0% {
+        transform: translateY(-5%) scale(1);
+    }
+    50% {
+        transform: translateY(0) scale(1.02);
+    }
+    100% {
+        transform: translateY(5%) scale(1);
+    }
+}
+
+/* Efecto adicional: Revelado progresivo con máscara */
+.flyer-media::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(10, 25, 41, 0.3) 70%,
+        rgba(10, 25, 41, 0.9) 100%
+    );
+    pointer-events: none;
+    z-index: 3;
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Ajuste para que el contenido se lea mejor */
+.poster-media {
+    height: 450px;
+    position: relative;
+}
