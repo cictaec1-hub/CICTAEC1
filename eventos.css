@@ -1988,3 +1988,49 @@
         padding: 12px;
     }
 }
+
+
+/* Botón Flyer - Compacto y discreto */
+.btn-flyer-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFD700;
+    padding: 12px 20px;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 50px; /* Forma de píldora */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.flyer-icon {
+    width: 18px;
+    height: 18px;
+    stroke: #FFD700;
+    transition: all 0.3s ease;
+}
+
+.btn-flyer-download:hover {
+    background: rgba(255, 215, 0, 0.25);
+    border-color: #FFD700;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.btn-flyer-download:hover .flyer-icon {
+    stroke: #fff;
+    transform: translateY(2px); /* Animación de descarga */
+}
+
+@media (max-width: 768px) {
+    .btn-flyer-download {
+        justify-content: center;
+        padding: 10px 18px;
+        font-size: 0.8rem;
+    }
+}
