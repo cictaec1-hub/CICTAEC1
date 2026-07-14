@@ -165,33 +165,31 @@
         }
     }
 
-    // Cambiar a un vídeo específico
-    function changeVideo(index) {
-        if (index < 0) index = videoIds.length - 1;
-        if (index >= videoIds.length) index = 0;
+  // Cambiar a un vídeo específico
+function changeVideo(index) {
+    if (index < 0) index = videoIds.length - 1;
+    if (index >= videoIds.length) index = 0;
+    
+    currentIndex = index;
+    const videoId = videoIds[index];
+    
+    console.log('Cargando vídeo:', videoId);
+    
+    if (player && player.loadVideoById) {
+        player.loadVideoById(videoId);
         
-        currentIndex = index;
-        const videoId = videoIds[index];
-        
-        console.log('Cargando vídeo:', videoId, 'Índice:', index);
-        
-        if (player && player.loadVideoById) {
-            // Cargar y reproducir el nuevo vídeo
-            player.loadVideoById({
-                videoId: videoId,
-                startSeconds: 0
-            });
-            
-            // Asegurar que empieza muteado
-            setTimeout(() => {
-                if (player && player.isMuted && !player.isMuted()) {
-                    player.mute();
-                }
-            }, 500);
-        }
-        
-        resetAutoPlay();
+        // ✅ SOLUCIÓN: Forzar audio DESPUÉS de cargar el vídeo
+        setTimeout(() => {
+            if (player && !player.isMuted()) {
+                player.unMute();
+                updateMuteButton();
+                console.log('Audio forzado en nuevo vídeo');
+            }
+        }, 1500); // Esperar 1.5 segundos
     }
+    
+    resetAutoPlay();
+}
 
     // Siguiente vídeo
     window.nextVideo = function() {
@@ -273,3 +271,33 @@
     
     console.log('✅ Reproductor de YouTube inicializado con', videoIds.length, 'vídeos');
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+function updateMuteButton() {
+    const btn = document.querySelector('.mute-btn');
+    if (!btn || !player) return;
+    
+    const iconOff = btn.querySelector('.icon-off');
+    const iconOn = btn.querySelector('.icon-on');
+    
+    if (!player.isMuted()) {
+        btn.classList.add('unmuted');
+        if (iconOff) iconOff.style.display = 'none';
+        if (iconOn) iconOn.style.display = 'block';
+    } else {
+        btn.classList.remove('unmuted');
+        if (iconOff) iconOff.style.display = 'block';
+        if (iconOn) iconOn.style.display = 'none';
+    }
+}
