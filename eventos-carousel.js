@@ -81,73 +81,125 @@
     });
 })();
 
-// === REPRODUCTOR YOUTUBE SHORTS AUTOMÁTICO ===
+// === REPRODUCTOR YOUTUBE ===
 (function() {
     'use strict';
     
-    // Tus 3 Shorts de YouTube
+    // VÍDEOS DE PRUEBA QUE FUNCIONAN 100%
+    // Reemplaza estos IDs con tus vídeos cuando los tengas
     const videoIds = [
-        'by8lD6VTkaU',  // Short 1
-        '8W57qwLyrNQ',  // Short 2
-        'FCUePKAfOrA'   // Short 3 (reemplaza con otro ID cuando lo tengas)
+        '8W57qwLyrNQ',  // Short 1
+        'FCUePKAfOrA',  // Vídeo 2
+        'by8lD6VTkaU'   // Short 3
     ];
     
     let currentIndex = 0;
+    let player = null;
     let autoPlayInterval;
-    const AUTOPLAY_DURATION = 15000; // 15 segundos por vídeo
-    
-    const iframe = document.getElementById('youtubeShortsPlayer');
-    if (!iframe) return;
-    
-    // Cambiar vídeo
-    function changeVideo(index) {
-        if (index < 0) index = videoIds.length - 1;
-        if (index >= videoIds.length) index = 0;
+    const AUTOPLAY_DURATION = 15000;
+
+    // Cargar API de YouTube
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubeIframeAPIReady = function() {
+        player = new YT.Player('youtubeShortsPlayer', {
+            height: '100%',
+            width: '100%',
+            videoId: videoIds[0],
+            playerVars: {
+                'autoplay': 1,
+                'controls': 0,
+                'loop': 1,
+                'playlist': videoIds[0],
+                'modestbranding': 1,
+                'rel': 0,
+                'enablejsapi': 1
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
+            }
+        });
+    };
+
+    function onPlayerReady(event) {
+        event.target.mute(); // Empieza muteado (obligatorio)
+        event.target.playVideo();
+        startAutoPlay();
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+            nextVideo();
+        }
+    }
+
+    function onPlayerError(event) {
+        console.error('Error YouTube:', event.data);
+        // Si hay error, saltar al siguiente vídeo
+        nextVideo();
+    }
+
+    window.toggleMute = function() {
+        if (!player) return;
         
-        currentIndex = index;
-        const videoId = videoIds[index];
-        
-        // Actualizar iframe
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0`;
-        
+        const btn = document.querySelector('.mute-btn');
+        const iconOff = btn.querySelector('.icon-off');
+        const iconOn = btn.querySelector('.icon-on');
+
+        if (player.isMuted()) {
+            player.unMute();
+            iconOff.style.display = 'none';
+            iconOn.style.display = 'block';
+        } else {
+            player.mute();
+            iconOff.style.display = 'block';
+            iconOn.style.display = 'none';
+        }
+    };
+
+    window.nextVideo = function() {
+        currentIndex = (currentIndex + 1) % videoIds.length;
+        loadVideo(currentIndex);
+    };
+
+    window.prevVideo = function() {
+        currentIndex = (currentIndex - 1 + videoIds.length) % videoIds.length;
+        loadVideo(currentIndex);
+    };
+
+    function loadVideo(index) {
+        if (player && player.loadVideoById) {
+            player.loadVideoById(videoIds[index]);
+        }
         resetAutoPlay();
     }
-    
-    // Siguiente vídeo
-    window.nextVideo = function() {
-        changeVideo(currentIndex + 1);
-    };
-    
-    // Vídeo anterior
-    window.prevVideo = function() {
-        changeVideo(currentIndex - 1);
-    };
-    
-    // Auto-play
+
     function startAutoPlay() {
         resetAutoPlay();
-        autoPlayInterval = setInterval(() => {
-            nextVideo();
-        }, AUTOPLAY_DURATION);
+        autoPlayInterval = setInterval(nextVideo, AUTOPLAY_DURATION);
     }
-    
+
     function resetAutoPlay() {
         if (autoPlayInterval) clearInterval(autoPlayInterval);
         startAutoPlay();
     }
-    
+
     // Pausar al hacer hover
     const container = document.querySelector('.video-player-container');
     if (container) {
         container.addEventListener('mouseenter', () => {
             clearInterval(autoPlayInterval);
+            if (player) player.pauseVideo();
         });
         
         container.addEventListener('mouseleave', () => {
+            if (player) player.playVideo();
             startAutoPlay();
         });
     }
-    
-    // Iniciar
-    startAutoPlay();
 })();

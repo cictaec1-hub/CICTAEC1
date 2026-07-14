@@ -259,6 +259,7 @@
     <div class="title-country">ECUATORIANO</div>
 </div>
 
+
 <!-- SECCIÓN VÍDEOS DESDE REDES SOCIALES -->
 <div class="festival-social-videos animate-fade-in-up delay-1">
     <div class="social-videos-header">
@@ -270,26 +271,38 @@
     <div class="video-player-container">
         <!-- Reproductor YouTube -->
         <div class="main-video-wrapper">
-            <iframe 
-                id="youtubeShortsPlayer"
-                src="https://www.youtube.com/embed/8W57qwLyrNQ?autoplay=1&mute=1&controls=0&loop=1&playlist=8W57qwLyrNQ&modestbranding=1&rel=0"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <div id="youtubeShortsPlayer"></div>
             
-            <!-- Overlay simple -->
-            <div class="video-overlay-simple">
-                <div class="video-platform-badge">
-                    <span class="platform-icon">▶️</span>
-                    <span class="platform-name">YouTube Shorts</span>
+            <!-- Overlay con botón de sonido -->
+            <div class="video-controls">
+                <button class="mute-btn" onclick="toggleMute()" title="Activar sonido">
+                    <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <path d="M23 9l-6 6M17 9l6 6"/>
+                    </svg>
+                    <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+                
+                <div class="platform-badge">
+                    <span>▶️ YouTube</span>
                 </div>
             </div>
         </div>
         
-        <!-- Botones de navegación -->
-        <button class="video-nav-btn prev" onclick="prevVideo()" title="Anterior">◀</button>
-        <button class="video-nav-btn next" onclick="nextVideo()" title="Siguiente">▶</button>
+        <!-- Botones de navegación MEJORADOS -->
+        <button class="nav-btn prev" onclick="prevVideo()" title="Anterior">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+        </button>
+        <button class="nav-btn next" onclick="nextVideo()" title="Siguiente">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+        </button>
     </div>
     
     <!-- Links a redes -->
@@ -305,7 +318,6 @@
         </a>
     </div>
 </div>
-
 
         <!-- Carrusel de Artistas -->
 <!-- Carrusel de Artistas -->
