@@ -81,12 +81,21 @@
     });
 })();
 
-// === REPRODUCTOR YOUTUBE ===
+
+
+
+
+
+
+
+
+
+
+// === REPRODUCTOR YOUTUBE SHORTS ===
 (function() {
     'use strict';
     
-    // VÍDEOS DE PRUEBA QUE FUNCIONAN 100%
-    // Reemplaza estos IDs con tus vídeos cuando los tengas
+    // Tus 3 vídeos de YouTube
     const videoIds = [
         '8W57qwLyrNQ',  // Short 1
         'FCUePKAfOrA',  // Vídeo 2
@@ -96,7 +105,8 @@
     let currentIndex = 0;
     let player = null;
     let autoPlayInterval;
-    const AUTOPLAY_DURATION = 15000;
+    let isUserInteracting = false;
+    const AUTOPLAY_DURATION = 15000; // 15 segundos
 
     // Cargar API de YouTube
     const tag = document.createElement('script');
@@ -104,7 +114,14 @@
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+    // Cuando la API esté lista
     window.onYouTubeIframeAPIReady = function() {
+        createPlayer();
+    };
+    
+    function createPlayer() {
+        if (!document.getElementById('youtubeShortsPlayer')) return;
+        
         player = new YT.Player('youtubeShortsPlayer', {
             height: '100%',
             width: '100%',
@@ -112,80 +129,123 @@
             playerVars: {
                 'autoplay': 1,
                 'controls': 0,
-                'loop': 1,
-                'playlist': videoIds[0],
+                'disablekb': 1,
+                'fs': 0,
                 'modestbranding': 1,
                 'rel': 0,
                 'enablejsapi': 1
+                // NO poner 'loop' aquí
             },
             events: {
                 'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange,
-                'onError': onPlayerError
+                'onStateChange': onPlayerStateChange
             }
         });
-    };
+    }
 
     function onPlayerReady(event) {
-        event.target.mute(); // Empieza muteado (obligatorio)
+        // Empezar muteado (obligatorio para autoplay)
+        event.target.mute();
         event.target.playVideo();
+        
+        // Iniciar contador para cambio automático
         startAutoPlay();
     }
 
     function onPlayerStateChange(event) {
+        // Cuando el vídeo termina (estado 0 = ENDED)
         if (event.data === YT.PlayerState.ENDED) {
+            console.log('Vídeo terminado, pasando al siguiente...');
             nextVideo();
         }
-    }
-
-    function onPlayerError(event) {
-        console.error('Error YouTube:', event.data);
-        // Si hay error, saltar al siguiente vídeo
-        nextVideo();
-    }
-
-    window.toggleMute = function() {
-        if (!player) return;
         
-        const btn = document.querySelector('.mute-btn');
-        const iconOff = btn.querySelector('.icon-off');
-        const iconOn = btn.querySelector('.icon-on');
+        // Cuando está reproduciéndose (estado 1 = PLAYING)
+        if (event.data === YT.PlayerState.PLAYING) {
+            resetAutoPlay();
+        }
+    }
 
+    // Cambiar a un vídeo específico
+    function changeVideo(index) {
+        if (index < 0) index = videoIds.length - 1;
+        if (index >= videoIds.length) index = 0;
+        
+        currentIndex = index;
+        const videoId = videoIds[index];
+        
+        console.log('Cargando vídeo:', videoId, 'Índice:', index);
+        
+        if (player && player.loadVideoById) {
+            // Cargar y reproducir el nuevo vídeo
+            player.loadVideoById({
+                videoId: videoId,
+                startSeconds: 0
+            });
+            
+            // Asegurar que empieza muteado
+            setTimeout(() => {
+                if (player && player.isMuted && !player.isMuted()) {
+                    player.mute();
+                }
+            }, 500);
+        }
+        
+        resetAutoPlay();
+    }
+
+    // Siguiente vídeo
+    window.nextVideo = function() {
+        isUserInteracting = false;
+        changeVideo(currentIndex + 1);
+    };
+
+    // Vídeo anterior
+    window.prevVideo = function() {
+        isUserInteracting = false;
+        changeVideo(currentIndex - 1);
+    };
+
+    // Hacer changeVideo global para las miniaturas (si las añades luego)
+    window.changeVideo = changeVideo;
+
+    // Toggle mute
+    window.toggleMute = function() {
+        if (!player || !player.isMuted) return;
+        
         if (player.isMuted()) {
             player.unMute();
-            iconOff.style.display = 'none';
-            iconOn.style.display = 'block';
+            const btn = document.querySelector('.mute-btn');
+            if (btn) {
+                btn.classList.add('unmuted');
+                btn.querySelector('.icon-off').style.display = 'none';
+                btn.querySelector('.icon-on').style.display = 'block';
+            }
         } else {
             player.mute();
-            iconOff.style.display = 'block';
-            iconOn.style.display = 'none';
+            const btn = document.querySelector('.mute-btn');
+            if (btn) {
+                btn.classList.remove('unmuted');
+                btn.querySelector('.icon-off').style.display = 'block';
+                btn.querySelector('.icon-on').style.display = 'none';
+            }
         }
     };
 
-    window.nextVideo = function() {
-        currentIndex = (currentIndex + 1) % videoIds.length;
-        loadVideo(currentIndex);
-    };
-
-    window.prevVideo = function() {
-        currentIndex = (currentIndex - 1 + videoIds.length) % videoIds.length;
-        loadVideo(currentIndex);
-    };
-
-    function loadVideo(index) {
-        if (player && player.loadVideoById) {
-            player.loadVideoById(videoIds[index]);
-        }
-        resetAutoPlay();
-    }
-
+    // Auto-play cada 15 segundos
     function startAutoPlay() {
         resetAutoPlay();
-        autoPlayInterval = setInterval(nextVideo, AUTOPLAY_DURATION);
+        autoPlayInterval = setInterval(() => {
+            if (!isUserInteracting && player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+                console.log('Autoplay: pasando al siguiente vídeo');
+                nextVideo();
+            }
+        }, AUTOPLAY_DURATION);
     }
 
     function resetAutoPlay() {
-        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+        }
         startAutoPlay();
     }
 
@@ -193,13 +253,23 @@
     const container = document.querySelector('.video-player-container');
     if (container) {
         container.addEventListener('mouseenter', () => {
-            clearInterval(autoPlayInterval);
-            if (player) player.pauseVideo();
+            isUserInteracting = true;
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+            }
+            if (player && player.pauseVideo) {
+                player.pauseVideo();
+            }
         });
         
         container.addEventListener('mouseleave', () => {
-            if (player) player.playVideo();
+            isUserInteracting = false;
+            if (player && player.playVideo) {
+                player.playVideo();
+            }
             startAutoPlay();
         });
     }
+    
+    console.log('✅ Reproductor de YouTube inicializado con', videoIds.length, 'vídeos');
 })();
