@@ -2152,8 +2152,8 @@
     text-align: center;
 }
 
-/* Botones de navegación con iconos SVG */
-.nav-btn {
+/* Botones de navegación de VÍDEOS (con prefijo para evitar conflictos) */
+.video-nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -2171,20 +2171,20 @@
     box-shadow: 0 6px 25px rgba(0,0,0,0.4);
 }
 
-.nav-btn:hover {
+.video-nav-btn:hover {
     background: #FFD700;
     transform: translateY(-50%) scale(1.15);
     box-shadow: 0 8px 30px rgba(255, 215, 0, 0.7);
 }
 
-.nav-btn svg {
+.video-nav-btn svg {
     color: #0f2b4d;
     width: 28px;
     height: 28px;
 }
 
-.nav-btn.prev { left: -35px; }
-.nav-btn.next { right: -35px; }
+.video-nav-btn.prev { left: -35px; }
+.video-nav-btn.next { right: -35px; }
 
 /* Links a redes */
 .social-platforms-links {
@@ -2233,13 +2233,13 @@
         max-height: 500px;
     }
     
-    .nav-btn {
+    .video-nav-btn {
         width: 50px;
         height: 50px;
     }
     
-    .nav-btn.prev { left: 10px; }
-    .nav-btn.next { right: 10px; }
+    .video-nav-btn.prev { left: 10px; }
+    .video-nav-btn.next { right: 10px; }
     
     .mute-btn {
         width: 42px;
