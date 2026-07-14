@@ -94,27 +94,24 @@
 (function() {
     'use strict';
     
-    // Tus 3 vídeos de YouTube
     const videoIds = [
-        '8W57qwLyrNQ',  // Short 1
-        'FCUePKAfOrA',  // Vídeo 2
-        'by8lD6VTkaU'   // Short 3
+        '8W57qwLyrNQ',
+        'FCUePKAfOrA',
+        'by8lD6VTkaU'
     ];
     
     let currentIndex = 0;
     let player = null;
     let autoPlayInterval;
     let isUserInteracting = false;
-    let isAudioEnabled = false; // ✅ NUEVO: Guarda si el usuario activó el audio
-    const AUTOPLAY_DURATION = 15000; // 15 segundos
+    let userWantsSound = false; // Solo true si el usuario hace clic en activar sonido
+    const AUTOPLAY_DURATION = 15000;
 
-    // Cargar API de YouTube
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    // Cuando la API esté lista
     window.onYouTubeIframeAPIReady = function() {
         createPlayer();
     };
@@ -143,34 +140,33 @@
     }
 
     function onPlayerReady(event) {
-        // Empezar muteado (obligatorio para autoplay en navegadores)
-        event.target.mute();
+        event.target.mute(); // Siempre empieza muteado por política del navegador
         event.target.playVideo();
-        updateMuteButton(); // ✅ Actualizar icono inicial
+        updateMuteButtonUI();
         startAutoPlay();
     }
 
     function onPlayerStateChange(event) {
-        // Cuando el vídeo termina (estado 0 = ENDED)
         if (event.data === YT.PlayerState.ENDED) {
-            console.log('Vídeo terminado, pasando al siguiente...');
             nextVideo();
         }
         
-        // ✅ NUEVO: Cuando empieza a reproducirse, aplicar el estado del audio guardado
+        // Cuando empieza a reproducir, verificar si debemos activar el audio
         if (event.data === YT.PlayerState.PLAYING) {
-            if (isAudioEnabled && player && player.unMute) {
+            if (userWantsSound) {
+                // Esperar un poco y activar el audio
                 setTimeout(() => {
-                    player.unMute();
-                    updateMuteButton();
-                    console.log('Audio restaurado para el nuevo vídeo');
-                }, 500); // Pequeño delay para asegurar que la API lo permita
+                    if (player && player.unMute) {
+                        player.unMute();
+                        updateMuteButtonUI();
+                        console.log('🔊 Audio activado automáticamente');
+                    }
+                }, 1000);
             }
             resetAutoPlay();
         }
     }
 
-    // Cambiar a un vídeo específico
     function changeVideo(index) {
         if (index < 0) index = videoIds.length - 1;
         if (index >= videoIds.length) index = 0;
@@ -178,88 +174,78 @@
         currentIndex = index;
         const videoId = videoIds[index];
         
-        console.log('Cargando vídeo:', videoId, 'Índice:', index);
+        console.log('Cambiando a vídeo:', videoId);
         
         if (player && player.loadVideoById) {
-            // Cargar y reproducir el nuevo vídeo
-            player.loadVideoById({
-                videoId: videoId,
-                startSeconds: 0
-            });
-            // El audio se restaurará automáticamente en onPlayerStateChange
+            player.loadVideoById(videoId);
+            // El audio se activará en onPlayerStateChange si userWantsSound es true
         }
         
         resetAutoPlay();
     }
 
-    // Siguiente vídeo
     window.nextVideo = function() {
         isUserInteracting = false;
         changeVideo(currentIndex + 1);
     };
 
-    // Vídeo anterior
     window.prevVideo = function() {
         isUserInteracting = false;
         changeVideo(currentIndex - 1);
     };
 
-    // Hacer changeVideo global
     window.changeVideo = changeVideo;
 
-    // Toggle mute
+    // Cuando el usuario hace clic en el botón de sonido
     window.toggleMute = function() {
-        if (!player || !player.isMuted) return;
+        if (!player) return;
         
+        // Alternar el estado
         if (player.isMuted()) {
             player.unMute();
-            isAudioEnabled = true; // ✅ Guardar preferencia del usuario
-            console.log('Audio activado manualmente');
+            userWantsSound = true;
+            console.log('🔊 Usuario activó sonido');
         } else {
             player.mute();
-            isAudioEnabled = false; // ✅ Guardar preferencia del usuario
-            console.log('Audio desactivado manualmente');
+            userWantsSound = false;
+            console.log('🔇 Usuario silenció');
         }
         
-        updateMuteButton();
+        updateMuteButtonUI();
     };
 
-    // ✅ NUEVA: Función para sincronizar el icono del botón con el estado real
-    function updateMuteButton() {
+    // Actualizar el icono del botón
+    function updateMuteButtonUI() {
         const btn = document.querySelector('.mute-btn');
-        if (!btn) return;
+        if (!btn || !player) return;
         
         const iconOff = btn.querySelector('.icon-off');
         const iconOn = btn.querySelector('.icon-on');
         
-        if (player && player.isMuted && !player.isMuted()) {
-            // Audio activado
+        if (!player.isMuted()) {
+            // Sonido activado
             btn.classList.add('unmuted');
             if (iconOff) iconOff.style.display = 'none';
             if (iconOn) iconOn.style.display = 'block';
         } else {
-            // Audio muteado
+            // Silenciado
             btn.classList.remove('unmuted');
             if (iconOff) iconOff.style.display = 'block';
             if (iconOn) iconOn.style.display = 'none';
         }
     }
 
-    // Auto-play cada 15 segundos
     function startAutoPlay() {
         resetAutoPlay();
         autoPlayInterval = setInterval(() => {
             if (!isUserInteracting && player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
-                console.log('Autoplay: pasando al siguiente vídeo');
                 nextVideo();
             }
         }, AUTOPLAY_DURATION);
     }
 
     function resetAutoPlay() {
-        if (autoPlayInterval) {
-            clearInterval(autoPlayInterval);
-        }
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
         startAutoPlay();
     }
 
@@ -268,22 +254,16 @@
     if (container) {
         container.addEventListener('mouseenter', () => {
             isUserInteracting = true;
-            if (autoPlayInterval) {
-                clearInterval(autoPlayInterval);
-            }
-            if (player && player.pauseVideo) {
-                player.pauseVideo();
-            }
+            clearInterval(autoPlayInterval);
+            if (player) player.pauseVideo();
         });
         
         container.addEventListener('mouseleave', () => {
             isUserInteracting = false;
-            if (player && player.playVideo) {
-                player.playVideo();
-            }
+            if (player) player.playVideo();
             startAutoPlay();
         });
     }
     
-    console.log('✅ Reproductor de YouTube inicializado con', videoIds.length, 'vídeos');
+    console.log('✅ Reproductor listo -', videoIds.length, 'vídeos');
 })();
