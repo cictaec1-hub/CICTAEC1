@@ -90,7 +90,6 @@
 
 
 
-
 // === REPRODUCTOR YOUTUBE SHORTS ===
 (function() {
     'use strict';
@@ -106,6 +105,7 @@
     let player = null;
     let autoPlayInterval;
     let isUserInteracting = false;
+    let isAudioEnabled = false; // ✅ NUEVO: Guarda si el usuario activó el audio
     const AUTOPLAY_DURATION = 15000; // 15 segundos
 
     // Cargar API de YouTube
@@ -134,7 +134,6 @@
                 'modestbranding': 1,
                 'rel': 0,
                 'enablejsapi': 1
-                // NO poner 'loop' aquí
             },
             events: {
                 'onReady': onPlayerReady,
@@ -144,11 +143,10 @@
     }
 
     function onPlayerReady(event) {
-        // Empezar muteado (obligatorio para autoplay)
+        // Empezar muteado (obligatorio para autoplay en navegadores)
         event.target.mute();
         event.target.playVideo();
-        
-        // Iniciar contador para cambio automático
+        updateMuteButton(); // ✅ Actualizar icono inicial
         startAutoPlay();
     }
 
@@ -159,8 +157,15 @@
             nextVideo();
         }
         
-        // Cuando está reproduciéndose (estado 1 = PLAYING)
+        // ✅ NUEVO: Cuando empieza a reproducirse, aplicar el estado del audio guardado
         if (event.data === YT.PlayerState.PLAYING) {
+            if (isAudioEnabled && player && player.unMute) {
+                setTimeout(() => {
+                    player.unMute();
+                    updateMuteButton();
+                    console.log('Audio restaurado para el nuevo vídeo');
+                }, 500); // Pequeño delay para asegurar que la API lo permita
+            }
             resetAutoPlay();
         }
     }
@@ -181,13 +186,7 @@
                 videoId: videoId,
                 startSeconds: 0
             });
-            
-            // Asegurar que empieza muteado
-            setTimeout(() => {
-                if (player && player.isMuted && !player.isMuted()) {
-                    player.mute();
-                }
-            }, 500);
+            // El audio se restaurará automáticamente en onPlayerStateChange
         }
         
         resetAutoPlay();
@@ -205,7 +204,7 @@
         changeVideo(currentIndex - 1);
     };
 
-    // Hacer changeVideo global para las miniaturas (si las añades luego)
+    // Hacer changeVideo global
     window.changeVideo = changeVideo;
 
     // Toggle mute
@@ -214,22 +213,37 @@
         
         if (player.isMuted()) {
             player.unMute();
-            const btn = document.querySelector('.mute-btn');
-            if (btn) {
-                btn.classList.add('unmuted');
-                btn.querySelector('.icon-off').style.display = 'none';
-                btn.querySelector('.icon-on').style.display = 'block';
-            }
+            isAudioEnabled = true; // ✅ Guardar preferencia del usuario
+            console.log('Audio activado manualmente');
         } else {
             player.mute();
-            const btn = document.querySelector('.mute-btn');
-            if (btn) {
-                btn.classList.remove('unmuted');
-                btn.querySelector('.icon-off').style.display = 'block';
-                btn.querySelector('.icon-on').style.display = 'none';
-            }
+            isAudioEnabled = false; // ✅ Guardar preferencia del usuario
+            console.log('Audio desactivado manualmente');
         }
+        
+        updateMuteButton();
     };
+
+    // ✅ NUEVA: Función para sincronizar el icono del botón con el estado real
+    function updateMuteButton() {
+        const btn = document.querySelector('.mute-btn');
+        if (!btn) return;
+        
+        const iconOff = btn.querySelector('.icon-off');
+        const iconOn = btn.querySelector('.icon-on');
+        
+        if (player && player.isMuted && !player.isMuted()) {
+            // Audio activado
+            btn.classList.add('unmuted');
+            if (iconOff) iconOff.style.display = 'none';
+            if (iconOn) iconOn.style.display = 'block';
+        } else {
+            // Audio muteado
+            btn.classList.remove('unmuted');
+            if (iconOff) iconOff.style.display = 'block';
+            if (iconOn) iconOn.style.display = 'none';
+        }
+    }
 
     // Auto-play cada 15 segundos
     function startAutoPlay() {
