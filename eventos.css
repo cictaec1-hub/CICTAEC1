@@ -84,6 +84,9 @@
     border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
+
+
+
 .events-title {
     font-size: 3.5rem;
     color: #fff;
@@ -1027,7 +1030,8 @@
 }
 
 .title-sub {
-    font-family: 'Brush Script MT', 'Pacifico', cursive;
+  font-family: 'Dancing Script', cursive !important;
+    font-weight: 700;
     font-size: 2.5rem;
     color: #FFD700;
     text-shadow: 
@@ -2039,7 +2043,7 @@
 
 
 
-/* Sección vídeos simplificada */
+
 /* ============================================
    SECCIÓN VÍDEOS DESDE REDES SOCIALES
    ============================================ */
