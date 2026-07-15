@@ -2263,7 +2263,6 @@
 
 
 
-
 .audio-auto-notice {
     position: absolute;
     bottom: 40px;
@@ -2274,26 +2273,18 @@
     color: #FFD700;
     padding: 14px 28px;
     border-radius: 30px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
     border: 2px solid #FFD700;
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    pointer-events: auto;
+    pointer-events: none;
     z-index: 100;
     white-space: nowrap;
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-    cursor: pointer;
 }
 
 .audio-auto-notice.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-}
-
-.audio-auto-notice:hover {
-    background: #FFD700;
-    color: #0f2b4d;
-    transform: translateX(-50%) translateY(-3px);
-    box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5);
 }
