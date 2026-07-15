@@ -303,7 +303,248 @@
     
     console.log('✅ Reproductor listo');
 })();
+// === REPRODUCTOR YOUTUBE SHORTS ===
+(function() {
+    'use strict';
+    
+    const videoIds = [
+        '8W57qwLyrNQ',
+        'FCUePKAfOrA',
+        'by8lD6VTkaU'
+    ];
+    
+    let currentIndex = 0;
+    let player = null;
+    let autoPlayInterval;
+    let isUserInteracting = false;
+    let audioEnabled = false;
+    const AUTOPLAY_DURATION = 15000;
 
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubeIframeAPIReady = function() {
+        createPlayer();
+    };
+    
+    function createPlayer() {
+        if (!document.getElementById('youtubeShortsPlayer')) return;
+        
+        player = new YT.Player('youtubeShortsPlayer', {
+            height: '100%',
+            width: '100%',
+            videoId: videoIds[0],
+            playerVars: {
+                'autoplay': 1,
+                'controls': 0,
+                'disablekb': 1,
+                'fs': 0,
+                'modestbranding': 1,
+                'rel': 0,
+                'enablejsapi': 1
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.mute();
+        event.target.playVideo();
+        updateMuteButtonUI();
+        startAutoPlay();
+        
+        // Mostrar aviso tras 2 segundos
+        setTimeout(showAudioNotice, 2000);
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+            nextVideo();
+        }
+        
+        if (event.data === YT.PlayerState.PLAYING) {
+            if (audioEnabled) {
+                setTimeout(() => {
+                    if (player && player.unMute) {
+                        player.unMute();
+                        updateMuteButtonUI();
+                    }
+                }, 500);
+            }
+            resetAutoPlay();
+        }
+    }
+
+    // Activar audio en el primer click/touch
+    function enableAudioOnFirstClick() {
+        if (!audioEnabled && player) {
+            player.unMute();
+            audioEnabled = true;
+            updateMuteButtonUI();
+            hideAudioNotice();
+            console.log(' Audio activado');
+        }
+        document.removeEventListener('click', enableAudioOnFirstClick);
+        document.removeEventListener('touchstart', enableAudioOnFirstClick);
+    }
+
+    document.addEventListener('click', enableAudioOnFirstClick, { once: true });
+    document.addEventListener('touchstart', enableAudioOnFirstClick, { once: true });
+
+    function changeVideo(index) {
+        if (index < 0) index = videoIds.length - 1;
+        if (index >= videoIds.length) index = 0;
+        
+        currentIndex = index;
+        const videoId = videoIds[index];
+        
+        if (player && player.loadVideoById) {
+            player.loadVideoById(videoId);
+            
+            if (audioEnabled) {
+                setTimeout(() => {
+                    if (player && player.unMute) {
+                        player.unMute();
+                        updateMuteButtonUI();
+                    }
+                }, 800);
+            }
+        }
+        resetAutoPlay();
+    }
+
+    window.nextVideo = function() {
+        isUserInteracting = false;
+        changeVideo(currentIndex + 1);
+    };
+
+    window.prevVideo = function() {
+        isUserInteracting = false;
+        changeVideo(currentIndex - 1);
+    };
+
+    window.toggleMute = function() {
+        if (!player) return;
+        
+        if (player.isMuted()) {
+            player.unMute();
+            audioEnabled = true;
+            hideAudioNotice();
+        } else {
+            player.mute();
+            audioEnabled = false;
+            setTimeout(showAudioNotice, 1000);
+        }
+        updateMuteButtonUI();
+    };
+
+    function updateMuteButtonUI() {
+        const btn = document.querySelector('.mute-btn');
+        if (!btn || !player) return;
+        
+        const iconOff = btn.querySelector('.icon-off');
+        const iconOn = btn.querySelector('.icon-on');
+        
+        if (!player.isMuted()) {
+            btn.classList.add('unmuted');
+            if (iconOff) iconOff.style.display = 'none';
+            if (iconOn) iconOn.style.display = 'block';
+        } else {
+            btn.classList.remove('unmuted');
+            if (iconOff) iconOff.style.display = 'block';
+            if (iconOn) iconOn.style.display = 'none';
+        }
+    }
+
+    // ✅ NOTIFICACIÓN MEJORADA
+    function showAudioNotice() {
+        console.log('📢 Mostrando notificación de audio');
+        
+        // Buscar el contenedor del vídeo
+        const wrapper = document.querySelector('.main-video-wrapper');
+        if (!wrapper) {
+            console.error('❌ No se encontró .main-video-wrapper');
+            return;
+        }
+        
+        // Eliminar notificación anterior si existe
+        const existingNotice = wrapper.querySelector('.audio-auto-notice');
+        if (existingNotice) existingNotice.remove();
+        
+        // Crear nueva notificación
+        const notice = document.createElement('div');
+        notice.className = 'audio-auto-notice';
+        notice.innerHTML = ' Haz clic para activar el sonido';
+        notice.style.cursor = 'pointer';
+        
+        // Al hacer clic en la notificación, activar audio
+        notice.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (player && !audioEnabled) {
+                player.unMute();
+                audioEnabled = true;
+                updateMuteButtonUI();
+                hideAudioNotice();
+                console.log('🔊 Audio activado desde notificación');
+            }
+        });
+        
+        wrapper.appendChild(notice);
+        
+        // Forzar reflow para que la animación funcione
+        setTimeout(() => {
+            notice.classList.add('show');
+        }, 100);
+        
+        console.log('✅ Notificación añadida al DOM');
+    }
+
+    function hideAudioNotice() {
+        const notice = document.querySelector('.audio-auto-notice');
+        if (notice) {
+            notice.classList.remove('show');
+            setTimeout(() => {
+                if (notice.parentNode) notice.remove();
+            }, 500);
+        }
+    }
+
+    function startAutoPlay() {
+        resetAutoPlay();
+        autoPlayInterval = setInterval(() => {
+            if (!isUserInteracting && player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+                nextVideo();
+            }
+        }, AUTOPLAY_DURATION);
+    }
+
+    function resetAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    const container = document.querySelector('.video-player-container');
+    if (container) {
+        container.addEventListener('mouseenter', () => {
+            isUserInteracting = true;
+            clearInterval(autoPlayInterval);
+            if (player) player.pauseVideo();
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            isUserInteracting = false;
+            if (player) player.playVideo();
+            startAutoPlay();
+        });
+    }
+    
+    console.log('✅ Reproductor listo');
+})();
 
 
 
