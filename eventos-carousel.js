@@ -90,7 +90,7 @@
 
 
 
-// === REPRODUCTOR YOUTUBE SHORTS CON AUTO-AUDIO AL SCROLL ===
+// === REPRODUCTOR YOUTUBE SHORTS CON ACTIVACIÓN AL PRIMER CLIC ===
 (function() {
     'use strict';
     
@@ -104,34 +104,13 @@
     let player = null;
     let autoPlayInterval;
     let isUserInteracting = false;
-    let userHasInteracted = false; // ✅ Clave: detecta primera interacción
-    let audioUnlocked = false; // ✅ Clave: detecta si ya desbloqueamos el audio
+    let audioEnabled = false;
     const AUTOPLAY_DURATION = 15000;
 
-    // Cargar API de YouTube
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // ✅ DETECTAR PRIMERA INTERACCIÓN DEL USUARIO (scroll, clic, tecla, touch)
-    function markUserInteraction() {
-        if (!userHasInteracted) {
-            userHasInteracted = true;
-            console.log('✅ Usuario interactuó con la página');
-            
-            // Si el vídeo ya está visible, activar audio inmediatamente
-            if (player && audioUnlocked) {
-                tryUnlockAudio();
-            }
-        }
-    }
-
-    // Escuchar TODOS los tipos de interacción
-    document.addEventListener('scroll', markUserInteraction, { passive: true });
-    document.addEventListener('click', markUserInteraction, { passive: true });
-    document.addEventListener('touchstart', markUserInteraction, { passive: true });
-    document.addEventListener('keydown', markUserInteraction, { passive: true });
 
     window.onYouTubeIframeAPIReady = function() {
         createPlayer();
@@ -166,8 +145,8 @@
         updateMuteButtonUI();
         startAutoPlay();
         
-        // ✅ INICIAR OBSERVER PARA DETECTAR CUANDO EL VÍDEO ES VISIBLE
-        setupIntersectionObserver();
+        // Mostrar aviso sutil para activar sonido
+        showAudioNotice();
     }
 
     function onPlayerStateChange(event) {
@@ -176,77 +155,33 @@
         }
         
         if (event.data === YT.PlayerState.PLAYING) {
-            // Si el usuario ya interactuó y el audio está desbloqueado, activarlo
-            if (userHasInteracted && audioUnlocked) {
+            if (audioEnabled) {
                 setTimeout(() => {
-                    tryUnlockAudio();
-                }, 800);
+                    player.unMute();
+                    updateMuteButtonUI();
+                }, 500);
             }
             resetAutoPlay();
         }
     }
 
-    // ✅ INTERSECTION OBSERVER: Detecta cuando el vídeo entra en pantalla
-    function setupIntersectionObserver() {
-        const container = document.querySelector('.video-player-container');
-        if (!container) return;
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-                    // El vídeo está más del 50% visible
-                    console.log('👁️ Vídeo visible en pantalla');
-                    audioUnlocked = true;
-                    
-                    // Si el usuario ya interactuó, activar audio
-                    if (userHasInteracted) {
-                        tryUnlockAudio();
-                    }
-                }
-            });
-        }, {
-            threshold: [0.5] // Se activa cuando el 50% del elemento es visible
-        });
-        
-        observer.observe(container);
+    // ✅ TRUCO: El primer clic en CUALQUIER parte de la página activa el audio
+    function enableAudioOnFirstClick() {
+        if (!audioEnabled && player) {
+            player.unMute();
+            audioEnabled = true;
+            updateMuteButtonUI();
+            hideAudioNotice();
+            console.log('🔊 Audio activado por interacción del usuario');
+        }
+        // Eliminar el listener después del primer clic para no interferir
+        document.removeEventListener('click', enableAudioOnFirstClick);
+        document.removeEventListener('touchstart', enableAudioOnFirstClick);
     }
 
-    // ✅ INTENTAR ACTIVAR EL AUDIO (funciona si el usuario ya interactuó)
-    function tryUnlockAudio() {
-        if (!player || !player.unMute) return;
-        
-        try {
-            player.unMute();
-            
-            // Verificar si realmente se desmuté después de un breve momento
-            setTimeout(() => {
-                if (player && !player.isMuted()) {
-                    console.log('🔊 ¡Audio activado automáticamente!');
-                    updateMuteButtonUI();
-                    
-                    // Mostrar notificación temporal
-                    let notice = document.querySelector('.audio-auto-notice');
-                    if (!notice) {
-                        notice = document.createElement('div');
-                        notice.className = 'audio-auto-notice';
-                        notice.textContent = '🔊 Audio activado';
-                        document.querySelector('.main-video-wrapper').appendChild(notice);
-                    }
-                    notice.classList.add('show');
-                    
-                    // Ocultar la notificación después de 2 segundos
-                    setTimeout(() => {
-                        notice.classList.remove('show');
-                    }, 2000);
-                    
-                } else {
-                    console.log('⚠️ El navegador bloqueó el audio automático');
-                }
-            }, 300);
-        } catch (e) {
-            console.log('Error al activar audio:', e);
-        }
-    }
+    // Escuchar el primer clic o toque en toda la página
+    document.addEventListener('click', enableAudioOnFirstClick, { once: true });
+    document.addEventListener('touchstart', enableAudioOnFirstClick, { once: true });
 
     function changeVideo(index) {
         if (index < 0) index = videoIds.length - 1;
@@ -255,19 +190,16 @@
         currentIndex = index;
         const videoId = videoIds[index];
         
-        console.log('Cambiando a vídeo:', videoId);
-        
         if (player && player.loadVideoById) {
             player.loadVideoById(videoId);
             
-            // Si el audio está desbloqueado, activarlo en el nuevo vídeo
-            if (audioUnlocked && userHasInteracted) {
+            if (audioEnabled) {
                 setTimeout(() => {
-                    tryUnlockAudio();
-                }, 1500);
+                    player.unMute();
+                    updateMuteButtonUI();
+                }, 800);
             }
         }
-        
         resetAutoPlay();
     }
 
@@ -281,20 +213,18 @@
         changeVideo(currentIndex - 1);
     };
 
-    window.changeVideo = changeVideo;
-
-    // Toggle mute manual (por si el usuario quiere silenciar)
     window.toggleMute = function() {
         if (!player) return;
         
         if (player.isMuted()) {
             player.unMute();
-            audioUnlocked = true;
+            audioEnabled = true;
+            hideAudioNotice();
         } else {
             player.mute();
-            audioUnlocked = false;
+            audioEnabled = false;
+            showAudioNotice();
         }
-        
         updateMuteButtonUI();
     };
 
@@ -313,6 +243,32 @@
             btn.classList.remove('unmuted');
             if (iconOff) iconOff.style.display = 'block';
             if (iconOn) iconOn.style.display = 'none';
+        }
+    }
+
+    function showAudioNotice() {
+        let notice = document.querySelector('.audio-auto-notice');
+        if (!notice) {
+            notice = document.createElement('div');
+            notice.className = 'audio-auto-notice';
+            notice.innerHTML = '🔊 Haz clic en la página para activar el sonido';
+            notice.style.cursor = 'pointer';
+            notice.onclick = function() {
+                player.unMute();
+                audioEnabled = true;
+                hideAudioNotice();
+                updateMuteButtonUI();
+            };
+            document.querySelector('.main-video-wrapper').appendChild(notice);
+        }
+        setTimeout(() => notice.classList.add('show'), 1000); // Aparece tras 1 segundo
+    }
+
+    function hideAudioNotice() {
+        const notice = document.querySelector('.audio-auto-notice');
+        if (notice) {
+            notice.classList.remove('show');
+            setTimeout(() => { if(notice.parentNode) notice.remove(); }, 500);
         }
     }
 
@@ -345,8 +301,9 @@
         });
     }
     
-    console.log('✅ Reproductor listo con auto-audio al scroll');
+    console.log('✅ Reproductor listo');
 })();
+
 
 
 
