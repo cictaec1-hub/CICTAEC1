@@ -144,7 +144,7 @@
         updateMuteButtonUI();
         startAutoPlay();
         
-        // Mostrar aviso tras 2 segundos
+        // Mostrar aviso grande tras 2 segundos
         setTimeout(showAudioNotice, 2000);
     }
 
@@ -166,74 +166,38 @@
         }
     }
 
-    // ✅ ACTIVAR AUDIO CON RUEDA DEL RATÓN (desktop)
-    function enableAudioOnWheel(e) {
+    // ✅ ESTA FUNCIÓN SE EJECUTA CON GESTOS VÁLIDOS (Click, Rueda presionada, Toque)
+    function enableAudioOnValidGesture(e) {
         if (!audioEnabled && player) {
             try {
                 player.unMute();
                 audioEnabled = true;
                 updateMuteButtonUI();
                 hideAudioNotice();
-                console.log('🔊 Audio activado por rueda del ratón');
+                console.log('🔊 Audio activado por gesto válido del usuario');
                 
-                // Eliminar listeners una vez activado
-                document.removeEventListener('wheel', enableAudioOnWheel, { passive: true });
-            } catch (err) {
-                console.log('Error al activar audio:', err);
-            }
-        }
-    }
-
-    // ✅ ACTIVAR AUDIO CON TECLAS DE SCROLL (desktop)
-    function enableAudioOnKey(e) {
-        const scrollKeys = ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' ', 'Home', 'End'];
-        if (scrollKeys.includes(e.key) && !audioEnabled && player) {
-            try {
-                player.unMute();
-                audioEnabled = true;
-                updateMuteButtonUI();
-                hideAudioNotice();
-                console.log('🔊 Audio activado por teclado');
+                // Eliminar listeners para no interferir más
+                document.removeEventListener('mousedown', enableAudioOnValidGesture);
+                document.removeEventListener('touchend', enableAudioOnValidGesture);
                 document.removeEventListener('keydown', enableAudioOnKey);
             } catch (err) {
-                console.log('Error al activar audio:', err);
+                console.log('El navegador bloqueó el audio:', err);
             }
         }
     }
 
-    // ✅ ACTIVAR AUDIO CON TOUCH MOVE (móvil - scroll con el dedo)
-    let touchStartY = 0;
-    function enableAudioOnTouchStart(e) {
-        touchStartY = e.touches[0].clientY;
-    }
-
-    function enableAudioOnTouchMove(e) {
-        if (!audioEnabled && player) {
-            const touchY = e.touches[0].clientY;
-            const diff = Math.abs(touchY - touchStartY);
-            
-            // Si el usuario movió el dedo más de 30px, es scroll real
-            if (diff > 30) {
-                try {
-                    player.unMute();
-                    audioEnabled = true;
-                    updateMuteButtonUI();
-                    hideAudioNotice();
-                    console.log('🔊 Audio activado por touch scroll');
-                    document.removeEventListener('touchstart', enableAudioOnTouchStart);
-                    document.removeEventListener('touchmove', enableAudioOnTouchMove);
-                } catch (err) {
-                    console.log('Error al activar audio:', err);
-                }
-            }
+    // ✅ Teclas de dirección y espacio también cuentan como gesto válido
+    function enableAudioOnKey(e) {
+        const scrollKeys = ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' '];
+        if (scrollKeys.includes(e.key)) {
+            enableAudioOnValidGesture(e);
         }
     }
 
-    // Registrar todos los listeners
-    document.addEventListener('wheel', enableAudioOnWheel, { passive: true });
+    // Registramos mousedown (incluye presionar la rueda) y touchend (toque en móvil)
+    document.addEventListener('mousedown', enableAudioOnValidGesture);
+    document.addEventListener('touchend', enableAudioOnValidGesture);
     document.addEventListener('keydown', enableAudioOnKey);
-    document.addEventListener('touchstart', enableAudioOnTouchStart, { passive: true });
-    document.addEventListener('touchmove', enableAudioOnTouchMove, { passive: true });
 
     function changeVideo(index) {
         if (index < 0) index = videoIds.length - 1;
@@ -300,6 +264,7 @@
         }
     }
 
+    // ✅ NOTIFICACIÓN GRANDE Y CENTRADA (IMPOSIBLE DE NO VER)
     function showAudioNotice() {
         if (audioEnabled) return;
         
@@ -311,10 +276,13 @@
         
         const notice = document.createElement('div');
         notice.className = 'audio-auto-notice';
-        notice.innerHTML = '🔊 Desliza o usa la rueda para activar sonido';
+        notice.innerHTML = '🔊 Toca la pantalla o presiona la rueda del ratón para activar el sonido';
         wrapper.appendChild(notice);
         
-        setTimeout(() => notice.classList.add('show'), 100);
+        // Forzar animación
+        requestAnimationFrame(() => {
+            notice.classList.add('show');
+        });
     }
 
     function hideAudioNotice() {
