@@ -89,7 +89,7 @@
 
 
 
-// === REPRODUCTOR YOUTUBE SHORTS ===
+// === REPRODUCTOR YOUTUBE SHORTS (Efecto Scroll-to-Unmute) ===
 (function() {
     'use strict';
     
@@ -103,9 +103,10 @@
     let player = null;
     let autoPlayInterval;
     let isUserInteracting = false;
-    let audioEnabled = false;
+    let hasUserInteracted = false; // Clave: se activa con el primer gesto válido
     const AUTOPLAY_DURATION = 15000;
 
+    // Cargar API de YouTube
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     const firstScriptTag = document.getElementsByTagName('script')[0];
@@ -144,8 +145,11 @@
         updateMuteButtonUI();
         startAutoPlay();
         
-        // Mostrar aviso grande tras 2 segundos
-        setTimeout(showAudioNotice, 2000);
+        // Mostrar aviso tras 1.5 segundos
+        setTimeout(showAudioNotice, 1500);
+        
+        // Iniciar el observador de scroll
+        setupScrollObserver();
     }
 
     function onPlayerStateChange(event) {
@@ -154,50 +158,64 @@
         }
         
         if (event.data === YT.PlayerState.PLAYING) {
-            if (audioEnabled) {
+            // Si el usuario ya interactuó, asegurar que el nuevo vídeo tenga audio
+            if (hasUserInteracted && player && player.isMuted()) {
                 setTimeout(() => {
-                    if (player && player.unMute) {
-                        player.unMute();
-                        updateMuteButtonUI();
-                    }
-                }, 500);
+                    player.unMute();
+                    updateMuteButtonUI();
+                    hideAudioNotice();
+                }, 600);
             }
             resetAutoPlay();
         }
     }
 
-    // ✅ ESTA FUNCIÓN SE EJECUTA CON GESTOS VÁLIDOS (Click, Rueda presionada, Toque)
-    function enableAudioOnValidGesture(e) {
-        if (!audioEnabled && player) {
-            try {
+    // ✅ 1. DETECTAR PRIMERA INTERACCIÓN VÁLIDA (Click, Toque, Tecla)
+    function registerFirstInteraction() {
+        if (!hasUserInteracted) {
+            hasUserInteracted = true;
+            console.log('✅ Interacción de usuario detectada (Audio desbloqueado)');
+            
+            // Si el vídeo ya está en pantalla, activar audio inmediatamente
+            if (player && player.isMuted()) {
                 player.unMute();
-                audioEnabled = true;
                 updateMuteButtonUI();
                 hideAudioNotice();
-                console.log('🔊 Audio activado por gesto válido del usuario');
-                
-                // Eliminar listeners para no interferir más
-                document.removeEventListener('mousedown', enableAudioOnValidGesture);
-                document.removeEventListener('touchend', enableAudioOnValidGesture);
-                document.removeEventListener('keydown', enableAudioOnKey);
-            } catch (err) {
-                console.log('El navegador bloqueó el audio:', err);
             }
+            
+            // Limpiar listeners para ahorrar recursos
+            document.removeEventListener('mousedown', registerFirstInteraction);
+            document.removeEventListener('touchstart', registerFirstInteraction);
+            document.removeEventListener('keydown', registerFirstInteraction);
         }
     }
 
-    // ✅ Teclas de dirección y espacio también cuentan como gesto válido
-    function enableAudioOnKey(e) {
-        const scrollKeys = ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' '];
-        if (scrollKeys.includes(e.key)) {
-            enableAudioOnValidGesture(e);
-        }
-    }
+    // Escuchamos gestos que el navegador SÍ acepta para desbloquear audio
+    document.addEventListener('mousedown', registerFirstInteraction); // Incluye clic en barra de scroll
+    document.addEventListener('touchstart', registerFirstInteraction, { passive: true }); // Toque en móvil
+    document.addEventListener('keydown', registerFirstInteraction); // Flechas del teclado
 
-    // Registramos mousedown (incluye presionar la rueda) y touchend (toque en móvil)
-    document.addEventListener('mousedown', enableAudioOnValidGesture);
-    document.addEventListener('touchend', enableAudioOnValidGesture);
-    document.addEventListener('keydown', enableAudioOnKey);
+    // ✅ 2. OBSERVADOR DE SCROLL (Detecta cuando el vídeo es visible)
+    function setupScrollObserver() {
+        const container = document.querySelector('.video-player-container');
+        if (!container) return;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Cuando más del 50% del vídeo es visible al hacer scroll
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                    if (hasUserInteracted && player && player.isMuted()) {
+                        player.unMute();
+                        updateMuteButtonUI();
+                        hideAudioNotice();
+                        console.log('🔊 Audio activado automáticamente al hacer scroll');
+                    }
+                }
+            });
+        }, { threshold: 0.5 }); // Se dispara cuando el 50% del elemento es visible
+        
+        observer.observe(container);
+    }
 
     function changeVideo(index) {
         if (index < 0) index = videoIds.length - 1;
@@ -209,9 +227,10 @@
         if (player && player.loadVideoById) {
             player.loadVideoById(videoId);
             
-            if (audioEnabled) {
+            // Si ya hubo interacción, preparar el audio para el nuevo vídeo
+            if (hasUserInteracted) {
                 setTimeout(() => {
-                    if (player && player.unMute) {
+                    if (player && player.isMuted()) {
                         player.unMute();
                         updateMuteButtonUI();
                     }
@@ -236,11 +255,10 @@
         
         if (player.isMuted()) {
             player.unMute();
-            audioEnabled = true;
+            hasUserInteracted = true;
             hideAudioNotice();
         } else {
             player.mute();
-            audioEnabled = false;
             setTimeout(showAudioNotice, 1000);
         }
         updateMuteButtonUI();
@@ -264,9 +282,8 @@
         }
     }
 
-    // ✅ NOTIFICACIÓN GRANDE Y CENTRADA (IMPOSIBLE DE NO VER)
     function showAudioNotice() {
-        if (audioEnabled) return;
+        if (!player || !player.isMuted()) return;
         
         const wrapper = document.querySelector('.main-video-wrapper');
         if (!wrapper) return;
@@ -276,13 +293,10 @@
         
         const notice = document.createElement('div');
         notice.className = 'audio-auto-notice';
-        notice.innerHTML = '🔊 Toca la pantalla o presiona la rueda del ratón para activar el sonido';
+        notice.innerHTML = '🔊 Desplázate o toca la pantalla para activar el sonido';
         wrapper.appendChild(notice);
         
-        // Forzar animación
-        requestAnimationFrame(() => {
-            notice.classList.add('show');
-        });
+        requestAnimationFrame(() => notice.classList.add('show'));
     }
 
     function hideAudioNotice() {
@@ -291,7 +305,7 @@
             notice.classList.remove('show');
             setTimeout(() => {
                 if (notice.parentNode) notice.remove();
-            }, 500);
+            }, 400);
         }
     }
 
@@ -324,5 +338,5 @@
         });
     }
     
-    console.log('✅ Reproductor listo');
+    console.log('✅ Reproductor listo con detección de scroll');
 })();
