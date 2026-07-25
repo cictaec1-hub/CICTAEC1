@@ -96,7 +96,14 @@
     const videoIds = [
         '8W57qwLyrNQ',
         'FCUePKAfOrA',
-        'by8lD6VTkaU'
+        'by8lD6VTkaU',
+         'KwX9Hv3s76c',
+          'CWTXD1ysiq8',
+           'ih40e8lRHEc',
+            'Hb0dEY4_A8A',
+             'bPLiiI0i7NE',
+              'x1hnCGSF9k8'
+        
     ];
     
     let currentIndex = 0;
