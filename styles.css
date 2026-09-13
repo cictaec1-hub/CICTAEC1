@@ -227,14 +227,55 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    width: 95%;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
-.hero h1, .hero h2 {
+
+/* Detalle estético: línea fina bajo CICTAEC */
+.hero h1 {
+    position: relative;
+    padding-bottom: 8px; /* Reducido de 20px a 8px */
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+}
+
+/* Subtítulo dorado debajo de CICTAEC */
+/* Subtítulo elegante del Slide 1 */
+.hero-subtitle-inline {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+    font-weight: 400;
+    color: #F4F4F4;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    line-height: 1.4;
+    margin-top: 5px; /* Reducido de 25px a 12px */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.hero h2 {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .hero p {
     font-size: 18px;
     letter-spacing: 2px;

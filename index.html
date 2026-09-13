@@ -124,6 +124,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         /* Estilos del banner de consentimiento de cookies */
         #cookie-consent-banner { position: fixed; right: 20px; bottom: 20px; left:20px; z-index: 9999; display:flex; justify-content:space-between; align-items:center; background:#fff; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.12); padding:16px; gap:12px; }
@@ -194,41 +195,49 @@
         <main>
 
     <section id="inicio" class="hero">
-        <div class="carousel-container">
-            <div class="slide active">
-                <img src="images/index_volcano.jpg" alt="Volcán Cotopaxi - Ecuador, destino turístico promovido por CICTAEC">
-                <div class="hero-content">
-                    <h1 data-key="hero_title">CICTAEC – Cámara Internacional de Comercio y Turismo Ecuador Europa</h1>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="images/index_bano_ecuador.jpg" alt="Baños de Agua Santa, Ecuador - Comercio Internacional CICTAEC">
-                <div class="hero-content">
-                    <h2 data-key="hero_slide_connect">CONECTANDO CONTINENTES</h2>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="images/index_hero2.jpg" alt="Turismo Ecuador Europa - CICTAEC">
-                <div class="hero-content">
-                    <h2 data-key="hero_slide_bridge">TU PUENTE AL MUNDO</h2>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="images/commun_banderas_internacionales.jpg" alt="Banderas internacionales - CICTAEC nexo Ecuador y Europa">
-                <div class="hero-content">
-                    <h2 data-key="hero_slide_3">CICTAEC</h2>
-                </div>
+    <div class="carousel-container">
+        
+        <!-- SLIDE 1 -->
+        <div class="slide active">
+            <img src="images/index_volcano.jpg" alt="Volcán Cotopaxi">
+            <div class="hero-content">
+                <h1>
+                    <span data-key="hero_title">CICTAEC</span>
+                    <br>
+                    <span class="hero-subtitle-inline" data-key="hero_subtitle">Cámara Internacional de Comercio y Turismo </span>
+                    <span class="hero-subtitle-inline" data-key="hero_subtitle2">Ecuador - Europa</span>
+                </h1>
             </div>
         </div>
 
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <img src="images/index_bano_ecuador.jpg" alt="Baños de Agua Santa, Ecuador - Comercio Internacional CICTAEC">
+            <div class="hero-content">
+                <h2 data-key="hero_slide_connect">CONECTANDO CONTINENTES</h2>
+            </div>
+        </div>
 
-    </section>
+        <!-- SLIDE 3 -->
+        <div class="slide">
+            <img src="images/index_hero2.jpg" alt="Turismo Ecuador Europa - CICTAEC">
+            <div class="hero-content">
+                <h2 data-key="hero_slide_bridge">TU PUENTE AL MUNDO</h2>
+            </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide">
+            <img src="images/commun_banderas_internacionales.jpg" alt="Banderas internacionales - CICTAEC nexo Ecuador y Europa">
+            <div class="hero-content">
+                <h2 data-key="hero_slide_3">CICTAEC</h2>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
-<<<<<<< HEAD
 <section id="festival-tricolor" class="festival-tricolor-section">
     
     <!-- Fondo con gradiente tricolor animado -->
@@ -266,64 +275,189 @@
 </div>
 
 
-<!-- SECCIÓN VÍDEOS DESDE REDES SOCIALES -->
-<div class="festival-social-videos animate-fade-in-up delay-1">
-    <div class="social-videos-header">
-        <span class="header-line"></span>
-        <span class="header-text">RECUERDOS DEL EVENTO</span>
-        <span class="header-line"></span>
-    </div>
+<!-- SLIDESHOW MASONRY CINEMÁTICO - RECUERDOS DEL EVENTO -->
+<section class="cinematic-masonry-slideshow">
     
-    <div class="video-player-container">
-        <!-- Reproductor YouTube -->
-        <div class="main-video-wrapper">
-            <div id="youtubeShortsPlayer"></div>
-            
-            <!-- Overlay con botón de sonido -->
-            <div class="video-controls">
-                <button class="mute-btn" onclick="toggleMute()" title="Activar sonido">
-                    <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                        <path d="M23 9l-6 6M17 9l6 6"/>
-                    </svg>
-                    <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
-                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
-                </button>
-                
-                <div class="platform-badge">
-                    <span>▶️ YouTube</span>
+    <div class="slideshow-header">
+        <span class="slideshow-badge">GALERÍA DE RECUERDOS</span>
+        <h2 class="slideshow-title">Momentos que Quedaron para la Historia</h2>
+       
+    </div>
+
+    <div class="cinematic-slideshow-wrapper">
+        
+        <!-- SLIDE 1: 12 celdas completas (4+2+2+4=12) -->
+        <div class="masonry-slide active" data-slide="1">
+            <div class="masonry-grid">
+                <div class="masonry-item item-large">
+                    <img src="images/1.jpg" alt="Festival" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="overlay-icon">🎉</span>
+                        <span class="overlay-text">Festival Tricolor 2026</span>
+                    </div>
+                </div>
+                <div class="masonry-item item-gif-vertical">
+                    <img src="images/gif1.gif" alt="Energía" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="overlay-text">Energía en vivo</span>
+                    </div>
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/2.jpg" alt="Artista" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="overlay-text">Show en vivo</span>
+                    </div>
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/3.jpg" alt="Baile" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/4.jpg" alt="Animación" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/5.jpg" alt="Público" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/6.jpg" alt="Escenario" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/7.jpg" alt="Luces" loading="lazy">
                 </div>
             </div>
         </div>
-        
-        <!-- Botones de navegación MEJORADOS (clase cambiada a video-nav-btn) -->
-        <button class="video-nav-btn prev" onclick="prevVideo()" title="Anterior">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+
+        <!-- SLIDE 2: 12 celdas completas -->
+        <div class="masonry-slide" data-slide="2">
+            <div class="masonry-grid">
+                <div class="masonry-item item-large">
+                    <img src="images/8.jpg" alt="Cierre" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="overlay-icon">🎤</span>
+                        <span class="overlay-text">25+ Artistas</span>
+                    </div>
+                </div>
+                <div class="masonry-item item-gif-vertical">
+                    <img src="images/gif2.gif" alt="Movimiento" loading="lazy">
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/9.jpg" alt="Cultura" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="overlay-text">Gran final</span>
+                    </div>
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/10.jpg" alt="Música" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/11.jpg" alt="Artesanía" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/12.jpg" alt="Bandera" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/13.jpg" alt="Stand" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/14.jpg" alt="Bebidas" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: 12 celdas completas -->
+        <div class="masonry-slide" data-slide="3">
+            <div class="masonry-grid">
+                <div class="masonry-item item-large">
+                    <img src="images/15.jpg" alt="Postres" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="overlay-icon">🎭</span>
+                        <span class="overlay-text">Cultura y Tradición</span>
+                    </div>
+                </div>
+                <div class="masonry-item item-gif-vertical">
+                    <img src="images/gif3.gif" alt="Ambiente" loading="lazy">
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/16.jpg" alt="Ambiente" loading="lazy">
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/17.jpg" alt="Noche" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/18.jpg" alt="Detalle" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/19.jpg" alt="Detalle" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/20.jpg" alt="Detalle" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/21.jpg" alt="Detalle" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: 12 celdas completas -->
+        <div class="masonry-slide" data-slide="4">
+            <div class="masonry-grid">
+                <div class="masonry-item item-large">
+                    <img src="images/22.jpg" alt="Final" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="overlay-icon">✨</span>
+                        <span class="overlay-text">Noche Inolvidable</span>
+                    </div>
+                </div>
+                <div class="masonry-item item-gif-vertical">
+                    <img src="images/gif4.gif" alt="Celebración" loading="lazy">
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/23.jpg" alt="Celebración" loading="lazy">
+                </div>
+                <div class="masonry-item item-medium">
+                    <img src="images/24.jpg" alt="Recuerdo" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/1.jpg" alt="Recuerdo" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/2.jpg" alt="Recuerdo" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/3.jpg" alt="Recuerdo" loading="lazy">
+                </div>
+                <div class="masonry-item item-small">
+                    <img src="images/4.jpg" alt="Recuerdo" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de navegación (DENTRO del wrapper) -->
+        <button class="slideshow-nav-btn prev-btn" id="btnPrev" aria-label="Slide anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
         </button>
-        <button class="video-nav-btn next" onclick="nextVideo()" title="Siguiente">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        <button class="slideshow-nav-btn next-btn" id="btnNext" aria-label="Siguiente slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </button>
     </div>
-    
-    <!-- Links a redes -->
-    <div class="social-platforms-links">
-        <a href="https://youtube.com/@CICTAEC" target="_blank" class="platform-link youtube">
-            <span>YouTube</span>
-        </a>
-        <a href="https://instagram.com/cictaecoficial" target="_blank" class="platform-link instagram">
-            <span>Instagram</span>
-        </a>
-        <a href="https://tiktok.com/@cictaec" target="_blank" class="platform-link tiktok">
-            <span>TikTok</span>
-        </a>
+
+    <!-- Indicadores (Dots) -->
+    <div class="slideshow-dots" id="slideshowDots">
+        <span class="dot active" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
     </div>
-</div>
+
+    <!-- Contador de slides -->
+    <div class="slideshow-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+    </div>
+
+</section>
 
 
 
@@ -766,38 +900,7 @@
     </div>
 </div>
 
-        <!-- Info del Evento (Lugar, fecha, precio) -->
-        <div class="festival-info-strip animate-fade-in-up delay-3">
-            <div class="info-block">
-                <span class="info-icon"></span>
-                <div class="info-content">
-                    <span class="info-label">Lugar</span>
-                    <span class="info-value">Olimpic Arena Badalona</span>
-                </div>
-            </div>
-            <div class="info-block">
-                <span class="info-icon">📅</span>
-                <div class="info-content">
-                    <span class="info-label">Fecha</span>
-                    <span class="info-value">Sábado 1 Agosto 2026</span>
-                </div>
-            </div>
-            <div class="info-block">
-                <span class="info-icon">🕐</span>
-                <div class="info-content">
-                    <span class="info-label">Puertas</span>
-                    <span class="info-value">12:00h</span>
-                </div>
-            </div>
-            <div class="info-block highlight">
-                <span class="info-icon">🎟️</span>
-                <div class="info-content">
-                    <span class="info-label">Entradas desde</span>
-                    <span class="info-value price">16,50€</span>
-                </div>
-            </div>
-        </div>
-
+    
          <!-- 4. PRUEBA SOCIAL: Reencaminando la "Info del Evento" como Estadísticas de Éxito -->
         <div class="festival-info-strip animate-fade-in-up delay-3">
             <div class="info-block">
@@ -822,6 +925,29 @@
                 </div>
             </div>
 
+            <!-- 5. TESTIMONIOS (Nuevo bloque usando tu estilo oscuro/dorado) -->
+        <div class="archive-testimonials animate-fade-in-up delay-3" style="margin: 40px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,215,0,0.2);">
+            <h3 style="color: #FFD700; text-align: center; margin-bottom: 25px; font-size: 1.5rem;">💬 Lo que dijeron nuestros asistentes</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div style="background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; border-left: 4px solid #FFD700;">
+                    <p style="color: rgba(255,255,255,0.9); font-style: italic; margin: 0 0 10px 0; line-height: 1.5;">"Una celebración increíble que nos hizo sentir como en casa. ¡Gracias CICTAEC por tanto esfuerzo!"</p>
+                    <span style="color: #FFD700; font-weight: 700; font-size: 0.9rem;">- María G.</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; border-left: 4px solid #FFD700;">
+                    <p style="color: rgba(255,255,255,0.9); font-style: italic; margin: 0 0 10px 0; line-height: 1.5;">"La mejor manera de celebrar nuestras raíces en Barcelona. Ya estoy esperando la próxima edición."</p>
+                    <span style="color: #FFD700; font-weight: 700; font-size: 0.9rem;">- Carlos R.</span>
+                </div>
+            </div.>
+        </div>
+
+        <!-- 6. ACTIVIDADES: Marcadas como completadas -->
+        <div class="festival-activities animate-fade-in-up delay-3">
+            <div class="activity-item"><span class="activity-icon">🎵</span><span class="activity-text">Música en Vivo ✅</span></div>
+            <div class="activity-item"><span class="activity-icon">💃</span><span class="activity-text">Baile y Folklore ✅</span></div>
+            <div class="activity-item"><span class="activity-icon">🍽️</span><span class="activity-text">Gastronomía ✅</span></div>
+            <div class="activity-item"><span class="activity-icon"></span><span class="activity-text">Arte y Cultura ✅</span></div>
+            <div class="activity-item"><span class="activity-icon">🎮</span><span class="activity-text">Ambiente Familiar ✅</span></div>
+        </div>
         <!-- Sponsors -->
         <div class="festival-sponsors animate-fade-in-up delay-4">
             <div class="sponsors-header">
@@ -886,12 +1012,6 @@
 </style>
 
 </section>
-
-=======
->>>>>>> 6ca0274aefa735763e02a521506f51344738ebc8
-
-
-
 
     <section id="about" class="organization">
         <div class="container">
@@ -1552,6 +1672,7 @@
 
     <script src="script.js"></script>
         <script src="multimedia.js"></script>
+        <script src="eventos-carousel.js"></script>
        
 </body>
 

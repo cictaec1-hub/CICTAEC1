@@ -347,3 +347,160 @@
     
     console.log('✅ Reproductor listo con detección de scroll');
 })();
+
+
+
+
+
+
+
+
+
+// === SLIDESHOW MASONRY CINEMÁTICO 11/09===
+// === SLIDESHOW MASONRY CINEMÁTICO ===
+(function() {
+    'use strict';
+    
+    let currentSlide = 1;
+    const totalSlides = 4;
+    let autoPlayInterval;
+    const AUTOPLAY_DELAY = 8000;
+    
+    // Elementos del DOM
+    let slides, dots, btnPrev, btnNext, currentEl, totalEl;
+    
+    function initElements() {
+        slides = document.querySelectorAll('.masonry-slide');
+        dots = document.querySelectorAll('.dot');
+        btnPrev = document.getElementById('btnPrev');
+        btnNext = document.getElementById('btnNext');
+        currentEl = document.getElementById('currentSlide');
+        totalEl = document.getElementById('totalSlides');
+    }
+    
+    function updateSlides() {
+        if (!slides || !dots) return;
+        
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+            if (parseInt(slide.dataset.slide) === currentSlide) {
+                slide.classList.add('active');
+            }
+        });
+        
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+            if (parseInt(dot.dataset.slide) === currentSlide) {
+                dot.classList.add('active');
+            }
+        });
+        
+        if (currentEl) currentEl.textContent = currentSlide;
+        if (totalEl) totalEl.textContent = totalSlides;
+    }
+    
+    function next() {
+        currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+        updateSlides();
+        resetAutoPlay();
+    }
+    
+    function prev() {
+        currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+        updateSlides();
+        resetAutoPlay();
+    }
+    
+    function goTo(slide) {
+        currentSlide = slide;
+        updateSlides();
+        resetAutoPlay();
+    }
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(next, AUTOPLAY_DELAY);
+    }
+    
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+    
+    function pause() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    function resume() {
+        startAutoPlay();
+    }
+    
+    // Inicializar
+    function init() {
+        initElements();
+        
+        if (slides.length === 0) {
+            console.warn('⚠️ No se encontraron slides del masonry');
+            return;
+        }
+        
+        updateSlides();
+        startAutoPlay();
+        
+        // ✅ Event listeners directos en los botones (más robusto que onclick)
+        if (btnPrev) {
+            btnPrev.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                prev();
+            });
+        }
+        
+        if (btnNext) {
+            btnNext.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                next();
+            });
+        }
+        
+        // ✅ Event listeners en los dots
+        if (dots) {
+            dots.forEach(dot => {
+                dot.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const slideNum = parseInt(this.dataset.slide);
+                    goTo(slideNum);
+                });
+            });
+        }
+        
+        // Pausar al hacer hover en el wrapper
+        const wrapper = document.querySelector('.cinematic-slideshow-wrapper');
+        if (wrapper) {
+            wrapper.addEventListener('mouseenter', pause);
+            wrapper.addEventListener('mouseleave', resume);
+        }
+        
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prev();
+            }
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                next();
+            }
+        });
+        
+        console.log('✅ Masonry Slideshow inicializado con', totalSlides, 'slides');
+    }
+    
+    // Iniciar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
