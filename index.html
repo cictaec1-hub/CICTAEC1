@@ -992,24 +992,18 @@
 
 </div>
 
-<!-- Estilos hover (añade esto a tu CSS o en un style tag) -->
-<style>
-    .btn-flyer-download:hover {
-        background: rgba(255, 215, 0, 0.3) !important;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
-    }
-    
-    .btn-info-contacto:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 10px 35px rgba(16, 185, 129, 0.6) !important;
-    }
-    
-    .btn-ver-videos:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 10px 35px rgba(59, 130, 246, 0.6) !important;
-    }
-</style>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </section>
 
@@ -1673,6 +1667,117 @@
     <script src="script.js"></script>
         <script src="multimedia.js"></script>
         <script src="eventos-carousel.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="banana-festival-popup" class="banana-popup-overlay">
+    <div class="banana-popup-content">
+        
+        <!-- Botón cerrar -->
+        <button class="banana-popup-close" onclick="closeBananaPopup()">×</button>
+        
+        <!-- Badge -->
+        <div class="banana-popup-badge">
+            <span class="badge-icon">🍌</span>
+            <span>EVENTO DESTACADO</span>
+        </div>
+
+        <!-- Header con bananas flotantes -->
+        <div class="banana-popup-header">
+            <div class="floating-bananas-container">
+                <span class="floating-banana banana-1">🍌</span>
+                <span class="floating-banana banana-2">🍌</span>
+                <span class="floating-banana banana-3"></span>
+                <span class="floating-banana banana-4">🍌</span>
+                <span class="floating-banana banana-5">🍌</span>
+            </div>
+            <h2 class="banana-popup-title">Festival Mundial del<br>Plátano y del Banano</h2>
+            <p class="banana-popup-subtitle">El oro amarillo de Ecuador llega a Barcelona</p>
+        </div>
+
+        <!-- Contenido en dos columnas -->
+        <div class="banana-popup-body">
+            
+            <!-- Columna izquierda -->
+            <div class="banana-column">
+                <!-- Info rápida con logo CICTAEC -->
+                <div class="banana-quick-info">
+                    <div class="quick-info-item">
+                        <span class="quick-icon">📍</span>
+                        <div class="quick-info-content">
+                            <strong>Barcelona, España</strong>
+                            <p class="organizer-info">
+                                Organiza:
+                                <img src="images/commun_logo_cictaec.svg" alt="CICTAEC" class="cictaec-logo-small">
+                                <span class="cictaec-name">CICTAEC</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descripción compacta -->
+                <div class="banana-description-compact">
+                    <p>
+                        Desde el banano que conquista los mercados de exportación, hasta el plátano que es el corazón de nuestra mesa. 
+                        Descubre la versatilidad del "oro amarillo" ecuatoriano en un evento único que une comercio, gastronomía y cultura.
+                    </p>
+                </div>
+
+                <!-- Actividades en chips compactos -->
+                <div class="banana-activities-compact">
+                    <div class="activity-chip-small">🍰 Postres</div>
+                    <div class="activity-chip-small">🍛 Comidas típicas</div>
+                    <div class="activity-chip-small">‍🍳 Degustaciones</div>
+                    <div class="activity-chip-small">🎭 Cultura</div>
+                    <div class="activity-chip-small"> Recetas regionales</div>
+                    <div class="activity-chip-small">🤝 Networking</div>
+                </div>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="banana-column">
+                <!-- Respaldo -->
+                <div class="banana-sponsors-compact">
+                    <h4>Con el respaldo de:</h4>
+                    <div class="sponsor-badges-compact">
+                        <div class="sponsor-badge-small">
+                            <span></span>
+                            <span>José Delgado TV</span>
+                        </div>
+                        <div class="sponsor-badge-small">
+                            <span>🌍</span>
+                            <span>Ecua España</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA WhatsApp -->
+                <div class="banana-cta-compact">
+                    <p class="cta-text-small">¿Quieres más información?</p>
+                    <a href="https://wa.me/34661347659?text=Hola,%20me%20interesa%20recibir%20información%20sobre%20el%20Festival%20Mundial%20del%20Plátano%20y%20del%20Banano" 
+                       target="_blank" 
+                       class="banana-whatsapp-compact">
+                        <span class="whatsapp-icon-small">💬</span>
+                        <span>Contactar por WhatsApp</span>
+                        <span class="whatsapp-number-small">661 347 659</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+        
        
 </body>
 

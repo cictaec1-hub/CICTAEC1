@@ -356,8 +356,6 @@
 
 
 
-// === SLIDESHOW MASONRY CINEMÁTICO 11/09===
-// === SLIDESHOW MASONRY CINEMÁTICO ===
 (function() {
     'use strict';
     
@@ -502,5 +500,107 @@
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
+    }
+})();
+
+
+
+
+
+
+/*
+
+// === POPUP FESTIVAL DEL PLÁTANO Y BANANO (DESPLIEGUE)===
+(function() {
+    'use strict';
+    
+    const POPUP_DELAY = 5000; // 5 segundos
+    const POPUP_STORAGE_KEY = 'cictaec_banana_popup_shown';
+    const POPUP_COOLDOWN = 24 * 60 * 60 * 1000; // 24 horas
+    
+    function showBananaPopup() {
+        const lastShown = localStorage.getItem(POPUP_STORAGE_KEY);
+        const now = Date.now();
+        
+        if (lastShown && (now - parseInt(lastShown)) < POPUP_COOLDOWN) {
+            return;
+        }
+        
+        const popup = document.getElementById('banana-festival-popup');
+        if (popup) {
+            setTimeout(() => {
+                popup.classList.add('active');
+                localStorage.setItem(POPUP_STORAGE_KEY, now.toString());
+            }, POPUP_DELAY);
+        }
+    }
+    
+    window.closeBananaPopup = function() {
+        const popup = document.getElementById('banana-festival-popup');
+        if (popup) {
+            popup.classList.remove('active');
+        }
+    };
+    
+    document.addEventListener('click', function(e) {
+        const popup = document.getElementById('banana-festival-popup');
+        if (e.target === popup) {
+            closeBananaPopup();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeBananaPopup();
+        }
+    });
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showBananaPopup);
+    } else {
+        showBananaPopup();
+    }
+})(); */
+
+
+// === POPUP FESTIVAL DEL PLÁTANO Y BANANO (SOLO PRUEBA) ===
+(function() {
+    'use strict';
+    
+    const POPUP_DELAY = 5000; // 5 segundos
+    
+    function showBananaPopup() {
+        const popup = document.getElementById('banana-festival-popup');
+        if (popup) {
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, POPUP_DELAY);
+        }
+    }
+    
+    window.closeBananaPopup = function() {
+        const popup = document.getElementById('banana-festival-popup');
+        if (popup) {
+            popup.classList.remove('active');
+        }
+    };
+    
+    document.addEventListener('click', function(e) {
+        const popup = document.getElementById('banana-festival-popup');
+        if (e.target === popup) {
+            closeBananaPopup();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeBananaPopup();
+        }
+    });
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showBananaPopup);
+    } else {
+        showBananaPopup();
     }
 })();
