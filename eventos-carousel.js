@@ -604,3 +604,449 @@
         showBananaPopup();
     }
 })();
+
+
+
+
+
+
+/* =========================================================
+   -----------------SLIDESHOW · CARD 4----------------------
+   ========================================================= */
+
+(function () {
+
+    'use strict';
+
+
+    /* =====================================================
+       CONTENIDO DEL SLIDESHOW
+       =====================================================
+
+       Cada elemento puede ser:
+
+       - ARTISTA
+       - MOMENTO
+       - RECONOCIMIENTO
+       - EVENTO
+       - PÚBLICO
+       - BACKSTAGE
+       - ETC.
+
+       La imagen y el texto pertenecen al mismo elemento.
+       ===================================================== */
+
+ const slides = [
+
+    {
+        image: 'images/gala1.png',
+        badge: '✨ MOMENTO DE LA GALA',
+        title: 'Brillo, elegancia y reconocimiento',
+        description:
+            'Una noche en el Hotel Palace de Barcelona para celebrar el talento y la trayectoria ecuatoriana.'
+    },
+
+    {
+        image: 'images/daniloparra.png',
+        badge: '🎵 TALENTO MUSICAL',
+        title: 'Danilo Parra',
+        description:
+            'Cantautor ecuatoriano de amplia trayectoria, reconocido por llevar su música a escenarios internacionales.'
+    },
+
+    {
+        image: 'images/josedelgado.png',
+        badge: '📰 TRAYECTORIA PERIODÍSTICA',
+        title: 'José Delgado',
+        description:
+            'Periodista ecuatoriano con más de tres décadas de trayectoria y reconocido por su trabajo en televisión.'
+    },
+
+    {
+        image: 'images/hildamurillo.png',
+        badge: '🎵 TRAYECTORIA MUSICAL',
+        title: 'Hilda Murillo',
+        description:
+            'Una de las grandes voces de la música ecuatoriana, con una extensa trayectoria artística nacional e internacional.'
+    },
+
+    {
+        image: 'images/douglasbastidas.png',
+        badge: '🎸 ÍCONO DEL POP ROCK',
+        title: 'Douglas Bastidas',
+        description:
+            'Cantante y compositor ecuatoriano, referente del pop rock y voz histórica de la agrupación Tranzas.'
+    },
+
+    {
+        image: 'images/paoloplaza.png',
+        badge: '🎤 TALENTO MUSICAL',
+        title: 'Paolo Plaza',
+        description:
+            'Cantautor ecuatoriano reconocido por su trayectoria y su propuesta dentro de la salsa romántica.'
+    },
+
+    {
+        image: 'images/kattyelisa.png',
+        badge: '✨ TALENTO ECUATORIANO',
+        title: 'Katty Elisa',
+        description:
+            'Cantante ecuatoriana de amplia experiencia, reconocida por su trayectoria junto a Las Damas de Oro.'
+    }
+
+];
+
+
+
+
+    /* =====================================================
+       ELEMENTOS
+       ===================================================== */
+
+    const image =
+        document.getElementById(
+            'galaSlideImage'
+        );
+
+    const badge =
+        document.getElementById(
+            'galaSlideBadge'
+        );
+
+    const title =
+        document.getElementById(
+            'galaSlideTitle'
+        );
+
+    const description =
+        document.getElementById(
+            'galaSlideDescription'
+        );
+
+    const number =
+        document.getElementById(
+            'galaSlideNumber'
+        );
+
+    const total =
+        document.getElementById(
+            'galaSlideTotal'
+        );
+
+    const dotsContainer =
+        document.getElementById(
+            'galaSlideDots'
+        );
+
+    const prevButton =
+        document.getElementById(
+            'galaSlidePrev'
+        );
+
+    const nextButton =
+        document.getElementById(
+            'galaSlideNext'
+        );
+
+
+    /* =====================================================
+       COMPROBACIÓN
+       ===================================================== */
+
+    if (
+        !image ||
+        !badge ||
+        !title ||
+        !description ||
+        !number ||
+        !total ||
+        !dotsContainer ||
+        !prevButton ||
+        !nextButton
+    ) {
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       CONFIGURACIÓN
+       ===================================================== */
+
+    let currentIndex = 0;
+
+    let slideshowInterval = null;
+
+    const SLIDE_DURATION = 5000;
+
+
+    /* =====================================================
+       TOTAL
+       ===================================================== */
+
+    total.textContent =
+        String(slides.length)
+            .padStart(2, '0');
+
+
+    /* =====================================================
+       CREAR INDICADORES
+       ===================================================== */
+
+    slides.forEach(
+        (slide, index) => {
+
+            const dot =
+                document.createElement(
+                    'button'
+                );
+
+            dot.type = 'button';
+
+            dot.className =
+                'gala-slide-dot';
+
+            dot.setAttribute(
+                'aria-label',
+                `Mostrar ${slide.title}`
+            );
+
+            dot.addEventListener(
+                'click',
+                () => {
+
+                    showSlide(index);
+
+                    restartSlideshow();
+
+                }
+            );
+
+            dotsContainer.appendChild(dot);
+
+        }
+    );
+
+
+    const dots =
+        dotsContainer.querySelectorAll(
+            '.gala-slide-dot'
+        );
+
+
+    /* =====================================================
+       MOSTRAR SLIDE
+       ===================================================== */
+
+    function showSlide(index) {
+
+        if (index < 0) {
+
+            index =
+                slides.length - 1;
+
+        }
+
+
+        if (index >= slides.length) {
+
+            index = 0;
+
+        }
+
+
+        currentIndex = index;
+
+
+        const slide =
+            slides[currentIndex];
+
+
+        /* Animación */
+
+        image.classList.add(
+            'slide-changing'
+        );
+
+
+        setTimeout(
+            () => {
+
+                image.src =
+                    slide.image;
+
+                image.alt =
+                    slide.title;
+
+                badge.textContent =
+                    slide.badge;
+
+                title.textContent =
+                    slide.title;
+
+                description.textContent =
+                    slide.description;
+
+                number.textContent =
+                    String(
+                        currentIndex + 1
+                    ).padStart(2, '0');
+
+
+                image.classList.remove(
+                    'slide-changing'
+                );
+
+            },
+
+            180
+        );
+
+
+        /* Indicadores */
+
+        dots.forEach(
+            (dot, dotIndex) => {
+
+                dot.classList.toggle(
+                    'active',
+                    dotIndex === currentIndex
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SIGUIENTE
+       ===================================================== */
+
+    function nextSlide() {
+
+        showSlide(
+            currentIndex + 1
+        );
+
+    }
+
+
+    /* =====================================================
+       ANTERIOR
+       ===================================================== */
+
+    function previousSlide() {
+
+        showSlide(
+            currentIndex - 1
+        );
+
+    }
+
+
+    /* =====================================================
+       BOTONES
+       ===================================================== */
+
+    nextButton.addEventListener(
+        'click',
+        () => {
+
+            nextSlide();
+
+            restartSlideshow();
+
+        }
+    );
+
+
+    prevButton.addEventListener(
+        'click',
+        () => {
+
+            previousSlide();
+
+            restartSlideshow();
+
+        }
+    );
+
+
+    /* =====================================================
+       AUTOPLAY
+       ===================================================== */
+
+    function startSlideshow() {
+
+        clearInterval(
+            slideshowInterval
+        );
+
+        slideshowInterval =
+            setInterval(
+                nextSlide,
+                SLIDE_DURATION
+            );
+
+    }
+
+
+    function restartSlideshow() {
+
+        clearInterval(
+            slideshowInterval
+        );
+
+        startSlideshow();
+
+    }
+
+
+    /* =====================================================
+       PAUSA AL PASAR EL RATÓN
+       ===================================================== */
+
+    const slideshowCard =
+        document.querySelector(
+            '.gala-slideshow-card'
+        );
+
+
+    if (slideshowCard) {
+
+        slideshowCard.addEventListener(
+            'mouseenter',
+            () => {
+
+                clearInterval(
+                    slideshowInterval
+                );
+
+            }
+        );
+
+
+        slideshowCard.addEventListener(
+            'mouseleave',
+            () => {
+
+                startSlideshow();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       INICIAR
+       ===================================================== */
+
+    showSlide(0);
+
+    startSlideshow();
+
+
+})();

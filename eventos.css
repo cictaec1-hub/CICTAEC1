@@ -3067,3 +3067,711 @@
         height: 16px;
     }
 }
+
+
+
+
+
+
+/* ==========================================
+  BANNER DE TRANSICION E IMAGENES GALA PE FESTIAL 
+   ========================================== */
+
+.events-unifier {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0f2b4d 0%, #1a3a5c 100%);
+    text-align: center;
+    border-bottom: 2px solid #FFD700;
+}
+.unifier-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD700;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.unifier-badge::before,
+.unifier-badge::after {
+    content: "";
+    width: 35px;
+    height: 1px;
+    background: rgba(255, 215, 0, 0.65);
+    margin: 0 12px;
+}
+
+.unifier-badge::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 215, 0, 0.65)
+    );
+}
+
+.unifier-badge::after {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.65),
+        transparent
+    );
+}
+
+.unifier-title {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 10px 0;
+    font-weight: 800;
+}
+
+.unifier-subtitle {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.unifier-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(255,215,0,0.1);
+    border: 1px solid rgba(255,215,0,0.3);
+    color: #FFD700;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tag-separator {
+    color: #FFD700;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* ==========================================
+   SECCIÓN GALA - GRID COMPACTO
+   ========================================== */
+
+.gala-grid-section {
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.gala-header-compact {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gala-day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 6px 18px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.gala-grid-title {
+    color: #FFD700;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 8px 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.gala-grid-subtitle {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ==========================================
+   GRID DE TARJETAS
+   ========================================== */
+
+.gala-grid-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.gala-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255,215,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gala-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255,215,0,0.15);
+    border-color: rgba(255,215,0,0.3);
+}
+
+.gala-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.02) 100%);
+    border: 2px solid rgba(255,215,0,0.2);
+}
+
+/* ==========================================
+   IMAGEN DE TARJETA
+   ========================================== */
+
+.card-image {
+    position: relative;
+    height: 430px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gala-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+    z-index: 10;
+}
+
+/* ==========================================
+   CONTENIDO DE TARJETA
+   ========================================== */
+
+.card-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content.full {
+    padding: 35px;
+}
+
+.card-content h4 {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card-excerpt {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.card-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,215,0,0.2);
+}
+
+.stat {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.card-link:hover {
+    transform: translateX(5px);
+}
+
+/* ==========================================
+   TRANSICIÓN COMPACTA
+   ========================================== */
+
+.compact-transition {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f2b4d 100%);
+}
+
+.transition-arrow {
+    display: block;
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+.compact-transition p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 968px) {
+    .gala-card.featured {
+        grid-column: span 1;
+    }
+    
+    .gala-grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-unifier {
+        padding: 40px 15px;
+    }
+    
+    .gala-grid-section {
+        padding: 40px 15px;
+    }
+    
+    .gala-grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-image {
+        height: 220px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-content.full {
+        padding: 25px;
+    }
+    
+    .card-content h4 {
+        font-size: 1.3rem;
+    }
+    
+    .card-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* =========================================
+   SLIDESHOW — CARD4****************************
+   ========================================= */
+
+.gala-slideshow-card {
+    grid-column: span 2;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 215, 0, 0.045),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    border: 1px solid rgba(255, 215, 0, 0.18);
+    border-radius: 15px;
+
+    min-height: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.gala-slideshow-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, .35);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, .12);
+}
+
+
+/* CABECERA */
+
+.slideshow-header {
+    height: 48px;
+    min-height: 48px;
+
+    padding: 16px 20px 10px;
+
+    display: flex;
+    align-items: center;
+}
+
+.slideshow-label {
+    color: #FFD700;
+
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.gala-slideshow {
+    display: grid;
+
+    grid-template-columns: 1.35fr 1fr;
+
+    flex: 1;
+    min-height: 0;
+
+    height: calc(100% - 48px);
+}
+
+
+/* =========================================
+   IMAGEN
+   ========================================= */
+/* =========================================
+   ÁREA FIJA PARA TODAS LAS FOTOGRAFÍAS
+========================================= */
+
+.gala-slide-image{
+    position:relative;
+    width:100%;
+    height:320px;          /* SIEMPRE la misma altura */
+    min-height:320px;
+    max-height:320px;
+    overflow:hidden;
+    background:#080808;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* TODAS LAS IMÁGENES ENTRAN EN EL MISMO MARCO */
+
+.gala-slide-image img{
+    width:100%;
+    height:100%;
+    display:block;
+
+    object-fit:cover;
+    object-position:center center;
+
+    transition:opacity .35s ease, transform .5s ease;
+}
+
+
+/* BADGE SOBRE LA FOTO */
+
+.gala-slide-badge {
+    position: absolute;
+
+    top: 14px;
+    left: 14px;
+
+    padding: 7px 12px;
+
+    background: rgba(10, 10, 10, .84);
+
+    border: 1px solid rgba(255, 215, 0, .6);
+
+    color: #FFD700;
+
+    border-radius: 5px;
+
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+
+    backdrop-filter: blur(6px);
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   FLECHAS
+   ========================================= */
+
+.gala-slide-arrow {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 215, 0, .75);
+
+    background: rgba(5, 15, 25, .78);
+
+    color: #FFD700;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .25s ease;
+
+    z-index: 5;
+}
+
+.gala-slide-arrow:hover {
+    background: #FFD700;
+    color: #0f2b4d;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.gala-slide-arrow.prev {
+    left: 12px;
+}
+
+.gala-slide-arrow.next {
+    right: 12px;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.gala-slide-content {
+    position: relative;
+
+    padding: 30px 30px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+}
+
+
+/* CONTADOR */
+
+.gala-slide-counter {
+    position: absolute;
+
+    top: 22px;
+    right: 25px;
+
+    display: flex;
+    gap: 5px;
+
+    color: rgba(255, 255, 255, .3);
+
+    font-size: .7rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.gala-slide-counter span:first-child {
+    color: #FFD700;
+}
+
+
+/* TITULO */
+
+.gala-slide-content h4 {
+    color: #FFD700;
+
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+
+    margin: 0 65px 12px 0;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    line-height: 1.2;
+}
+
+
+/* DESCRIPCION */
+
+.gala-slide-description {
+    color: rgba(255, 255, 255, .75);
+
+    font-size: .88rem;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+    max-width: 520px;
+}
+
+
+/* =========================================
+   INDICADORES
+   ========================================= */
+
+.gala-slide-dots {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 25px;
+}
+
+.gala-slide-dot {
+    width: 18px;
+    height: 3px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 2px;
+
+    background: rgba(255, 255, 255, .2);
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.gala-slide-dot.active {
+    width: 35px;
+
+    background: #FFD700;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 968px) {
+
+    .gala-slideshow-card {
+        grid-column: span 1;
+    }
+
+    .gala-slideshow {
+        grid-template-columns: 1fr;
+    }
+
+    .gala-slide-image {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .gala-slide-content {
+        padding: 22px;
+    }
+}
+
+
+/* =========================================
+   MÓVIL
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .gala-slideshow-card {
+        min-height: 480px;
+    }
+
+    .slideshow-header {
+        height: 45px;
+        min-height: 45px;
+        padding: 14px 16px 8px;
+    }
+
+    .gala-slideshow {
+        height: auto;
+    }
+
+    .gala-slide-image {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .gala-slide-content {
+        padding: 18px;
+    }
+
+    .gala-slide-content h4 {
+        font-size: 1.2rem;
+    }
+
+    .gala-slide-description {
+        font-size: .8rem;
+    }
+
+    .gala-slide-dots {
+        margin-top: 18px;
+    }
+}
+
