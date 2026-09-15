@@ -687,7 +687,7 @@
     },
 
     {
-        image: 'images/kattyelisa.png',
+        image: 'images/katt.png',
         badge: '✨ TALENTO ECUATORIANO',
         title: 'Katty Elisa',
         description:
