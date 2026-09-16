@@ -3784,3 +3784,173 @@
     }
 }
 
+/* ==========================================================
+   FIX MÓVIL — GALERÍA DE RECUERDOS / CINEMATIC
+   Sobrescribe únicamente la versión móvil
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    /* SECCIÓN */
+    .cinematic-masonry-slideshow {
+        padding: 45px 12px;
+    }
+
+    /* CABECERA */
+    .cinematic-masonry-slideshow .slideshow-header {
+        height: auto;
+        min-height: 0;
+        padding: 0;
+        margin-bottom: 28px;
+        text-align: center;
+    }
+
+    .cinematic-masonry-slideshow .slideshow-title {
+        font-size: 1.8rem;
+        line-height: 1.15;
+    }
+
+    /* CONTENEDOR DEL SLIDESHOW
+       Quitamos la altura fija de escritorio/móvil */
+    .cinematic-masonry-slideshow .cinematic-slideshow-wrapper {
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: 14px;
+        border-width: 2px;
+    }
+
+    /* Cada slide deja de depender de una altura fija */
+    .cinematic-masonry-slideshow .masonry-slide {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+
+        display: none;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    /* Solo mostramos el slide activo */
+    .cinematic-masonry-slideshow .masonry-slide.active {
+        display: block;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    /* GALERÍA VERTICAL EN MÓVIL */
+    .cinematic-masonry-slideshow .masonry-grid {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: auto;
+
+        gap: 12px;
+    }
+
+    /* TODOS LOS ELEMENTOS */
+    .cinematic-masonry-slideshow .masonry-item,
+    .cinematic-masonry-slideshow .item-large,
+    .cinematic-masonry-slideshow .item-medium,
+    .cinematic-masonry-slideshow .item-small,
+    .cinematic-masonry-slideshow .item-gif-vertical {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        grid-column: auto;
+        grid-row: auto;
+
+        flex: none;
+    }
+
+    /* FOTOS NORMALES */
+    .cinematic-masonry-slideshow
+    .masonry-item:not(.item-gif-vertical) {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* GIF VERTICAL */
+    .cinematic-masonry-slideshow
+    .masonry-item.item-gif-vertical {
+        aspect-ratio: 9 / 16;
+        max-height: 520px;
+        background: #000;
+    }
+
+    /* FOTOS */
+    .cinematic-masonry-slideshow .masonry-item img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* GIF:
+       se muestra completo y no se aplasta */
+    .cinematic-masonry-slideshow
+    .masonry-item.item-gif-vertical img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    /* FLECHAS */
+    .cinematic-masonry-slideshow .slideshow-nav-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .cinematic-masonry-slideshow .slideshow-nav-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cinematic-masonry-slideshow .prev-btn {
+        left: 8px;
+    }
+
+    .cinematic-masonry-slideshow .next-btn {
+        right: 8px;
+    }
+
+}
+
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+
+    .cinematic-masonry-slideshow {
+        padding: 38px 10px;
+    }
+
+    .cinematic-masonry-slideshow .slideshow-title {
+        font-size: 1.55rem;
+    }
+
+    .cinematic-masonry-slideshow .masonry-grid {
+        gap: 10px;
+    }
+
+    .cinematic-masonry-slideshow
+    .masonry-item.item-gif-vertical {
+        aspect-ratio: 9 / 16;
+        max-height: 480px;
+    }
+
+    .cinematic-masonry-slideshow .slideshow-nav-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+}
