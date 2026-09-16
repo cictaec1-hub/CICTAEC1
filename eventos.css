@@ -2321,11 +2321,21 @@
 }
 
 .slideshow-title {
+
     color: #FFD700;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
+
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    line-height: 1.15;
+
     margin: 0 0 15px 0;
-    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+
+    text-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
+
 }
 
 .slideshow-subtitle {
@@ -3447,16 +3457,15 @@
 
 /* CABECERA */
 
-.slideshow-header {
+.gala-slideshow-card .slideshow-header {
     height: 48px;
     min-height: 48px;
-
     padding: 16px 20px 10px;
-
     display: flex;
     align-items: center;
+    margin-bottom: 0;
+    text-align: left;
 }
-
 .slideshow-label {
     color: #FFD700;
 
