@@ -121,6 +121,7 @@
     <link rel="stylesheet" href="multimedia.css">
     <link rel="stylesheet" href="eventos.css">
     <link rel="stylesheet" href="confianza.css">
+    <link rel="stylesheet" href="anuncios.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -135,6 +136,10 @@
         #cookie-preferences h4 { margin-top:0; }
         .cc-toggle { display:flex; justify-content:space-between; align-items:center; margin:8px 0; }
     </style>
+        
+    <!-- Elfsight Instagram Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+
 </head>
 
 <body>
@@ -1175,21 +1180,129 @@
     </a>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </section>
+
+
+<!-- ============================================
+     MEGA SECCIÓN: NOTICIAS AUTO + INSTAGRAM REAL
+     ============================================ -->
+<section id="tablon-anuncios" class="anuncios-mega-section">
+    <div class="container">
+        
+        <div class="anuncios-mega-header">
+            <span class="anuncios-mega-label">Mantente Conectado</span>
+            <h2 class="anuncios-mega-title">Noticias y <span>cultura</span> ecuatoriana</h2>
+            <p class="anuncios-mega-subtitle">
+               Actualidad, derechos y cultura para todos
+            </p>
+        </div>
+
+        <div class="anuncios-mega-container">
+            
+            <div class="anuncios-mega-grid">
+                
+                <!-- COLUMNA IZQUIERDA: NOTICIAS AUTOMÁTICAS -->
+                <div class="noticias-column">
+                    
+                    <div class="column-header">
+                        <div class="column-header-left">
+                            <div class="column-icon"></div>
+                            <h3 class="column-title">Noticias en Vivo</h3>
+                        </div>
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            <span>Actualización automática</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtros -->
+                    <div class="news-filters">
+                        <button class="news-filter-btn active" data-filter="all">Todas</button>
+                        <button class="news-filter-btn" data-filter="inmigracion">Inmigración</button>
+                        <button class="news-filter-btn" data-filter="vivienda">Vivienda</button>
+                        <button class="news-filter-btn" data-filter="legislacion">Legislación</button>
+                        <button class="news-filter-btn" data-filter="comunidad">Comunidad</button>
+                    </div>
+                    
+                    <!-- Grid de noticias (se llena automáticamente) -->
+                    <div class="noticias-grid" id="noticiasGrid">
+                        <div class="news-loading">
+                            <div class="spinner"></div>
+                            <p>Cargando noticias actualizadas...</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLUMNA DERECHA: INSTAGRAM REAL -->
+                <div class="instagram-column">
+                    
+                    <div class="instagram-real-feed">
+                        
+                        <div class="instagram-feed-header">
+                            <div class="instagram-profile-info">
+                                <img src="https://instagram.fcix3-1.fna.fbcdn.net/v/t51.2885-19/placeholder.jpg" 
+                                     alt="CICTAEC" 
+                                     class="instagram-avatar"
+                                     onerror="this.src='https://via.placeholder.com/60/833AB4/ffffff?text=C'">
+                                <div class="instagram-profile-text">
+                                    <h4 class="instagram-profile-name">CICTAEC</h4>
+                                    <p class="instagram-profile-handle">@cictaecoficial</p>
+                                </div>
+                            </div>
+                            <a href="https://instagram.com/cictaecoficial" target="_blank" class="instagram-follow-btn-real">
+                                Seguir en Instagram
+                            </a>
+                        </div>
+
+                        <!-- Widget de Instagram -->
+                        <div class="instagram-widget-container">
+                            
+                            <!-- OPCIÓN 1: Elfsight (RECOMENDADA) -->
+                            <!-- Regístrate gratis en https://elfsight.com/instagram-feed-widget/ -->
+                            <!-- Crea un widget y pega aquí el código que te dan -->
+                                                    <!-- Widget de Instagram -->
+                        <div class="instagram-widget-container">
+                            <div class="elfsight-app-edd11e14-3bf7-4b6a-bfce-dd129208e40b" data-elfsight-app-lazy></div>
+                        </div>
+                            
+                            <!-- OPCIÓN 2: SnapWidget (alternativa gratuita) -->
+                            <!-- <iframe src="https://snapwidget.com/embed/TU_ID" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:500px;"></iframe> -->
+                            
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section id="about" class="organization">
         <div class="container">
@@ -1851,6 +1964,8 @@
     <script src="script.js"></script>
         <script src="multimedia.js"></script>
         <script src="eventos-carousel.js"></script>
+         <script src="anuncios.js"></script>
+
 
 
 
