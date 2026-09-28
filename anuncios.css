@@ -685,3 +685,68 @@
         max-width: 100% !important;
     }
 }
+
+
+/* ============================================
+   FIX: FORZAR ANCHO COMPLETO EN MÓVIL
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Forzar que el container de Bootstrap no limite el ancho */
+    .anuncios-mega-section > .container {
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Hacer que el mega container ocupe todo el ancho */
+    .anuncios-mega-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-radius: 15px !important;
+    }
+    
+    /* Reducir padding lateral al mínimo */
+    .anuncios-mega-section {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+    
+    .anuncios-mega-container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+    
+    /* Asegurar que las tarjetas ocupen todo el ancho */
+    .noticia-card-compact {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Instagram también al ancho completo */
+    .instagram-real-feed {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .instagram-widget-container {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .anuncios-mega-section {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    
+    .anuncios-mega-container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
