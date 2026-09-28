@@ -447,14 +447,11 @@
 /* MÓVIL GRANDE (hasta 768px) */
 @media (max-width: 768px) {
     .anuncios-mega-section {
-        padding: 60px 10px;
-        width: 100%;
-        overflow: visible;
+        padding: 60px 15px;
     }
     
     .anuncios-mega-header {
         margin-bottom: 40px;
-        width: 100%;
     }
     
     .anuncios-mega-label {
@@ -471,12 +468,12 @@
         font-size: 1rem;
     }
     
+    /* Contenedor blanco con ancho limitado en móvil */
     .anuncios-mega-container {
+        max-width: 420px;
+        margin: 0 auto;
         padding: 20px 15px;
         border-radius: 20px;
-        width: 100%;
-        max-width: 100%;
-        overflow: visible;
     }
     
     /* Header de noticias apilado */
@@ -501,7 +498,6 @@
         padding-bottom: 10px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
-        width: 100%;
     }
     
     .news-filters::-webkit-scrollbar {
@@ -517,7 +513,6 @@
     .noticias-grid {
         grid-template-columns: 1fr;
         gap: 12px;
-        width: 100%;
     }
     
     /* Tarjetas de noticias */
@@ -525,9 +520,6 @@
         min-height: auto;
         padding: 18px;
         margin-bottom: 5px;
-        width: 100%;
-        box-sizing: border-box;
-        overflow: visible;
     }
     
     .noticia-title-compact {
@@ -559,21 +551,18 @@
     
     .instagram-real-feed {
         border-radius: 20px;
-        width: 100%;
-        overflow: visible;
     }
     
     .instagram-widget-container {
         padding: 10px;
         min-height: 450px;
-        width: 100%;
     }
 }
 
 /* MÓVIL PEQUEÑO (hasta 480px) */
 @media (max-width: 480px) {
     .anuncios-mega-section {
-        padding: 40px 5px;
+        padding: 40px 10px;
     }
     
     .anuncios-mega-header {
@@ -595,8 +584,10 @@
         font-size: 0.9rem;
     }
     
+    /* Contenedor más estrecho para móviles pequeños */
     .anuncios-mega-container {
-        padding: 15px 10px;
+        max-width: 360px;
+        padding: 15px 12px;
         border-radius: 15px;
     }
     
@@ -617,7 +608,7 @@
     
     /* Tarjetas de noticias */
     .noticia-card-compact {
-        padding: 20px;
+        padding: 16px;
         margin-bottom: 8px;
     }
     
@@ -628,17 +619,17 @@
     }
     
     .noticia-title-compact {
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.5;
     }
     
     .noticia-excerpt {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.7;
     }
     
     .noticia-meta-compact {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
@@ -658,122 +649,21 @@
         font-size: 1.4rem;
     }
     
+    /* Contenedor aún más estrecho para móviles muy pequeños */
     .anuncios-mega-container {
-        padding: 12px 8px;
+        max-width: 320px;
+        padding: 12px 10px;
     }
     
     .noticia-card-compact {
-        padding: 18px;
+        padding: 14px;
     }
     
     .noticia-title-compact {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .noticia-excerpt {
-        font-size: 0.9rem;
-    }
-}
-
-/* ============================================
-   FIX: FORZAR ANCHO COMPLETO EN MÓVIL
-   ============================================ */
-@media (max-width: 768px) {
-    .container {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        max-width: 100% !important;
-    }
-}
-
-
-/* ============================================
-   FIX: FORZAR ANCHO COMPLETO EN MÓVIL
-   ============================================ */
-
-@media (max-width: 768px) {
-    /* Forzar que el container de Bootstrap no limite el ancho */
-    .anuncios-mega-section > .container {
-        max-width: 100% !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        width: 100% !important;
-    }
-    
-    /* Hacer que el mega container ocupe todo el ancho */
-    .anuncios-mega-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        border-radius: 15px !important;
-    }
-    
-    /* Reducir padding lateral al mínimo */
-    .anuncios-mega-section {
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-    }
-    
-    .anuncios-mega-container {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-    }
-    
-    /* Asegurar que las tarjetas ocupen todo el ancho */
-    .noticia-card-compact {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-    
-    /* Instagram también al ancho completo */
-    .instagram-real-feed {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    
-    .instagram-widget-container {
-        width: 100% !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .anuncios-mega-section {
-        padding-left: 5px !important;
-        padding-right: 5px !important;
-    }
-    
-    .anuncios-mega-container {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
-}
-
-/* ============================================
-   FIX CRÍTICO: Sobrescribir el .container de Bootstrap
-   ============================================ */
-
-/* En móvil, el container dentro de anuncios debe ocupar todo el ancho */
-@media (max-width: 768px) {
-    .anuncios-mega-section > .container,
-    .anuncios-mega-section .container {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .anuncios-mega-section > .container,
-    .anuncios-mega-section .container {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        font-size: 0.85rem;
     }
 }
