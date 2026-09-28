@@ -411,31 +411,272 @@
     border: none;
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE COMPLETO - TABLÓN DE ANUNCIOS
+   ============================================ */
+
+/* TABLET (hasta 1024px) */
 @media (max-width: 1024px) {
+    .anuncios-mega-section {
+        padding: 80px 20px;
+    }
+    
+    .anuncios-mega-title {
+        font-size: 2.5rem;
+    }
+    
     .anuncios-mega-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .noticias-column {
+        height: auto;
     }
     
     .noticias-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .instagram-real-feed {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
+/* MÓVIL GRANDE (hasta 768px) */
 @media (max-width: 768px) {
-    .anuncios-mega-container {
-        padding: 25px 20px;
+    .anuncios-mega-section {
+        padding: 60px 15px;
+    }
+    
+    .anuncios-mega-header {
+        margin-bottom: 40px;
+    }
+    
+    .anuncios-mega-label {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        padding: 10px 25px;
     }
     
     .anuncios-mega-title {
         font-size: 2rem;
     }
     
+    .anuncios-mega-subtitle {
+        font-size: 1rem;
+    }
+    
+    .anuncios-mega-container {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+    
+    /* Header de noticias apilado */
+    .column-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .column-title {
+        font-size: 1.4rem;
+    }
+    
+    .live-indicator {
+        font-size: 0.75rem;
+    }
+    
+    /* Filtros scrolleables horizontalmente */
+    .news-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .news-filters::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .news-filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    
+    /* Grid de noticias a 1 columna */
     .noticias-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    /* Tarjetas de noticias */
+    .noticia-card-compact {
+        min-height: auto;
+        padding: 15px;
+    }
+    
+    .noticia-title-compact {
+        font-size: 1rem;
+    }
+    
+    .noticia-excerpt {
+        display: block; /* En móvil siempre visible (no hay hover) */
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+    
+    /* Instagram */
+    .instagram-real-feed {
+        border-radius: 20px;
+    }
+    
+    .instagram-feed-header {
+        padding: 20px 15px;
+    }
+    
+    .instagram-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .instagram-profile-name {
+        font-size: 1rem;
+    }
+    
+    .instagram-profile-handle {
+        font-size: 0.8rem;
+    }
+    
+    .instagram-follow-btn-real {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .instagram-widget-container {
+        padding: 15px;
+        min-height: 350px;
+    }
+}
+
+/* MÓVIL PEQUEÑO (hasta 480px) */
+@media (max-width: 480px) {
+    .anuncios-mega-section {
+        padding: 40px 10px;
+    }
+    
+    .anuncios-mega-header {
+        margin-bottom: 30px;
+    }
+    
+    .anuncios-mega-label {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        padding: 8px 20px;
+    }
+    
+    .anuncios-mega-title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .anuncios-mega-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .anuncios-mega-container {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    .column-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .column-title {
+        font-size: 1.2rem;
+    }
+    
+    .news-filter-btn {
+        padding: 5px 12px;
+        font-size: 0.75rem;
     }
     
     .noticia-card-compact {
-        height: 120px;
+        padding: 12px;
+    }
+    
+    .noticia-category-compact {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+    
+    .noticia-title-compact {
+        font-size: 0.95rem;
+    }
+    
+    .noticia-meta-compact {
+        font-size: 0.7rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .instagram-feed-header {
+        padding: 15px 12px;
+    }
+    
+    .instagram-profile-info {
+        gap: 10px;
+    }
+    
+    .instagram-avatar {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .instagram-profile-name {
+        font-size: 0.95rem;
+    }
+    
+    .instagram-profile-handle {
+        font-size: 0.75rem;
+    }
+    
+    .instagram-follow-btn-real {
+        padding: 6px 14px;
+        font-size: 0.75rem;
+    }
+    
+    .instagram-widget-container {
+        padding: 10px;
+        min-height: 300px;
+    }
+}
+
+/* MÓVIL MUY PEQUEÑO (hasta 360px) */
+@media (max-width: 360px) {
+    .anuncios-mega-title {
+        font-size: 1.4rem;
+    }
+    
+    .anuncios-mega-container {
+        padding: 15px 10px;
+    }
+    
+    .noticia-title-compact {
+        font-size: 0.9rem;
+    }
+    
+    .instagram-profile-name {
+        font-size: 0.9rem;
+    }
+    
+    .instagram-profile-handle {
+        font-size: 0.7rem;
     }
 }

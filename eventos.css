@@ -870,7 +870,7 @@
     .events-cinema-section { padding: 70px 15px; }
     .events-title { font-size: 2rem; letter-spacing: 2px; }
     .events-carousel-container { padding: 0 50px; }
-    .events-carousel-track { height: auto; min-height: 800px; }
+    .events-carousel-track { height: auto; min-height: 600px; }
     .flyer-media { height: 300px; }
     .poster-media { height: 350px; }
     .flyer-body { padding: 25px; }
@@ -885,6 +885,25 @@
     .poster-badge { font-size: 0.75rem; padding: 8px 15px; }
 }
 
+
+
+@media (max-width: 480px) {
+    .events-cinema-section { padding: 50px 10px; }
+    .events-title { font-size: 1.6rem; letter-spacing: 1px; }
+    .events-subtitle { font-size: 1rem; }
+    .events-carousel-container { padding: 0 40px; }
+    .events-carousel-track { min-height: 500px; }
+    .flyer-media { height: 220px; }
+    .poster-media { height: 260px; }
+    .flyer-body { padding: 20px 15px; }
+    .flyer-heading { font-size: 1.3rem; }
+    .poster-heading { font-size: 1.2rem !important; }
+    .carousel-control { width: 40px; height: 40px; }
+    .carousel-control.prev { left: -5px; }
+    .carousel-control.next { right: -5px; }
+    .btn-view-all-events { padding: 15px 30px; font-size: 0.95rem; }
+    .events-cta { margin-top: 50px; }
+}
 
 /* ============================================
    SECCIÓN FESTIVAL TRICOLOR ECUATORIANO
@@ -1645,6 +1664,32 @@
         font-size: 0.85rem;
     }
 }
+
+
+/* ============================================
+ responsive del banner para el movil
+   ============================================ */
+.festival-date-banner {
+    padding: 15px 20px;
+    width: 90%;
+}
+
+.date-day {
+    font-size: 1.1rem;
+}
+
+.date-time {
+    font-size: 0.75rem;
+}
+
+.festival-organizer {
+    margin-bottom: 20px;
+}
+
+.org-logo-img {
+    height: 40px;
+}
+
 /* ============================================
    MODAL DE ARTISTA
    ============================================ */
@@ -1877,6 +1922,53 @@
 
 .artist-card:hover .hover-text::after {
     width: 100%;
+}
+
+@media (max-width: 480px) {
+    .festival-tricolor-section {
+        padding: 40px 10px 30px;
+    }
+    
+    .title-tricolor {
+        font-size: 2.2rem !important;
+        letter-spacing: 1px;
+    }
+    
+    .title-sub {
+        font-size: 1.4rem;
+    }
+    
+    .title-country {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .festival-date-banner {
+        padding: 12px 15px;
+    }
+    
+    .date-day {
+        font-size: 0.95rem;
+    }
+    
+    .artist-card {
+        min-width: 85px;
+    }
+    
+    .artist-photo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .artist-name {
+        font-size: 0.7rem;
+    }
+    
+    .btn-comprar-entradas,
+    .btn-info-contacto {
+        padding: 15px 25px;
+        font-size: 0.95rem;
+    }
 }
 /* ============================================
    MODAL RESPONSIVE MÓVIL
@@ -2242,8 +2334,10 @@
         height: 50px;
     }
     
-    .video-nav-btn.prev { left: 10px; }
-    .video-nav-btn.next { right: 10px; }
+  .video-nav-btn.prev { left: 5px; }
+.video-nav-btn.next { right: 5px; }
+.video-nav-btn { width: 42px; height: 42px; }
+.video-nav-btn svg { width: 20px; height: 20px; }
     
     .mute-btn {
         width: 42px;
@@ -2287,6 +2381,47 @@
     opacity: 1;
     transform: translate(-50%, -50%);
 }
+
+/* ============================================
+    responsive 28/09
+   ============================================ */
+@media (max-width: 480px) {
+    .festival-social-videos {
+        padding: 25px 10px;
+    }
+    
+    .social-videos-header .header-text {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+    
+    .main-video-wrapper {
+        max-height: 420px;
+        border-radius: 15px;
+    }
+    
+    .video-nav-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .video-nav-btn.prev { left: 2px; }
+    .video-nav-btn.next { right: 2px; }
+    
+    .mute-btn {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .platform-link {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
 
 
 
@@ -3748,9 +3883,23 @@
 
 @media (max-width: 480px) {
 
-    .gala-slideshow-card {
-        min-height: 480px;
-    }
+   .gala-slideshow-card {
+    min-height: auto;
+}
+
+.gala-slide-image {
+    height: 200px;
+    min-height: 200px;
+}
+
+.gala-slide-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.4rem;
+}
+
+.gala-slide-arrow.prev { left: 8px; }
+.gala-slide-arrow.next { right: 8px; }
 
     .slideshow-header {
         height: 45px;
@@ -3783,6 +3932,79 @@
         margin-top: 18px;
     }
 }
+
+/* =========================================
+   MÓVIL 2
+   ========================================= */
+
+
+
+@media (max-width: 480px) {
+    .gala-grid-section {
+        padding: 35px 10px;
+    }
+    
+    .gala-grid-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .gala-grid-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .gala-card {
+        border-radius: 12px;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .card-excerpt {
+        font-size: 0.85rem;
+    }
+    
+    .card-badge {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+    
+    .gala-day-badge {
+        font-size: 0.65rem;
+        padding: 5px 14px;
+    }
+    
+    .events-unifier {
+        padding: 30px 10px;
+    }
+    
+    .unifier-title {
+        font-size: 1.5rem;
+    }
+    
+    .unifier-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .tag {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+
 
 /* ==========================================================
    FIX MÓVIL — GALERÍA DE RECUERDOS / CINEMATIC
@@ -3942,12 +4164,11 @@
         gap: 10px;
     }
 
-    .cinematic-masonry-slideshow
-    .masonry-item.item-gif-vertical {
-        aspect-ratio: 9 / 16;
-        max-height: 480px;
-    }
-
+   .cinematic-masonry-slideshow
+.masonry-item.item-gif-vertical {
+    aspect-ratio: 9 / 16;
+    max-height: 400px;
+}
     .cinematic-masonry-slideshow .slideshow-nav-btn {
         width: 38px;
         height: 38px;
