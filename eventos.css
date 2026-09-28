@@ -6,7 +6,6 @@
     overflow: hidden;
 }
 
-/* Partículas flotantes */
 .cinema-particles {
     position: absolute;
     top: 0;
@@ -34,16 +33,13 @@
         opacity: 0.5;
         transform: translateY(90vh) translateX(20px) scale(1);
     }
-    90% {
-        opacity: 0.3;
-    }
+    90% { opacity: 0.3; }
     100% {
         transform: translateY(-100px) translateX(-20px) scale(0);
         opacity: 0;
     }
 }
 
-/* Rayos de luz */
 .cinema-light-rays {
     position: absolute;
     top: 0;
@@ -63,7 +59,6 @@
     50% { opacity: 1; }
 }
 
-/* Header */
 .events-header {
     text-align: center;
     margin-bottom: 70px;
@@ -83,9 +78,6 @@
     margin-bottom: 20px;
     border: 1px solid rgba(255, 215, 0, 0.3);
 }
-
-
-
 
 .events-title {
     font-size: 3.5rem;
@@ -119,7 +111,6 @@
     margin: 25px auto 0;
 }
 
-/* Carrusel Container */
 .events-carousel-container {
     position: relative;
     max-width: 1100px;
@@ -134,7 +125,6 @@
     perspective: 1500px;
 }
 
-/* Slide */
 .event-slide {
     position: absolute;
     top: 0;
@@ -156,7 +146,6 @@
     filter: blur(0);
 }
 
-/* Flyer */
 .event-flyer.featured {
     background: #fff;
     border-radius: 24px;
@@ -170,7 +159,6 @@
     position: relative;
 }
 
-/* Ken Burns Layer */
 .ken-burns-layer {
     position: absolute;
     top: 0;
@@ -180,7 +168,6 @@
     overflow: hidden;
 }
 
-/* === EFECTO DE SCROLL VERTICAL EN IMÁGENES === */
 .flyer-poster-img,
 .flyer-image-static {
     width: 100%;
@@ -190,18 +177,11 @@
 }
 
 @keyframes verticalScroll {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-15%) scale(1.05);
-    }
-    100% {
-        transform: translateY(-30%) scale(1.1);
-    }
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-15%) scale(1.05); }
+    100% { transform: translateY(-30%) scale(1.1); }
 }
 
-/* Video del cóndor - movimiento más suave */
 .flyer-video-bg {
     width: 100%;
     height: 100%;
@@ -210,18 +190,11 @@
 }
 
 @keyframes videoVerticalScroll {
-    0% {
-        transform: translateY(-5%) scale(1);
-    }
-    50% {
-        transform: translateY(0) scale(1.02);
-    }
-    100% {
-        transform: translateY(5%) scale(1);
-    }
+    0% { transform: translateY(-5%) scale(1); }
+    50% { transform: translateY(0) scale(1.02); }
+    100% { transform: translateY(5%) scale(1); }
 }
 
-/* Media */
 .flyer-media {
     position: relative;
     height: 400px;
@@ -246,7 +219,6 @@
     z-index: 2;
 }
 
-/* Scanline */
 .flyer-scanline {
     position: absolute;
     top: 0;
@@ -269,7 +241,6 @@
     100% { transform: translateY(100%); }
 }
 
-/* Light Sweep */
 .light-sweep {
     position: absolute;
     top: 0;
@@ -292,7 +263,6 @@
     100% { left: 100%; }
 }
 
-/* Badges flotantes */
 .poster-badges-container {
     position: absolute;
     top: 20px;
@@ -320,7 +290,6 @@
     gap: 8px;
 }
 
-/* Esquinas decorativas */
 .corner-decoration {
     position: absolute;
     width: 40px;
@@ -330,35 +299,11 @@
     opacity: 0.7;
 }
 
-.corner-decoration.top-left {
-    top: 20px;
-    left: 20px;
-    border-right: none;
-    border-bottom: none;
-}
+.corner-decoration.top-left { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+.corner-decoration.top-right { top: 20px; right: 20px; border-left: none; border-bottom: none; }
+.corner-decoration.bottom-left { bottom: 20px; left: 20px; border-right: none; border-top: none; }
+.corner-decoration.bottom-right { bottom: 20px; right: 20px; border-left: none; border-top: none; }
 
-.corner-decoration.top-right {
-    top: 20px;
-    right: 20px;
-    border-left: none;
-    border-bottom: none;
-}
-
-.corner-decoration.bottom-left {
-    bottom: 20px;
-    left: 20px;
-    border-right: none;
-    border-top: none;
-}
-
-.corner-decoration.bottom-right {
-    bottom: 20px;
-    right: 20px;
-    border-left: none;
-    border-top: none;
-}
-
-/* Body */
 .flyer-body {
     padding: 40px;
     flex-grow: 1;
@@ -372,7 +317,6 @@
     background: linear-gradient(180deg, #0f2b4d 0%, #1a3a5c 100%);
 }
 
-/* Badge */
 .flyer-badge {
     display: inline-flex;
     align-items: center;
@@ -420,7 +364,6 @@
     50% { transform: translateY(-3px); }
 }
 
-/* Heading */
 .flyer-heading {
     font-size: 2.3rem;
     color: #0f2b4d;
@@ -436,7 +379,6 @@
     text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
 }
 
-/* Artists Marquee */
 .poster-artists {
     margin-bottom: 25px;
     padding: 20px;
@@ -479,7 +421,6 @@
     100% { transform: translateX(-50%); }
 }
 
-/* Meta */
 .flyer-meta {
     display: flex;
     flex-wrap: wrap;
@@ -513,7 +454,6 @@
     font-size: 1.2rem;
 }
 
-/* Text */
 .flyer-text {
     color: #666;
     line-height: 1.7;
@@ -522,7 +462,6 @@
     font-size: 1.05rem;
 }
 
-/* Footer */
 .flyer-footer {
     display: flex;
     justify-content: space-between;
@@ -536,7 +475,6 @@
     border-top-color: rgba(255, 215, 0, 0.3) !important;
 }
 
-/* Botones */
 .btn-flyer.primary {
     padding: 16px 35px;
     background: linear-gradient(135deg, #FFD700 0%, #ffc400 100%);
@@ -565,34 +503,21 @@
     transition: left 0.6s;
 }
 
-.btn-flyer.primary:hover::before {
-    left: 100%;
-}
+.btn-flyer.primary:hover::before { left: 100%; }
 
 .btn-flyer.primary:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
 }
 
-.btn-arrow {
-    transition: transform 0.3s;
-}
+.btn-arrow { transition: transform 0.3s; }
+.btn-flyer.primary:hover .btn-arrow { transform: translateX(5px); }
 
-.btn-flyer.primary:hover .btn-arrow {
-    transform: translateX(5px);
-}
-
-.btn-pulse {
-    animation: pulse 2s infinite;
-}
+.btn-pulse { animation: pulse 2s infinite; }
 
 @keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-    }
-    50% {
-        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.8);
-    }
+    0%, 100% { box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4); }
+    50% { box-shadow: 0 8px 30px rgba(255, 215, 0, 0.8); }
 }
 
 .btn-flyer.secondary {
@@ -617,7 +542,6 @@
     box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
 }
 
-/* Status */
 .flyer-status {
     padding: 10px 20px;
     border-radius: 10px;
@@ -631,7 +555,6 @@
 .flyer-status.open { background: #d1ecf1; color: #0c5460; border: 2px solid #17a2b8; }
 .flyer-status.limited { background: #fff3cd; color: #856404; border: 2px solid #ffc107; }
 
-/* Controles */
 .carousel-control {
     position: absolute;
     top: 50%;
@@ -660,7 +583,6 @@
 .carousel-control.prev { left: 0; }
 .carousel-control.next { right: 0; }
 
-/* Barra de progreso */
 .progress-bar-container {
     width: 100%;
     height: 4px;
@@ -681,7 +603,6 @@
     transition: width 0.1s linear;
 }
 
-/* Indicadores */
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -714,7 +635,6 @@
     transform: scale(1.2);
 }
 
-/* Autoplay Toggle */
 .autoplay-toggle {
     position: absolute;
     top: 20px;
@@ -745,7 +665,6 @@
     opacity: 0.7;
 }
 
-/* CTA */
 .events-cta {
     text-align: center;
     margin-top: 70px;
@@ -782,9 +701,7 @@
     z-index: -1;
 }
 
-.btn-view-all-events:hover::before {
-    left: 0;
-}
+.btn-view-all-events:hover::before { left: 0; }
 
 .btn-view-all-events:hover {
     color: #0f2b4d;
@@ -792,80 +709,38 @@
     box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
 }
 
-/* ANIMACIONES DE ENTRADA */
-.animate-fade-in {
-    animation: fadeIn 0.8s ease both;
-}
-
-.animate-fade-in-delay {
-    animation: fadeIn 0.8s ease 0.3s both;
-}
-
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s ease both;
-}
-
-.animate-slide-in-left {
-    animation: slideInLeft 0.8s ease both;
-}
-
-.animate-bounce-in {
-    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
-}
-
-.animate-expand {
-    animation: expandWidth 1.5s ease 0.5s both;
-}
+.animate-fade-in { animation: fadeIn 0.8s ease both; }
+.animate-fade-in-delay { animation: fadeIn 0.8s ease 0.3s both; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease both; }
+.animate-slide-in-left { animation: slideInLeft 0.8s ease both; }
+.animate-bounce-in { animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both; }
+.animate-expand { animation: expandWidth 1.5s ease 0.5s both; }
 
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes bounceIn {
-    from {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.3); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes expandWidth {
-    from { width: 0; }
-    to { width: 100px; }
-}
+@keyframes expandWidth { from { width: 0; } to { width: 100px; } }
 
-/* Responsive */
+/* Responsive Cine Eventos */
 @media (max-width: 768px) {
     .events-cinema-section { padding: 70px 15px; }
     .events-title { font-size: 2rem; letter-spacing: 2px; }
@@ -884,8 +759,6 @@
     .poster-badges-container { flex-direction: column; }
     .poster-badge { font-size: 0.75rem; padding: 8px 15px; }
 }
-
-
 
 @media (max-width: 480px) {
     .events-cinema-section { padding: 50px 10px; }
@@ -912,17 +785,11 @@
 .festival-tricolor-section {
     position: relative;
     padding: 80px 20px 60px;
-    background:  linear-gradient(
-            180deg,
-            #001f54 0%,
-            #003b88 40%,
-            #002147 100%
-        );
+    background: linear-gradient(180deg, #001f54 0%, #003b88 40%, #002147 100%);
     overflow: hidden;
     min-height: 100vh;
 }
 
-/* Fondo con bandas tricolor */
 .festival-bg-effects {
     position: absolute;
     top: 0;
@@ -978,7 +845,6 @@
     z-index: 1;
 }
 
-/* Organizador */
 .festival-organizer {
     text-align: center;
     margin-bottom: 30px;
@@ -1010,7 +876,6 @@
     letter-spacing: 2px;
 }
 
-/* Banner de Fecha */
 .festival-date-banner {
     text-align: center;
     margin-bottom: 40px;
@@ -1041,7 +906,7 @@
     font-weight: 600;
     letter-spacing: 2px;
 }
-/* Título Principal - Efecto 3D Superpuesto */
+
 .festival-main-title {
     text-align: center;
     margin: 50px 0 60px;
@@ -1049,7 +914,7 @@
 }
 
 .title-sub {
-  font-family: 'Dancing Script', cursive !important;
+    font-family: 'Dancing Script', cursive !important;
     font-weight: 700;
     font-size: 2.5rem;
     color: #FFD700;
@@ -1079,7 +944,6 @@
     position: relative;
 }
 
-/* Cada letra 3D - CLASE ÚNICA */
 .tri-letter {
     display: inline-block;
     position: relative;
@@ -1103,23 +967,13 @@
     z-index: 10;
 }
 
-/* Animación de pop con rebote */
 @keyframes letterPop {
-    0%, 100% {
-        transform: translateY(0) scale(1) rotateX(0deg);
-    }
-    25% {
-        transform: translateY(-15px) scale(1.1) rotateX(10deg);
-    }
-    50% {
-        transform: translateY(0) scale(1) rotateX(0deg);
-    }
-    75% {
-        transform: translateY(-5px) scale(1.05) rotateX(5deg);
-    }
+    0%, 100% { transform: translateY(0) scale(1) rotateX(0deg); }
+    25% { transform: translateY(-15px) scale(1.1) rotateX(10deg); }
+    50% { transform: translateY(0) scale(1) rotateX(0deg); }
+    75% { transform: translateY(-5px) scale(1.05) rotateX(5deg); }
 }
 
-/* Efecto de brillo que recorre las letras */
 .tri-letter::before {
     content: '';
     position: absolute;
@@ -1127,12 +981,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     animation: shimmer 3s infinite;
     pointer-events: none;
 }
@@ -1168,26 +1017,6 @@
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .title-tricolor {
-        font-size: 3.5rem;
-        letter-spacing: 5px;
-    }
-    
-    .title-sub {
-        font-size: 1.8rem;
-    }
-    
-    .title-country {
-        font-size: 1.3rem;
-        letter-spacing: 5px;
-    }
-}
-
-
-
-/* Sección de Artistas */
 .festival-artists-section {
     margin: 50px 0;
     padding: 30px 0;
@@ -1236,6 +1065,7 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-80%); }
 }
+
 .artist-card {
     display: flex;
     flex-direction: column;
@@ -1243,11 +1073,10 @@
     gap: 12px;
     min-width: 130px;
     transition: transform 0.3s ease;
+    position: relative;
 }
 
-.artist-card:hover {
-    transform: translateY(-8px);
-}
+.artist-card:hover { transform: translateY(-8px); }
 
 .artist-photo {
     height: 110px;
@@ -1297,7 +1126,6 @@
     line-height: 1.2;
 }
 
-/* Info Strip */
 .festival-info-strip {
     display: flex;
     flex-wrap: wrap;
@@ -1330,14 +1158,9 @@
     border: 1px solid rgba(231, 76, 60, 0.5);
 }
 
-.info-icon {
-    font-size: 1.8rem;
-}
+.info-icon { font-size: 1.8rem; }
 
-.info-content {
-    display: flex;
-    flex-direction: column;
-}
+.info-content { display: flex; flex-direction: column; }
 
 .info-label {
     color: rgba(255,255,255,0.6);
@@ -1357,7 +1180,6 @@
     font-size: 1.3rem;
 }
 
-/* Actividades */
 .festival-activities {
     display: flex;
     flex-wrap: wrap;
@@ -1383,9 +1205,7 @@
     transform: translateY(-3px);
 }
 
-.activity-icon {
-    font-size: 1.3rem;
-}
+.activity-icon { font-size: 1.3rem; }
 
 .activity-text {
     color: #fff;
@@ -1393,10 +1213,7 @@
     font-size: 0.9rem;
 }
 
-/* Sponsors */
-.festival-sponsors {
-    margin: 50px 0;
-}
+.festival-sponsors { margin: 50px 0; }
 
 .sponsors-header {
     display: flex;
@@ -1442,7 +1259,6 @@
     width: 100%;
 }
 
-/* Botones de Acción */
 .festival-actions {
     display: flex;
     justify-content: center;
@@ -1470,12 +1286,8 @@
 }
 
 @keyframes btnPulse {
-    0%, 100% {
-        box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5);
-    }
-    50% {
-        box-shadow: 0 10px 40px rgba(231, 76, 60, 0.8);
-    }
+    0%, 100% { box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5); }
+    50% { box-shadow: 0 10px 40px rgba(231, 76, 60, 0.8); }
 }
 
 .btn-comprar-entradas:hover {
@@ -1514,7 +1326,6 @@
     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
 }
 
-/* Dirección */
 .festival-address {
     text-align: center;
     color: rgba(255,255,255,0.7);
@@ -1526,26 +1337,12 @@
     margin-top: 20px;
 }
 
-.address-icon {
-    font-size: 1.2rem;
-}
+.address-icon { font-size: 1.2rem; }
 
-/* Animaciones */
-.animate-fade-in {
-    animation: fadeIn 0.8s ease both;
-}
-
-.animate-slide-down {
-    animation: slideDown 0.8s ease 0.2s both;
-}
-
-.animate-scale-in {
-    animation: scaleIn 1s ease 0.4s both;
-}
-
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s ease both;
-}
+.animate-fade-in { animation: fadeIn 0.8s ease both; }
+.animate-slide-down { animation: slideDown 0.8s ease 0.2s both; }
+.animate-scale-in { animation: scaleIn 1s ease 0.4s both; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease both; }
 
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.3s; }
@@ -1553,141 +1350,75 @@
 .delay-4 { animation-delay: 0.7s; }
 .delay-5 { animation-delay: 0.9s; }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
+    from { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 @keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
+/* Responsive Festival Tricolor */
 @media (max-width: 768px) {
-    .festival-tricolor-section {
-        padding: 50px 15px 40px;
+    .festival-tricolor-section { padding: 50px 15px 40px; }
+    
+    .festival-date-banner {
+        padding: 15px 20px;
+        width: 90%;
     }
     
-    .date-day {
-        font-size: 1.3rem;
-    }
+    .date-day { font-size: 1.3rem; }
+    .date-time { font-size: 0.85rem; }
     
-    .date-time {
-        font-size: 0.85rem;
-    }
+    .festival-organizer { margin-bottom: 20px; }
+    .org-logo-img { height: 40px; }
     
-    .title-sub {
-        font-size: 1.8rem;
-    }
+    .title-sub { font-size: 1.8rem; }
+    .title-tricolor { font-size: 3rem; letter-spacing: 2px; }
+    .title-country { font-size: 1.2rem; letter-spacing: 4px; }
     
-    .title-tricolor {
-        font-size: 3rem;
-        letter-spacing: 2px;
-    }
+    .artist-card { min-width: 100px; }
+    .artist-photo { width: 85px; height: 85px; }
+    .artist-initials { font-size: 1.5rem; }
+    .artist-name { font-size: 0.75rem; }
     
-    .title-country {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-    }
+    .festival-info-strip { flex-direction: column; }
+    .info-block { width: 100%; justify-content: center; }
     
-    .artist-card {
-        min-width: 100px;
-    }
+    .festival-actions { flex-direction: column; align-items: stretch; }
+    .btn-comprar-entradas, .btn-info-contacto { justify-content: center; }
     
-    .artist-photo {
-        width: 85px;
-        height: 85px;
-    }
-    
-    .artist-initials {
-        font-size: 1.5rem;
-    }
-    
-    .artist-name {
-        font-size: 0.75rem;
-    }
-    
-    .festival-info-strip {
-        flex-direction: column;
-    }
-    
-    .info-block {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .festival-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .btn-comprar-entradas,
-    .btn-info-contacto {
-        justify-content: center;
-    }
-    
-    .festival-activities {
-        gap: 10px;
-    }
-    
-    .activity-item {
-        padding: 10px 15px;
-        font-size: 0.85rem;
-    }
+    .festival-activities { gap: 10px; }
+    .activity-item { padding: 10px 15px; font-size: 0.85rem; }
 }
 
-
-/* ============================================
- responsive del banner para el movil
-   ============================================ */
-.festival-date-banner {
-    padding: 15px 20px;
-    width: 90%;
-}
-
-.date-day {
-    font-size: 1.1rem;
-}
-
-.date-time {
-    font-size: 0.75rem;
-}
-
-.festival-organizer {
-    margin-bottom: 20px;
-}
-
-.org-logo-img {
-    height: 40px;
+@media (max-width: 480px) {
+    .festival-tricolor-section { padding: 40px 10px 30px; }
+    
+    .title-tricolor { font-size: 2.2rem !important; letter-spacing: 1px; }
+    .title-sub { font-size: 1.4rem; }
+    .title-country { font-size: 1rem; letter-spacing: 2px; }
+    
+    .festival-date-banner { padding: 12px 15px; }
+    .date-day { font-size: 0.95rem; }
+    
+    .artist-card { min-width: 85px; }
+    .artist-photo { width: 70px; height: 70px; }
+    .artist-name { font-size: 0.7rem; }
+    
+    .btn-comprar-entradas, .btn-info-contacto {
+        padding: 15px 25px;
+        font-size: 0.95rem;
+    }
 }
 
 /* ============================================
@@ -1706,9 +1437,7 @@
     padding: 20px;
 }
 
-.artist-modal.active { 
-    display: flex; 
-}
+.artist-modal.active { display: flex; }
 
 .artist-modal-content {
     background: linear-gradient(135deg, #0f2b4d 0%, #1a3a5c 100%);
@@ -1724,14 +1453,8 @@
 }
 
 @keyframes slideUpModal {
-    from { 
-        opacity: 0; 
-        transform: translateY(50px) scale(0.9); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0) scale(1); 
-    }
+    from { opacity: 0; transform: translateY(50px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .artist-modal-close {
@@ -1791,9 +1514,7 @@
     font-weight: 900;
 }
 
-.artist-modal-title { 
-    text-align: center; 
-}
+.artist-modal-title { text-align: center; }
 
 .artist-modal-title h2 {
     color: #FFD700;
@@ -1809,9 +1530,7 @@
     margin: 0 auto;
 }
 
-.artist-modal-body { 
-    padding: 30px; 
-}
+.artist-modal-body { padding: 30px; }
 
 .artist-modal-description {
     color: rgba(255, 255, 255, 0.9);
@@ -1848,35 +1567,6 @@
     transform: translateY(-3px);
 }
 
-/* Responsive 
-@media (max-width: 768px) {
-    .artist-modal-content { 
-        max-width: 95%; 
-    }
-    
-    .artist-modal-photo { 
-        width: 120px; 
-        height: 120px; 
-    }
-    
-    .artist-modal-title h2 { 
-        font-size: 1.5rem; 
-    }
-    
-    .artist-modal-description {
-        font-size: 1rem;
-    }
-    
-    .artist-social-links { 
-        flex-direction: column; 
-    }
-    
-    .social-link-item { 
-        width: 100%; 
-        justify-content: center; 
-    }
-}*/
-/* Overlay Hover Profesional */
 .artist-hover-overlay {
     position: absolute;
     top: 0;
@@ -1894,9 +1584,7 @@
     border-radius: 12px;
 }
 
-.artist-card:hover .artist-hover-overlay {
-    opacity: 1;
-}
+.artist-card:hover .artist-hover-overlay { opacity: 1; }
 
 .hover-text {
     color: #FFD700;
@@ -1920,62 +1608,10 @@
     transition: width 0.3s ease;
 }
 
-.artist-card:hover .hover-text::after {
-    width: 100%;
-}
+.artist-card:hover .hover-text::after { width: 100%; }
 
-@media (max-width: 480px) {
-    .festival-tricolor-section {
-        padding: 40px 10px 30px;
-    }
-    
-    .title-tricolor {
-        font-size: 2.2rem !important;
-        letter-spacing: 1px;
-    }
-    
-    .title-sub {
-        font-size: 1.4rem;
-    }
-    
-    .title-country {
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
-    
-    .festival-date-banner {
-        padding: 12px 15px;
-    }
-    
-    .date-day {
-        font-size: 0.95rem;
-    }
-    
-    .artist-card {
-        min-width: 85px;
-    }
-    
-    .artist-photo {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .artist-name {
-        font-size: 0.7rem;
-    }
-    
-    .btn-comprar-entradas,
-    .btn-info-contacto {
-        padding: 15px 25px;
-        font-size: 0.95rem;
-    }
-}
-/* ============================================
-   MODAL RESPONSIVE MÓVIL
-   ============================================ */
-
+/* Modal Responsive Móvil */
 @media (max-width: 768px) {
-
     .artist-modal {
         padding: 10px;
         align-items: flex-end;
@@ -2008,9 +1644,7 @@
         border-width: 3px;
     }
 
-    .artist-modal-initials {
-        font-size: 2.2rem;
-    }
+    .artist-modal-initials { font-size: 2.2rem; }
 
     .artist-modal-title h2 {
         font-size: 1.4rem;
@@ -2018,13 +1652,8 @@
         padding: 0 10px;
     }
 
-    .artist-modal-divider {
-        width: 60px;
-    }
-
-    .artist-modal-body {
-        padding: 20px;
-    }
+    .artist-modal-divider { width: 60px; }
+    .artist-modal-body { padding: 20px; }
 
     .artist-modal-description {
         font-size: 0.95rem;
@@ -2046,38 +1675,19 @@
     }
 }
 
-/* Móviles pequeños */
 @media (max-width: 480px) {
-
-    .artist-modal {
-        padding: 0;
-    }
+    .artist-modal { padding: 0; }
 
     .artist-modal-content {
         border-radius: 20px 20px 0 0;
         max-height: 95vh;
     }
 
-    .artist-modal-header {
-        padding: 25px 15px 15px;
-    }
-
-    .artist-modal-photo {
-        width: 85px;
-        height: 85px;
-    }
-
-    .artist-modal-title h2 {
-        font-size: 1.2rem;
-    }
-
-    .artist-modal-description {
-        font-size: 0.9rem;
-    }
-
-    .artist-modal-body {
-        padding: 15px;
-    }
+    .artist-modal-header { padding: 25px 15px 15px; }
+    .artist-modal-photo { width: 85px; height: 85px; }
+    .artist-modal-title h2 { font-size: 1.2rem; }
+    .artist-modal-description { font-size: 0.9rem; }
+    .artist-modal-body { padding: 15px; }
 
     .social-link-item {
         font-size: 0.9rem;
@@ -2085,8 +1695,7 @@
     }
 }
 
-
-/* Botón Flyer - Compacto y discreto */
+/* Botón Flyer */
 .btn-flyer-download {
     display: inline-flex;
     align-items: center;
@@ -2095,7 +1704,7 @@
     color: #FFD700;
     padding: 12px 20px;
     border: 2px solid rgba(255, 215, 0, 0.5);
-    border-radius: 50px; /* Forma de píldora */
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.85rem;
@@ -2120,7 +1729,7 @@
 
 .btn-flyer-download:hover .flyer-icon {
     stroke: #fff;
-    transform: translateY(2px); /* Animación de descarga */
+    transform: translateY(2px);
 }
 
 @media (max-width: 768px) {
@@ -2130,11 +1739,6 @@
         font-size: 0.8rem;
     }
 }
-
-
-
-
-
 
 /* ============================================
    SECCIÓN VÍDEOS DESDE REDES SOCIALES
@@ -2170,7 +1774,6 @@
     letter-spacing: 4px;
 }
 
-/* Contenedor del reproductor */
 .video-player-container {
     position: relative;
     max-width: 400px;
@@ -2200,7 +1803,6 @@
     border: none;
 }
 
-/* Controles superpuestos (botón mute + badge) */
 .video-controls {
     position: absolute;
     top: 20px;
@@ -2248,7 +1850,6 @@
     text-align: center;
 }
 
-/* Botones de navegación de VÍDEOS (con prefijo para evitar conflictos) */
 .video-nav-btn {
     position: absolute;
     top: 50%;
@@ -2282,7 +1883,6 @@
 .video-nav-btn.prev { left: -35px; }
 .video-nav-btn.next { right: -35px; }
 
-/* Links a redes */
 .social-platforms-links {
     display: flex;
     justify-content: center;
@@ -2309,51 +1909,6 @@
     color: #fff;
     transform: translateY(-3px);
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .festival-social-videos {
-        padding: 35px 15px;
-    }
-    
-    .social-videos-header .header-text {
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-    }
-    
-    .video-player-container {
-        max-width: 100%;
-    }
-    
-    .main-video-wrapper {
-        max-height: 500px;
-    }
-    
-    .video-nav-btn {
-        width: 50px;
-        height: 50px;
-    }
-    
-  .video-nav-btn.prev { left: 5px; }
-.video-nav-btn.next { right: 5px; }
-.video-nav-btn { width: 42px; height: 42px; }
-.video-nav-btn svg { width: 20px; height: 20px; }
-    
-    .mute-btn {
-        width: 42px;
-        height: 42px;
-    }
-    
-    .platform-link {
-        padding: 8px 18px;
-        font-size: 0.85rem;
-    }
-}
-
-
-
-
-
 
 .audio-auto-notice {
     position: absolute;
@@ -2382,13 +1937,41 @@
     transform: translate(-50%, -50%);
 }
 
-/* ============================================
-    responsive 28/09
-   ============================================ */
-@media (max-width: 480px) {
-    .festival-social-videos {
-        padding: 25px 10px;
+/* Responsive Videos Sociales */
+@media (max-width: 768px) {
+    .festival-social-videos { padding: 35px 15px; }
+    
+    .social-videos-header .header-text {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
     }
+    
+    .video-player-container { max-width: 100%; }
+    .main-video-wrapper { max-height: 500px; }
+    
+    .video-nav-btn {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .video-nav-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .video-nav-btn.prev { left: 5px; }
+    .video-nav-btn.next { right: 5px; }
+    
+    .mute-btn { width: 42px; height: 42px; }
+    
+    .platform-link {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .festival-social-videos { padding: 25px 10px; }
     
     .social-videos-header .header-text {
         font-size: 0.95rem;
@@ -2400,32 +1983,17 @@
         border-radius: 15px;
     }
     
-    .video-nav-btn {
-        width: 36px;
-        height: 36px;
-    }
-    
+    .video-nav-btn { width: 36px; height: 36px; }
     .video-nav-btn.prev { left: 2px; }
     .video-nav-btn.next { right: 2px; }
     
-    .mute-btn {
-        width: 38px;
-        height: 38px;
-    }
+    .mute-btn { width: 38px; height: 38px; }
     
     .platform-link {
         padding: 6px 14px;
         font-size: 0.8rem;
     }
 }
-
-
-
-
-
-
-
-/*GALERIA 3D RECUERDOS DEL EVENTO 11/9*/
 
 /* ============================================
    SLIDESHOW MASONRY CINEMÁTICO
@@ -2456,21 +2024,13 @@
 }
 
 .slideshow-title {
-
     color: #FFD700;
-
     font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-
     font-weight: 700;
-
     letter-spacing: 1px;
-
     line-height: 1.15;
-
     margin: 0 0 15px 0;
-
     text-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
-
 }
 
 .slideshow-subtitle {
@@ -2480,7 +2040,6 @@
     margin: 0 auto;
 }
 
-/* Wrapper principal */
 .cinematic-slideshow-wrapper {
     position: relative;
     max-width: 1400px;
@@ -2492,7 +2051,6 @@
     border: 4px solid rgba(255, 215, 0, 0.3);
 }
 
-/* Slides */
 .masonry-slide {
     position: absolute;
     top: 0;
@@ -2516,7 +2074,6 @@
     z-index: 5;
 }
 
-/* Grid 4x3 = 12 celdas exactas */
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2526,7 +2083,6 @@
     width: 100%;
 }
 
-/* Items base */
 .masonry-item {
     position: relative;
     border-radius: 15px;
@@ -2553,32 +2109,13 @@
     display: block;
 }
 
-.masonry-item:hover img {
-    transform: scale(1.1);
-}
+.masonry-item:hover img { transform: scale(1.1); }
 
-/* Tamaños que suman 12 celdas exactas */
-.item-large {
-    grid-column: span 2;
-    grid-row: span 2;
-}
+.item-large { grid-column: span 2; grid-row: span 2; }
+.item-gif-vertical { grid-column: span 1; grid-row: span 2; }
+.item-medium { grid-column: span 1; grid-row: span 1; }
+.item-small { grid-column: span 1; grid-row: span 1; }
 
-.item-gif-vertical {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-.item-medium {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.item-small {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-/* Overlay */
 .masonry-overlay {
     position: absolute;
     inset: 0;
@@ -2593,14 +2130,9 @@
     pointer-events: none;
 }
 
-.masonry-item:hover .masonry-overlay {
-    opacity: 1;
-}
+.masonry-item:hover .masonry-overlay { opacity: 1; }
 
-.overlay-icon {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-}
+.overlay-icon { font-size: 2.5rem; margin-bottom: 8px; }
 
 .overlay-text {
     color: #FFD700;
@@ -2610,7 +2142,6 @@
     text-align: center;
 }
 
-/* Botones de navegación */
 .slideshow-nav-btn {
     position: absolute;
     top: 50%;
@@ -2645,7 +2176,6 @@
 .prev-btn { left: 20px; }
 .next-btn { right: 20px; }
 
-/* Dots */
 .slideshow-dots {
     display: flex;
     justify-content: center;
@@ -2678,7 +2208,6 @@
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
 }
 
-/* Contador */
 .slideshow-counter {
     text-align: center;
     margin-top: 20px;
@@ -2693,89 +2222,136 @@
     font-weight: 800;
 }
 
-/* Responsive */
+/* Responsive Cinematic */
 @media (max-width: 1024px) {
-    .cinematic-slideshow-wrapper {
-        height: 650px;
-    }
+    .cinematic-slideshow-wrapper { height: 650px; }
     
     .masonry-grid {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
     }
     
-    .item-large {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
+    .item-large { grid-column: span 2; grid-row: span 2; }
 }
 
 @media (max-width: 768px) {
-    .cinematic-masonry-slideshow {
-        padding: 50px 15px;
+    .cinematic-masonry-slideshow { padding: 45px 12px; }
+
+    .cinematic-masonry-slideshow .slideshow-header {
+        height: auto;
+        min-height: 0;
+        padding: 0;
+        margin-bottom: 28px;
+        text-align: center;
     }
-    
-    .cinematic-slideshow-wrapper {
-        height: 550px;
-        border-radius: 15px;
-    }
-    
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        gap: 10px;
-    }
-    
-    .item-large {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    
-    .item-gif-vertical {
-        grid-row: span 2;
-    }
-    
-    .slideshow-nav-btn {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .slideshow-nav-btn svg {
-        width: 22px;
-        height: 22px;
-    }
-    
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
-    
-    .slideshow-title {
+
+    .cinematic-masonry-slideshow .slideshow-title {
         font-size: 1.8rem;
+        line-height: 1.15;
     }
+
+    .cinematic-masonry-slideshow .cinematic-slideshow-wrapper {
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: 14px;
+        border-width: 2px;
+    }
+
+    .cinematic-masonry-slideshow .masonry-slide {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .cinematic-masonry-slideshow .masonry-slide.active {
+        display: block;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .cinematic-masonry-slideshow .masonry-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 12px;
+    }
+
+    .cinematic-masonry-slideshow .masonry-item,
+    .cinematic-masonry-slideshow .item-large,
+    .cinematic-masonry-slideshow .item-medium,
+    .cinematic-masonry-slideshow .item-small,
+    .cinematic-masonry-slideshow .item-gif-vertical {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        grid-column: auto;
+        grid-row: auto;
+        flex: none;
+    }
+
+    .cinematic-masonry-slideshow .masonry-item:not(.item-gif-vertical) {
+        aspect-ratio: 4 / 3;
+    }
+
+    .cinematic-masonry-slideshow .masonry-item.item-gif-vertical {
+        aspect-ratio: 9 / 16;
+        max-height: 520px;
+        background: #000;
+    }
+
+    .cinematic-masonry-slideshow .masonry-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .cinematic-masonry-slideshow .masonry-item.item-gif-vertical img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .cinematic-masonry-slideshow .slideshow-nav-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .cinematic-masonry-slideshow .slideshow-nav-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cinematic-masonry-slideshow .prev-btn { left: 8px; }
+    .cinematic-masonry-slideshow .next-btn { right: 8px; }
 }
 
 @media (max-width: 480px) {
-    .cinematic-slideshow-wrapper {
-        height: 500px;
+    .cinematic-masonry-slideshow { padding: 38px 10px; }
+    .cinematic-masonry-slideshow .slideshow-title { font-size: 1.55rem; }
+    .cinematic-masonry-slideshow .masonry-grid { gap: 10px; }
+    
+    .cinematic-masonry-slideshow .masonry-item.item-gif-vertical {
+        aspect-ratio: 9 / 16;
+        max-height: 400px;
     }
     
-    .masonry-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 1fr);
-    }
-    
-    .item-large, .item-medium, .item-small, .item-gif-vertical {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    
-    .slideshow-nav-btn {
-        width: 40px;
-        height: 40px;
+    .cinematic-masonry-slideshow .slideshow-nav-btn {
+        width: 38px;
+        height: 38px;
     }
 }
-
-
-
 
 /* ============================================
    POPUP FESTIVAL DEL PLÁTANO Y BANANO
@@ -2821,7 +2397,6 @@
     transform: scale(1) translateY(0);
 }
 
-/* Botón cerrar */
 .banana-popup-close {
     position: absolute;
     top: 15px;
@@ -2848,7 +2423,6 @@
     transform: rotate(90deg) scale(1.1);
 }
 
-/* Badge */
 .banana-popup-badge {
     position: absolute;
     top: 15px;
@@ -2878,7 +2452,6 @@
     50% { transform: rotate(10deg); }
 }
 
-/* Header con bananas flotantes */
 .banana-popup-header {
     text-align: center;
     padding: 60px 30px 20px;
@@ -2903,47 +2476,15 @@
     animation: bananaFloat 3s ease-in-out infinite;
 }
 
-.floating-banana.banana-1 {
-    left: 5%;
-    top: 20%;
-    animation-delay: 0s;
-}
-
-.floating-banana.banana-2 {
-    left: 20%;
-    top: 10%;
-    animation-delay: 0.5s;
-    font-size: 2rem;
-}
-
-.floating-banana.banana-3 {
-    right: 20%;
-    top: 15%;
-    animation-delay: 1s;
-    font-size: 2rem;
-}
-
-.floating-banana.banana-4 {
-    right: 5%;
-    top: 25%;
-    animation-delay: 1.5s;
-}
-
-.floating-banana.banana-5 {
-    left: 50%;
-    top: 5%;
-    transform: translateX(-50%);
-    animation-delay: 0.7s;
-    font-size: 1.8rem;
-}
+.floating-banana.banana-1 { left: 5%; top: 20%; animation-delay: 0s; }
+.floating-banana.banana-2 { left: 20%; top: 10%; animation-delay: 0.5s; font-size: 2rem; }
+.floating-banana.banana-3 { right: 20%; top: 15%; animation-delay: 1s; font-size: 2rem; }
+.floating-banana.banana-4 { right: 5%; top: 25%; animation-delay: 1.5s; }
+.floating-banana.banana-5 { left: 50%; top: 5%; transform: translateX(-50%); animation-delay: 0.7s; font-size: 1.8rem; }
 
 @keyframes bananaFloat {
-    0%, 100% { 
-        transform: translateY(0) rotate(-5deg); 
-    }
-    50% { 
-        transform: translateY(-20px) rotate(5deg); 
-    }
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 .banana-popup-title {
@@ -2965,7 +2506,6 @@
     z-index: 1;
 }
 
-/* Body en dos columnas */
 .banana-popup-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2979,7 +2519,6 @@
     gap: 20px;
 }
 
-/* Quick info con logo CICTAEC */
 .banana-quick-info {
     background: rgba(255, 255, 255, 0.9);
     padding: 15px 20px;
@@ -3033,7 +2572,6 @@
     letter-spacing: 0.5px;
 }
 
-/* Descripción compacta */
 .banana-description-compact {
     background: rgba(255, 255, 255, 0.95);
     padding: 15px 20px;
@@ -3048,7 +2586,6 @@
     margin: 0;
 }
 
-/* Actividades compactas */
 .banana-activities-compact {
     display: flex;
     flex-wrap: wrap;
@@ -3073,7 +2610,6 @@
     border-color: #d4a017;
 }
 
-/* Sponsors compactos */
 .banana-sponsors-compact {
     background: rgba(255, 255, 255, 0.95);
     padding: 15px 20px;
@@ -3106,7 +2642,6 @@
     font-weight: 600;
 }
 
-/* CTA compacto */
 .banana-cta-compact {
     text-align: center;
     padding: 20px;
@@ -3141,13 +2676,8 @@
     box-shadow: 0 10px 30px rgba(37, 211, 102, 0.7);
 }
 
-.whatsapp-icon-small {
-    font-size: 1.8rem;
-}
-
-.banana-whatsapp-compact span:nth-child(2) {
-    font-size: 1rem;
-}
+.whatsapp-icon-small { font-size: 1.8rem; }
+.banana-whatsapp-compact span:nth-child(2) { font-size: 1rem; }
 
 .whatsapp-number-small {
     font-size: 1.1rem;
@@ -3157,7 +2687,6 @@
     border-radius: 15px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .banana-popup-content {
         width: 95%;
@@ -3171,31 +2700,15 @@
         padding: 15px 20px 20px;
     }
     
-    .banana-popup-title {
-        font-size: 1.8rem;
-    }
-    
-    .banana-popup-subtitle {
-        font-size: 0.95rem;
-    }
-    
-    .banana-popup-header {
-        padding: 50px 20px 15px;
-    }
-    
-    .floating-banana {
-        font-size: 1.8rem;
-    }
-    
-    .quick-icon {
-        font-size: 1.1rem;
-    }
+    .banana-popup-title { font-size: 1.8rem; }
+    .banana-popup-subtitle { font-size: 0.95rem; }
+    .banana-popup-header { padding: 50px 20px 15px; }
+    .floating-banana { font-size: 1.8rem; }
+    .quick-icon { font-size: 1.1rem; }
 }
 
 @media (max-width: 480px) {
-    .banana-popup-title {
-        font-size: 1.5rem;
-    }
+    .banana-popup-title { font-size: 1.5rem; }
     
     .banana-popup-close {
         width: 35px;
@@ -3208,18 +2721,11 @@
         font-size: 0.7rem;
     }
     
-    .cictaec-logo-small {
-        height: 16px;
-    }
+    .cictaec-logo-small { height: 16px; }
 }
 
-
-
-
-
-
 /* ==========================================
-  BANNER DE TRANSICION E IMAGENES GALA PE FESTIAL 
+   BANNER DE TRANSICION E IMAGENES GALA
    ========================================== */
 
 .events-unifier {
@@ -3228,6 +2734,7 @@
     text-align: center;
     border-bottom: 2px solid #FFD700;
 }
+
 .unifier-badge {
     display: inline-flex;
     align-items: center;
@@ -3251,19 +2758,11 @@
 }
 
 .unifier-badge::before {
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 215, 0, 0.65)
-    );
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.65));
 }
 
 .unifier-badge::after {
-    background: linear-gradient(
-        90deg,
-        rgba(255, 215, 0, 0.65),
-        transparent
-    );
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.65), transparent);
 }
 
 .unifier-title {
@@ -3343,10 +2842,6 @@
     margin: 0;
 }
 
-/* ==========================================
-   GRID DE TARJETAS
-   ========================================== */
-
 .gala-grid-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -3377,10 +2872,6 @@
     border: 2px solid rgba(255,215,0,0.2);
 }
 
-/* ==========================================
-   IMAGEN DE TARJETA
-   ========================================== */
-
 .card-image {
     position: relative;
     height: 430px;
@@ -3394,9 +2885,7 @@
     transition: transform 0.5s ease;
 }
 
-.gala-card:hover .card-image img {
-    transform: scale(1.05);
-}
+.gala-card:hover .card-image img { transform: scale(1.05); }
 
 .card-badge {
     position: absolute;
@@ -3412,10 +2901,6 @@
     z-index: 10;
 }
 
-/* ==========================================
-   CONTENIDO DE TARJETA
-   ========================================== */
-
 .card-content {
     padding: 25px;
     flex: 1;
@@ -3423,9 +2908,7 @@
     flex-direction: column;
 }
 
-.card-content.full {
-    padding: 35px;
-}
+.card-content.full { padding: 35px; }
 
 .card-content h4 {
     color: #FFD700;
@@ -3466,13 +2949,7 @@
     transition: all 0.3s;
 }
 
-.card-link:hover {
-    transform: translateX(5px);
-}
-
-/* ==========================================
-   TRANSICIÓN COMPACTA
-   ========================================== */
+.card-link:hover { transform: translateX(5px); }
 
 .compact-transition {
     text-align: center;
@@ -3499,88 +2976,49 @@
     margin: 0;
 }
 
-/* ==========================================
-   RESPONSIVE
-   ========================================== */
-
+/* Responsive Gala */
 @media (max-width: 968px) {
-    .gala-card.featured {
-        grid-column: span 1;
-    }
-    
-    .gala-grid-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .card-image {
-        height: 250px;
-    }
+    .gala-card.featured { grid-column: span 1; }
+    .gala-grid-container { grid-template-columns: 1fr; }
+    .card-image { height: 250px; }
 }
 
 @media (max-width: 480px) {
-    .events-unifier {
-        padding: 40px 15px;
-    }
+    .events-unifier { padding: 30px 10px; }
+    .unifier-title { font-size: 1.5rem; }
+    .unifier-subtitle { font-size: 0.9rem; }
+    .tag { padding: 6px 14px; font-size: 0.8rem; }
     
-    .gala-grid-section {
-        padding: 40px 15px;
-    }
-    
-    .gala-grid-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .card-image {
-        height: 220px;
-    }
-    
-    .card-content {
-        padding: 20px;
-    }
-    
-    .card-content.full {
-        padding: 25px;
-    }
-    
-    .card-content h4 {
-        font-size: 1.3rem;
-    }
-    
-    .card-stats {
-        flex-direction: column;
-        gap: 10px;
-    }
+    .gala-grid-section { padding: 35px 10px; }
+    .gala-grid-title { font-size: 1.5rem; letter-spacing: 1px; }
+    .gala-grid-subtitle { font-size: 0.85rem; }
+    .gala-card { border-radius: 12px; }
+    .card-image { height: 200px; }
+    .card-content { padding: 15px; }
+    .card-content.full { padding: 20px; }
+    .card-content h4 { font-size: 1.1rem; }
+    .card-excerpt { font-size: 0.85rem; }
+    .card-badge { padding: 6px 12px; font-size: 0.7rem; }
+    .gala-day-badge { font-size: 0.65rem; padding: 5px 14px; }
+    .card-stats { flex-direction: column; gap: 10px; }
 }
 
 /* =========================================
-   SLIDESHOW — CARD4****************************
+   SLIDESHOW — CARD4
    ========================================= */
 
 .gala-slideshow-card {
     grid-column: span 2;
     position: relative;
     overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 215, 0, 0.045),
-            rgba(255, 255, 255, 0.015)
-        );
-
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.045), rgba(255, 255, 255, 0.015));
     border: 1px solid rgba(255, 215, 0, 0.18);
     border-radius: 15px;
-
     min-height: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        border-color .3s ease;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
 .gala-slideshow-card:hover {
@@ -3588,9 +3026,6 @@
     border-color: rgba(255, 215, 0, .35);
     box-shadow: 0 15px 40px rgba(255, 215, 0, .12);
 }
-
-
-/* CABECERA */
 
 .gala-slideshow-card .slideshow-header {
     height: 48px;
@@ -3601,577 +3036,178 @@
     margin-bottom: 0;
     text-align: left;
 }
+
 .slideshow-label {
     color: #FFD700;
-
     font-size: .72rem;
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-
-/* CONTENEDOR PRINCIPAL */
-
 .gala-slideshow {
     display: grid;
-
     grid-template-columns: 1.35fr 1fr;
-
     flex: 1;
     min-height: 0;
-
     height: calc(100% - 48px);
 }
 
-
-/* =========================================
-   IMAGEN
-   ========================================= */
-/* =========================================
-   ÁREA FIJA PARA TODAS LAS FOTOGRAFÍAS
-========================================= */
-
-.gala-slide-image{
-    position:relative;
-    width:100%;
-    height:320px;          /* SIEMPRE la misma altura */
-    min-height:320px;
-    max-height:320px;
-    overflow:hidden;
-    background:#080808;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-/* TODAS LAS IMÁGENES ENTRAN EN EL MISMO MARCO */
-
-.gala-slide-image img{
-    width:100%;
-    height:100%;
-    display:block;
-
-    object-fit:cover;
-    object-position:center center;
-
-    transition:opacity .35s ease, transform .5s ease;
-}
-
-
-/* BADGE SOBRE LA FOTO */
-
-.gala-slide-badge {
-    position: absolute;
-
-    top: 14px;
-    left: 14px;
-
-    padding: 7px 12px;
-
-    background: rgba(10, 10, 10, .84);
-
-    border: 1px solid rgba(255, 215, 0, .6);
-
-    color: #FFD700;
-
-    border-radius: 5px;
-
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .5px;
-
-    backdrop-filter: blur(6px);
-
-    z-index: 3;
-}
-
-
-/* =========================================
-   FLECHAS
-   ========================================= */
-
-.gala-slide-arrow {
-    position: absolute;
-
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 38px;
-    height: 38px;
-
-    padding: 0;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(255, 215, 0, .75);
-
-    background: rgba(5, 15, 25, .78);
-
-    color: #FFD700;
-
-    font-size: 1.8rem;
-
-    cursor: pointer;
-
+.gala-slide-image {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
+    overflow: hidden;
+    background: #080808;
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
+.gala-slide-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    transition: opacity .35s ease, transform .5s ease;
+}
+
+.gala-slide-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 7px 12px;
+    background: rgba(10, 10, 10, .84);
+    border: 1px solid rgba(255, 215, 0, .6);
+    color: #FFD700;
+    border-radius: 5px;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+    backdrop-filter: blur(6px);
+    z-index: 3;
+}
+
+.gala-slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 215, 0, .75);
+    background: rgba(5, 15, 25, .78);
+    color: #FFD700;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all .25s ease;
-
     z-index: 5;
 }
 
 .gala-slide-arrow:hover {
     background: #FFD700;
     color: #0f2b4d;
-
-    transform:
-        translateY(-50%)
-        scale(1.08);
+    transform: translateY(-50%) scale(1.08);
 }
 
-.gala-slide-arrow.prev {
-    left: 12px;
-}
-
-.gala-slide-arrow.next {
-    right: 12px;
-}
-
-
-/* =========================================
-   CONTENIDO
-   ========================================= */
+.gala-slide-arrow.prev { left: 12px; }
+.gala-slide-arrow.next { right: 12px; }
 
 .gala-slide-content {
     position: relative;
-
     padding: 30px 30px 25px;
-
     display: flex;
     flex-direction: column;
-
     justify-content: center;
-
     min-width: 0;
 }
 
-
-/* CONTADOR */
-
 .gala-slide-counter {
     position: absolute;
-
     top: 22px;
     right: 25px;
-
     display: flex;
     gap: 5px;
-
     color: rgba(255, 255, 255, .3);
-
     font-size: .7rem;
     font-weight: 700;
-
     letter-spacing: 1px;
 }
 
-.gala-slide-counter span:first-child {
-    color: #FFD700;
-}
-
-
-/* TITULO */
+.gala-slide-counter span:first-child { color: #FFD700; }
 
 .gala-slide-content h4 {
     color: #FFD700;
-
     font-size: clamp(1.3rem, 2vw, 1.7rem);
-
     margin: 0 65px 12px 0;
-
     font-weight: 800;
-
     letter-spacing: .5px;
-
     line-height: 1.2;
 }
 
-
-/* DESCRIPCION */
-
 .gala-slide-description {
     color: rgba(255, 255, 255, .75);
-
     font-size: .88rem;
-
     line-height: 1.6;
-
     margin: 0;
-
     max-width: 520px;
 }
-
-
-/* =========================================
-   INDICADORES
-   ========================================= */
 
 .gala-slide-dots {
     display: flex;
     align-items: center;
-
     gap: 6px;
-
     margin-top: 25px;
 }
 
 .gala-slide-dot {
     width: 18px;
     height: 3px;
-
     padding: 0;
-
     border: none;
     border-radius: 2px;
-
     background: rgba(255, 255, 255, .2);
-
     cursor: pointer;
-
     transition: all .3s ease;
 }
 
 .gala-slide-dot.active {
     width: 35px;
-
     background: #FFD700;
 }
 
-
-/* =========================================
-   TABLET
-   ========================================= */
-
+/* Tablet Slideshow */
 @media (max-width: 968px) {
-
-    .gala-slideshow-card {
-        grid-column: span 1;
-    }
-
-    .gala-slideshow {
-        grid-template-columns: 1fr;
-    }
-
-    .gala-slide-image {
-        height: 280px;
-        min-height: 280px;
-    }
-
-    .gala-slide-content {
-        padding: 22px;
-    }
+    .gala-slideshow-card { grid-column: span 1; }
+    .gala-slideshow { grid-template-columns: 1fr; }
+    .gala-slide-image { height: 280px; min-height: 280px; }
+    .gala-slide-content { padding: 22px; }
 }
 
-
-/* =========================================
-   MÓVIL
-   ========================================= */
-
+/* Móvil Slideshow */
 @media (max-width: 480px) {
-
-   .gala-slideshow-card {
-    min-height: auto;
-}
-
-.gala-slide-image {
-    height: 200px;
-    min-height: 200px;
-}
-
-.gala-slide-arrow {
-    width: 32px;
-    height: 32px;
-    font-size: 1.4rem;
-}
-
-.gala-slide-arrow.prev { left: 8px; }
-.gala-slide-arrow.next { right: 8px; }
-
-    .slideshow-header {
-        height: 45px;
-        min-height: 45px;
-        padding: 14px 16px 8px;
-    }
-
-    .gala-slideshow {
-        height: auto;
-    }
-
-    .gala-slide-image {
-        height: 230px;
-        min-height: 230px;
-    }
-
-    .gala-slide-content {
-        padding: 18px;
-    }
-
-    .gala-slide-content h4 {
-        font-size: 1.2rem;
-    }
-
-    .gala-slide-description {
-        font-size: .8rem;
-    }
-
-    .gala-slide-dots {
-        margin-top: 18px;
-    }
-}
-
-/* =========================================
-   MÓVIL 2
-   ========================================= */
-
-
-
-@media (max-width: 480px) {
-    .gala-grid-section {
-        padding: 35px 10px;
+    .gala-slideshow-card { min-height: auto; }
+    .gala-slideshow { height: auto; }
+    .gala-slide-image { height: 200px; min-height: 200px; }
+    
+    .gala-slide-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 1.4rem;
     }
     
-    .gala-grid-title {
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-    }
+    .gala-slide-arrow.prev { left: 8px; }
+    .gala-slide-arrow.next { right: 8px; }
     
-    .gala-grid-subtitle {
-        font-size: 0.85rem;
-    }
-    
-    .gala-card {
-        border-radius: 12px;
-    }
-    
-    .card-image {
-        height: 200px;
-    }
-    
-    .card-content {
-        padding: 15px;
-    }
-    
-    .card-content h4 {
-        font-size: 1.1rem;
-    }
-    
-    .card-excerpt {
-        font-size: 0.85rem;
-    }
-    
-    .card-badge {
-        padding: 6px 12px;
-        font-size: 0.7rem;
-    }
-    
-    .gala-day-badge {
-        font-size: 0.65rem;
-        padding: 5px 14px;
-    }
-    
-    .events-unifier {
-        padding: 30px 10px;
-    }
-    
-    .unifier-title {
-        font-size: 1.5rem;
-    }
-    
-    .unifier-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .tag {
-        padding: 6px 14px;
-        font-size: 0.8rem;
-    }
-}
-
-
-
-
-
-
-/* ==========================================================
-   FIX MÓVIL — GALERÍA DE RECUERDOS / CINEMATIC
-   Sobrescribe únicamente la versión móvil
-   ========================================================== */
-
-@media (max-width: 768px) {
-
-    /* SECCIÓN */
-    .cinematic-masonry-slideshow {
-        padding: 45px 12px;
-    }
-
-    /* CABECERA */
-    .cinematic-masonry-slideshow .slideshow-header {
-        height: auto;
-        min-height: 0;
-        padding: 0;
-        margin-bottom: 28px;
-        text-align: center;
-    }
-
-    .cinematic-masonry-slideshow .slideshow-title {
-        font-size: 1.8rem;
-        line-height: 1.15;
-    }
-
-    /* CONTENEDOR DEL SLIDESHOW
-       Quitamos la altura fija de escritorio/móvil */
-    .cinematic-masonry-slideshow .cinematic-slideshow-wrapper {
-        height: auto;
-        min-height: 0;
-        overflow: hidden;
-        border-radius: 14px;
-        border-width: 2px;
-    }
-
-    /* Cada slide deja de depender de una altura fija */
-    .cinematic-masonry-slideshow .masonry-slide {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        padding: 10px;
-
-        display: none;
-
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-    }
-
-    /* Solo mostramos el slide activo */
-    .cinematic-masonry-slideshow .masonry-slide.active {
-        display: block;
-        position: relative;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-    }
-
-    /* GALERÍA VERTICAL EN MÓVIL */
-    .cinematic-masonry-slideshow .masonry-grid {
-        display: flex;
-        flex-direction: column;
-
-        width: 100%;
-        height: auto;
-
-        gap: 12px;
-    }
-
-    /* TODOS LOS ELEMENTOS */
-    .cinematic-masonry-slideshow .masonry-item,
-    .cinematic-masonry-slideshow .item-large,
-    .cinematic-masonry-slideshow .item-medium,
-    .cinematic-masonry-slideshow .item-small,
-    .cinematic-masonry-slideshow .item-gif-vertical {
-        width: 100%;
-        height: auto;
-        min-height: 0;
-
-        grid-column: auto;
-        grid-row: auto;
-
-        flex: none;
-    }
-
-    /* FOTOS NORMALES */
-    .cinematic-masonry-slideshow
-    .masonry-item:not(.item-gif-vertical) {
-        aspect-ratio: 4 / 3;
-    }
-
-    /* GIF VERTICAL */
-    .cinematic-masonry-slideshow
-    .masonry-item.item-gif-vertical {
-        aspect-ratio: 9 / 16;
-        max-height: 520px;
-        background: #000;
-    }
-
-    /* FOTOS */
-    .cinematic-masonry-slideshow .masonry-item img {
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-        object-position: center;
-    }
-
-    /* GIF:
-       se muestra completo y no se aplasta */
-    .cinematic-masonry-slideshow
-    .masonry-item.item-gif-vertical img {
-        object-fit: contain;
-        object-position: center;
-    }
-
-    /* FLECHAS */
-    .cinematic-masonry-slideshow .slideshow-nav-btn {
-        width: 42px;
-        height: 42px;
-    }
-
-    .cinematic-masonry-slideshow .slideshow-nav-btn svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .cinematic-masonry-slideshow .prev-btn {
-        left: 8px;
-    }
-
-    .cinematic-masonry-slideshow .next-btn {
-        right: 8px;
-    }
-
-}
-
-
-/* MÓVILES PEQUEÑOS */
-@media (max-width: 480px) {
-
-    .cinematic-masonry-slideshow {
-        padding: 38px 10px;
-    }
-
-    .cinematic-masonry-slideshow .slideshow-title {
-        font-size: 1.55rem;
-    }
-
-    .cinematic-masonry-slideshow .masonry-grid {
-        gap: 10px;
-    }
-
-   .cinematic-masonry-slideshow
-.masonry-item.item-gif-vertical {
-    aspect-ratio: 9 / 16;
-    max-height: 400px;
-}
-    .cinematic-masonry-slideshow .slideshow-nav-btn {
-        width: 38px;
-        height: 38px;
-    }
-
+    .gala-slide-content { padding: 18px; }
+    .gala-slide-content h4 { font-size: 1.2rem; }
+    .gala-slide-description { font-size: .8rem; }
+    .gala-slide-dots { margin-top: 18px; }
 }
