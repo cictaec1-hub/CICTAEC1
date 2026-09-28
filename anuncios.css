@@ -83,7 +83,7 @@
 .noticias-column {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100%; /* Ocupa toda la altura disponible */
 }
 
 .column-header {
@@ -173,16 +173,16 @@
     color: #fff;
 }
 
-/* Grid de noticias */
+/* Grid de noticias - AHORA SE EXPANDE */
 .noticias-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    flex-grow: 1;
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
     align-content: start;
 }
 
-/* Tarjeta de noticia */
+/* Tarjeta de noticia - AHORA SE EXPANDE */
 .noticia-card-compact {
     background: #f8f9fa;
     border-radius: 14px;
@@ -194,7 +194,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 160px;
+    min-height: 160px; /* Altura mínima */
 }
 
 .noticia-card-compact::before {
@@ -248,7 +248,7 @@
     margin: 0 0 10px 0;
     line-height: 1.3;
     font-weight: 700;
-    flex-grow: 1;
+    flex-grow: 1; /* Ocupa el espacio disponible */
 }
 
 .noticia-excerpt {
@@ -256,12 +256,12 @@
     color: #555;
     line-height: 1.5;
     margin: 0 0 10px 0;
-    display: none;
+    display: none; /* Oculto por defecto */
     flex-shrink: 0;
 }
 
 .noticia-card-compact:hover .noticia-excerpt {
-    display: block;
+    display: block; /* Se muestra al hacer hover */
 }
 
 .noticia-meta-compact {
@@ -270,7 +270,7 @@
     justify-content: space-between;
     font-size: 0.75rem;
     color: #888;
-    margin-top: auto;
+    margin-top: auto; /* Empuja hacia abajo */
     padding-top: 10px;
     border-top: 1px solid #e0e0e0;
     flex-shrink: 0;
@@ -411,259 +411,31 @@
     border: none;
 }
 
-/* ============================================
-   RESPONSIVE COMPLETO - TABLÓN DE ANUNCIOS
-   ============================================ */
-
-/* TABLET (hasta 1024px) */
+/* Responsive */
 @media (max-width: 1024px) {
-    .anuncios-mega-section {
-        padding: 80px 20px;
-    }
-    
-    .anuncios-mega-title {
-        font-size: 2.5rem;
-    }
-    
     .anuncios-mega-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .noticias-column {
-        height: auto;
     }
     
     .noticias-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .instagram-real-feed {
-        max-width: 600px;
-        margin: 0 auto;
-    }
 }
 
-/* MÓVIL GRANDE (hasta 768px) */
 @media (max-width: 768px) {
-    .anuncios-mega-section {
-        padding: 60px 15px;
-    }
-    
-    .anuncios-mega-header {
-        margin-bottom: 40px;
-    }
-    
-    .anuncios-mega-label {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-        padding: 10px 25px;
+    .anuncios-mega-container {
+        padding: 25px 20px;
     }
     
     .anuncios-mega-title {
         font-size: 2rem;
     }
     
-    .anuncios-mega-subtitle {
-        font-size: 1rem;
-    }
-    
-    /* Contenedor blanco con ancho limitado en móvil */
-    .anuncios-mega-container {
-        max-width: 420px;
-        margin: 0 auto;
-        padding: 20px 15px;
-        border-radius: 20px;
-    }
-    
-    /* Header de noticias apilado */
-    .column-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-    
-    .column-title {
-        font-size: 1.4rem;
-    }
-    
-    .live-indicator {
-        font-size: 0.75rem;
-    }
-    
-    /* Filtros scrolleables horizontalmente */
-    .news-filters {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 10px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-    
-    .news-filters::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .news-filter-btn {
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
-    
-    /* Grid de noticias a 1 columna */
     .noticias-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
-    }
-    
-    /* Tarjetas de noticias */
-    .noticia-card-compact {
-        min-height: auto;
-        padding: 18px;
-        margin-bottom: 5px;
-    }
-    
-    .noticia-title-compact {
-        font-size: 1.05rem;
-        line-height: 1.4;
-        margin-bottom: 12px;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-    
-    .noticia-excerpt {
-        display: block;
-        font-size: 0.9rem;
-        margin-top: 10px;
-        line-height: 1.6;
-        word-wrap: break-word;
-    }
-    
-    .noticia-meta-compact {
-        font-size: 0.8rem;
-        padding-top: 12px;
-        margin-top: 15px;
-    }
-    
-    /* Instagram - Ocultar header duplicado */
-    .instagram-feed-header {
-        display: none;
-    }
-    
-    .instagram-real-feed {
-        border-radius: 20px;
-    }
-    
-    .instagram-widget-container {
-        padding: 10px;
-        min-height: 450px;
-    }
-}
-
-/* MÓVIL PEQUEÑO (hasta 480px) */
-@media (max-width: 480px) {
-    .anuncios-mega-section {
-        padding: 40px 10px;
-    }
-    
-    .anuncios-mega-header {
-        margin-bottom: 30px;
-    }
-    
-    .anuncios-mega-label {
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        padding: 8px 20px;
-    }
-    
-    .anuncios-mega-title {
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-    }
-    
-    .anuncios-mega-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    /* Contenedor más estrecho para móviles pequeños */
-    .anuncios-mega-container {
-        max-width: 360px;
-        padding: 15px 12px;
-        border-radius: 15px;
-    }
-    
-    .column-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-    }
-    
-    .column-title {
-        font-size: 1.2rem;
-    }
-    
-    .news-filter-btn {
-        padding: 5px 12px;
-        font-size: 0.75rem;
-    }
-    
-    /* Tarjetas de noticias */
-    .noticia-card-compact {
-        padding: 16px;
-        margin-bottom: 8px;
-    }
-    
-    .noticia-category-compact {
-        font-size: 0.7rem;
-        padding: 5px 10px;
-        margin-bottom: 10px;
-    }
-    
-    .noticia-title-compact {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-    
-    .noticia-excerpt {
-        font-size: 0.9rem;
-        line-height: 1.7;
-    }
-    
-    .noticia-meta-compact {
-        font-size: 0.8rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding-top: 15px;
-    }
-    
-    /* Instagram */
-    .instagram-widget-container {
-        padding: 5px;
-        min-height: 500px;
-    }
-}
-
-/* MÓVIL MUY PEQUEÑO (hasta 360px) */
-@media (max-width: 360px) {
-    .anuncios-mega-title {
-        font-size: 1.4rem;
-    }
-    
-    /* Contenedor aún más estrecho para móviles muy pequeños */
-    .anuncios-mega-container {
-        max-width: 320px;
-        padding: 12px 10px;
     }
     
     .noticia-card-compact {
-        padding: 14px;
-    }
-    
-    .noticia-title-compact {
-        font-size: 0.95rem;
-    }
-    
-    .noticia-excerpt {
-        font-size: 0.85rem;
+        height: 120px;
     }
 }
