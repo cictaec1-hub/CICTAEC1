@@ -447,11 +447,14 @@
 /* MÓVIL GRANDE (hasta 768px) */
 @media (max-width: 768px) {
     .anuncios-mega-section {
-        padding: 60px 15px;
+        padding: 60px 10px;
+        width: 100%;
+        overflow: visible;
     }
     
     .anuncios-mega-header {
         margin-bottom: 40px;
+        width: 100%;
     }
     
     .anuncios-mega-label {
@@ -469,8 +472,11 @@
     }
     
     .anuncios-mega-container {
-        padding: 25px 20px;
+        padding: 20px 15px;
         border-radius: 20px;
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
     }
     
     /* Header de noticias apilado */
@@ -495,6 +501,7 @@
         padding-bottom: 10px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        width: 100%;
     }
     
     .news-filters::-webkit-scrollbar {
@@ -510,19 +517,25 @@
     .noticias-grid {
         grid-template-columns: 1fr;
         gap: 12px;
+        width: 100%;
     }
     
-    /* Tarjetas de noticias - MÁS ESPACIO */
+    /* Tarjetas de noticias */
     .noticia-card-compact {
         min-height: auto;
         padding: 18px;
         margin-bottom: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: visible;
     }
     
     .noticia-title-compact {
         font-size: 1.05rem;
         line-height: 1.4;
         margin-bottom: 12px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .noticia-excerpt {
@@ -530,6 +543,7 @@
         font-size: 0.9rem;
         margin-top: 10px;
         line-height: 1.6;
+        word-wrap: break-word;
     }
     
     .noticia-meta-compact {
@@ -538,25 +552,28 @@
         margin-top: 15px;
     }
     
-    /* Instagram - OCULTAR HEADER DUPLICADO */
+    /* Instagram - Ocultar header duplicado */
     .instagram-feed-header {
-        display: none; /* Oculta tu header personalizado en móvil */
+        display: none;
     }
     
     .instagram-real-feed {
         border-radius: 20px;
+        width: 100%;
+        overflow: visible;
     }
     
     .instagram-widget-container {
         padding: 10px;
-        min-height: 450px; /* Más alto para compensar el header oculto */
+        min-height: 450px;
+        width: 100%;
     }
 }
 
 /* MÓVIL PEQUEÑO (hasta 480px) */
 @media (max-width: 480px) {
     .anuncios-mega-section {
-        padding: 40px 10px;
+        padding: 40px 5px;
     }
     
     .anuncios-mega-header {
@@ -579,7 +596,7 @@
     }
     
     .anuncios-mega-container {
-        padding: 20px 15px;
+        padding: 15px 10px;
         border-radius: 15px;
     }
     
@@ -598,7 +615,7 @@
         font-size: 0.75rem;
     }
     
-    /* Tarjetas de noticias - AÚN MÁS ESPACIO */
+    /* Tarjetas de noticias */
     .noticia-card-compact {
         padding: 20px;
         margin-bottom: 8px;
@@ -642,7 +659,7 @@
     }
     
     .anuncios-mega-container {
-        padding: 15px 10px;
+        padding: 12px 8px;
     }
     
     .noticia-card-compact {
@@ -659,17 +676,12 @@
 }
 
 /* ============================================
-   FIX: BOTÓN FLOTANTE INSTAGRAM
+   FIX: FORZAR ANCHO COMPLETO EN MÓVIL
    ============================================ */
-
-/* Asegura que el botón flotante no tape contenido */
 @media (max-width: 768px) {
-    /* Si tienes un botón flotante de Instagram, ajústalo */
-    .instagram-float-btn,
-    .whatsapp-float-btn,
-    [class*="float-btn"] {
-        bottom: 80px !important; /* Sube el botón para no tapar */
-        right: 15px !important;
-        z-index: 999 !important;
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        max-width: 100% !important;
     }
 }
