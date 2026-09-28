@@ -83,7 +83,7 @@
 .noticias-column {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Ocupa toda la altura disponible */
+    height: 100%;
 }
 
 .column-header {
@@ -173,16 +173,16 @@
     color: #fff;
 }
 
-/* Grid de noticias - AHORA SE EXPANDE */
+/* Grid de noticias */
 .noticias-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    flex-grow: 1;
     align-content: start;
 }
 
-/* Tarjeta de noticia - AHORA SE EXPANDE */
+/* Tarjeta de noticia */
 .noticia-card-compact {
     background: #f8f9fa;
     border-radius: 14px;
@@ -194,7 +194,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 160px; /* Altura mínima */
+    min-height: 160px;
 }
 
 .noticia-card-compact::before {
@@ -248,7 +248,7 @@
     margin: 0 0 10px 0;
     line-height: 1.3;
     font-weight: 700;
-    flex-grow: 1; /* Ocupa el espacio disponible */
+    flex-grow: 1;
 }
 
 .noticia-excerpt {
@@ -256,12 +256,12 @@
     color: #555;
     line-height: 1.5;
     margin: 0 0 10px 0;
-    display: none; /* Oculto por defecto */
+    display: none;
     flex-shrink: 0;
 }
 
 .noticia-card-compact:hover .noticia-excerpt {
-    display: block; /* Se muestra al hacer hover */
+    display: block;
 }
 
 .noticia-meta-compact {
@@ -270,7 +270,7 @@
     justify-content: space-between;
     font-size: 0.75rem;
     color: #888;
-    margin-top: auto; /* Empuja hacia abajo */
+    margin-top: auto;
     padding-top: 10px;
     border-top: 1px solid #e0e0e0;
     flex-shrink: 0;
@@ -512,52 +512,44 @@
         gap: 12px;
     }
     
-    /* Tarjetas de noticias */
+    /* Tarjetas de noticias - MÁS ESPACIO */
     .noticia-card-compact {
         min-height: auto;
-        padding: 15px;
+        padding: 18px;
+        margin-bottom: 5px;
     }
     
     .noticia-title-compact {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
     }
     
     .noticia-excerpt {
-        display: block; /* En móvil siempre visible (no hay hover) */
-        font-size: 0.85rem;
-        margin-top: 8px;
+        display: block;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        line-height: 1.6;
     }
     
-    /* Instagram */
+    .noticia-meta-compact {
+        font-size: 0.8rem;
+        padding-top: 12px;
+        margin-top: 15px;
+    }
+    
+    /* Instagram - OCULTAR HEADER DUPLICADO */
+    .instagram-feed-header {
+        display: none; /* Oculta tu header personalizado en móvil */
+    }
+    
     .instagram-real-feed {
         border-radius: 20px;
     }
     
-    .instagram-feed-header {
-        padding: 20px 15px;
-    }
-    
-    .instagram-avatar {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .instagram-profile-name {
-        font-size: 1rem;
-    }
-    
-    .instagram-profile-handle {
-        font-size: 0.8rem;
-    }
-    
-    .instagram-follow-btn-real {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-    
     .instagram-widget-container {
-        padding: 15px;
-        min-height: 350px;
+        padding: 10px;
+        min-height: 450px; /* Más alto para compensar el header oculto */
     }
 }
 
@@ -606,55 +598,40 @@
         font-size: 0.75rem;
     }
     
+    /* Tarjetas de noticias - AÚN MÁS ESPACIO */
     .noticia-card-compact {
-        padding: 12px;
+        padding: 20px;
+        margin-bottom: 8px;
     }
     
     .noticia-category-compact {
-        font-size: 0.6rem;
-        padding: 3px 8px;
+        font-size: 0.7rem;
+        padding: 5px 10px;
+        margin-bottom: 10px;
     }
     
     .noticia-title-compact {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+    
+    .noticia-excerpt {
         font-size: 0.95rem;
+        line-height: 1.7;
     }
     
     .noticia-meta-compact {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
+        gap: 8px;
+        padding-top: 15px;
     }
     
-    .instagram-feed-header {
-        padding: 15px 12px;
-    }
-    
-    .instagram-profile-info {
-        gap: 10px;
-    }
-    
-    .instagram-avatar {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .instagram-profile-name {
-        font-size: 0.95rem;
-    }
-    
-    .instagram-profile-handle {
-        font-size: 0.75rem;
-    }
-    
-    .instagram-follow-btn-real {
-        padding: 6px 14px;
-        font-size: 0.75rem;
-    }
-    
+    /* Instagram */
     .instagram-widget-container {
-        padding: 10px;
-        min-height: 300px;
+        padding: 5px;
+        min-height: 500px;
     }
 }
 
@@ -668,15 +645,31 @@
         padding: 15px 10px;
     }
     
+    .noticia-card-compact {
+        padding: 18px;
+    }
+    
     .noticia-title-compact {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
-    .instagram-profile-name {
+    .noticia-excerpt {
         font-size: 0.9rem;
     }
-    
-    .instagram-profile-handle {
-        font-size: 0.7rem;
+}
+
+/* ============================================
+   FIX: BOTÓN FLOTANTE INSTAGRAM
+   ============================================ */
+
+/* Asegura que el botón flotante no tape contenido */
+@media (max-width: 768px) {
+    /* Si tienes un botón flotante de Instagram, ajústalo */
+    .instagram-float-btn,
+    .whatsapp-float-btn,
+    [class*="float-btn"] {
+        bottom: 80px !important; /* Sube el botón para no tapar */
+        right: 15px !important;
+        z-index: 999 !important;
     }
 }
